@@ -1,0 +1,4207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/select2.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/line-awesome.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/daterangepicker.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/animate.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/animated-headline.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/jquery-ui.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    
+
+
+<style>
+
+
+body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+   
+
+
+  /* Mobile responsiveness */
+   
+ /* Dropdown */
+.dropdown {
+    position: absolute;
+    top: 300px;
+    left: 200px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #ccc;
+   background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: none; /* Hidden by default */
+}
+
+/* Room controls */
+.room-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.room-controls label {
+    font-size: 16px;
+    flex: 2;
+    text-align: left;
+}
+
+.room-controls button {
+  width: 36px;
+    height: 36px;
+    background-color: #0066ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.room-controls span {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 20px;
+}
+
+/* Input field styling */
+#hotel-adult {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    max-width: 320px;
+    
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .dropdown {
+        width: calc(80% - 40px); /* Adjust dropdown width */
+        margin-top: 400px ;
+        left: 50%;
+        margin-right: 300px;
+        transform: translateX(-50%);
+        padding: 20px; /* Ensure dropdown has enough padding */
+    }
+
+    .room-controls{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Properly align controls */
+        padding: 10px 0; /* Add space between rows */
+    }
+
+    .room-controls button {
+        width: 35px; /* Ensure buttons stay circular */
+        height: 35px;
+        font-size: 16px;
+        border-radius: 50%; /* Make buttons perfectly circular */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0066ff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .room-controls button:active {
+        background-color: #004bbd; /* Slightly darker shade on click */
+    }
+
+    .room-controls span {
+        width: 30px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .room-controls label {
+        font-size: 14px; /* Adjust font size */
+        flex: 1; /* Maintain spacing between controls */
+    }
+
+    #hotel-adult {
+        font-size: 16px;
+        padding: 10px; /* Adjust padding for mobile */
+        width: calc(100% - 20px); /* Full width with some margin */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Container for flight forms */
+#flights-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spacing between multiple flight forms */
+  margin-top: 20px;
+}
+
+/* Individual flight form */
+.flight-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Spacing between elements in a single form */
+  align-items: center;
+  
+  padding: 15px;
+  border-radius: 8px;
+  
+}
+
+/* Input fields */
+.flight-form input[type="text"],
+.flight-form input[type="date"] {
+  flex: 1; /* Equal width for all inputs */
+  min-width: 200px; /* Minimum width to prevent shrinking too much */
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Remove button */
+.flight-form button {
+  flex: 0 0 auto; /* Button doesn't stretch */
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flight-form button:hover {
+  background-color: #c0392b;
+}
+
+
+
+/* style for ne adult*/
+
+
+        /* Dropdown toggle */
+       
+        
+
+ button{
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  background-color: #0066ff;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+        .menu-toggle {
+        margin-right: 40px;
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        header {
+        margin-top: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #253c53;
+            background: url('flight.png.jpg') no-repeat center center/cover;
+        }
+
+       
+   
+        .search-box {
+
+
+         
+
+
+
+
+
+
+
+
+          
+            
+        
+          
+background: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+max-width: 1100px;
+margin: 50px auto;
+display: flex;
+flex-direction: column;
+position: relative;
+gap: 10px;
+
+
+width: 800px;
+
+
+
+
+
+
+}
+
+
+.search-subnavbar {
+    display: flex;
+
+justify-content: space-around;
+background-color: #f8f9fa;
+padding: 10px;
+border-radius: 4px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-subnavbar a {
+color: #333;
+text-decoration: none;
+font-size: 14px;
+font-weight: bold;
+}
+
+.search-subnavbar a:hover {
+color: #007bff;
+}
+
+
+        
+
+   
+
+
+
+
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+              background-color: white;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul li:last-child {
+                margin-top: 1rem;
+            }
+
+            nav ul li:last-child button {
+           padding-left: 40px;
+                width: 100%;
+                background: #ffc107;
+                color: #007bff;
+                border: none;
+                padding: 0.75rem;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            nav ul li:last-child button:hover {
+                background: #e0a800;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo img {
+                max-width: 130px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        .form-flex {
+       display: flex;
+       gap: 15px;
+       flex-wrap: wrap;
+   }
+        
+
+
+ 
+
+   
+       
+
+        form {
+       
+       display: flex;
+       flex-direction: column;
+       gap: 15px;
+   }
+
+   form label {
+       font-size: 14px;
+       color: #333;
+       font-weight: bold;
+       display: inline-block;
+       margin-bottom: 5px;
+   }
+
+   form input[type="text"],
+   form input[type="date"],
+   form select {
+       padding: 10px;
+       border: 1px solid #ddd;
+       border-radius: 5px;
+       font-size: 14px;
+       width: 500px;
+
+      
+   }
+   form input:hover
+   {
+  border-color: #0066ff;
+   }
+
+
+
+ 
+
+   
+
+
+
+
+    
+          
+
+          /* Responsive Styles */
+         /* Dropdown Wrapper */
+.dropdown-wrapper {
+    position: relative;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Dropdown Toggle */
+.dropdown-toggle {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+/* Label Group */
+.dropdown-label-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Label Item */
+.dropdown-label-item {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dropdown Select */
+.dropdown-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+    .dropdown-label-group {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .dropdown-label-item {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    .dropdown-label-item:last-child {
+        margin-right: 0;
+    }
+}
+
+                        
+
+</style>
+       
+<style>
+         /* Responsive Styles */
+    @media (max-width: 768px) {
+      .modal-content {
+
+        padding: 15px;
+        max-width: 350px;
+        
+      }
+    
+      button {
+        font-size: 14px;
+      }
+    
+      .social-icons a {
+        font-size: 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      
+      .modal-content {
+        
+        max-width: 300px;
+        padding: 10px;
+      }
+    
+      h2 {
+        font-size: 22px;
+      }
+    
+      .modal input{
+      
+        font-size: 9px;
+      }
+      input {
+        padding: 12px;
+        font-size: 14px;
+      }
+      
+      button {
+        font-size: 14px;
+        padding: 8px;
+      }
+    
+      .social-icons a {
+        font-size: 18px;
+      }
+    }
+    
+    
+    
+    
+    
+    
+           </style>
+                  
+           
+           <!-- Login Modal -->
+          
+                   
+           
+           
+           
+           
+           
+           <style>
+
+
+
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .modal-content {
+
+        padding: 15px;
+        max-width: 350px;
+        
+      }
+    
+      button {
+        font-size: 14px;
+      }
+    
+      .social-icons a {
+        font-size: 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .modal-content {
+        
+        max-width: 300px;
+        padding: 10px;
+      }
+    
+      h2 {
+        font-size: 22px;
+      }
+    
+      .modal input{
+      
+        font-size: 9px;
+      }
+      input {
+        padding: 12px;
+        font-size: 14px;
+      }
+      
+      button {
+        font-size: 14px;
+        padding: 8px;
+      }
+    
+      .social-icons a {
+        font-size: 18px;
+      }
+    }
+    
+
+
+
+
+
+
+
+
+              .label-container input {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+             .modal {
+                 display: none; /* Hidden by default */
+                 position: fixed;
+                 z-index: 1000;
+                 left: 0;
+                 top: 100px;
+                 width: 100%;
+                 height: 100%;
+                 background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+               }
+               .modal h2 {
+      color: #000;
+    }
+    
+    .modal p {
+      color: #000;
+    }
+    
+    .modal input {
+      width: 100%; /* Make input fields stretch to fill the width of the modal */
+      height: 40px;
+      border-color: #1c1a1a;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    
+               /* Modal Content */
+               .modal-content {
+                 background-color: #fff;
+                 margin: 10% auto;
+                 padding: 30px;
+                 border-radius: 8px;
+                 width: 400px;
+                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                 position: relative;
+                 font-family: Arial, sans-serif;
+               }
+               
+               /* Close Button */
+               .close {
+                 position: absolute;
+                 top: 15px;
+                 right: 15px;
+                 color: #aaa;
+                 font-size: 24px;
+                 font-weight: bold;
+                 cursor: pointer;
+               }
+               
+               .close:hover {
+                 color: #000;
+               }
+               
+               
+               /* Social Media Icons */
+               .social-icons {
+                 text-align: center;
+                 margin-top: 15px;
+               }
+               
+               .social-icons a {
+                 margin: 0 8px;
+                 font-size: 18px;
+                 color: #555;
+                 text-decoration: none;
+               }
+               
+               .social-icons a:hover {
+                 color: #007bff;
+               }
+              
+           
+                   .navbar button {
+                      color: #ffffff;
+                       width: 100px;
+                       border: none;
+                       background-color: #007bff;
+                       border-radius: 5px;
+                       height: 40px;
+                   }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Responsiveness */
+    @media (max-width: 768px) {
+        .form-row {
+            flex-direction: column;
+        }
+    
+        .trip-type-group {
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        button {
+            width: 100%;
+        }
+    }
+    
+    
+    @media (max-width: 480px) {
+        .flight-form {
+            padding: 10px;
+        }
+    
+        .trip-type-group label {
+            font-size: 12px;
+        }
+    
+        input, select {
+            font-size: 12px;
+        }
+    
+        button {
+            font-size: 14px;
+        }
+    }   
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+    
+     
+    
+      button {
+        font-size: 14px;
+      }
+    
+      .social-icons a {
+        font-size: 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+    
+    
+      h2 {
+        font-size: 22px;
+      }
+    
+      
+      button {
+        font-size: 14px;
+        padding: 8px;
+      }
+    
+      .social-icons a {
+        font-size: 18px;
+      }
+    }
+    
+    
+    
+    
+    
+    
+           </style>
+                  
+           
+           <!-- Login Modal -->
+           <div id="loginModal" class="modal"style="overflow: hidden;">
+             <div class="modal-content">
+                 <span class="close">&times;</span>
+                 <h2>Login</h2>
+                 <p>Hello! Welcome to your account</p>
+                 <form>
+                     <label for="username">Username</label>
+                     <input  id="username" placeholder="Type your username"style="width: 250px;">
+                     
+                     <label for="password">Password</label>
+                     <input type="password" id="password" placeholder="Type your password"style="width:250px;">
+                   
+                     
+                     <button>Submit</button>
+               
+                 </form>
+                 <p>Or Login Using</p>
+                 <div class="social-icons">
+                     <a href="#"><i class="fab fa-facebook"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-linkedin"></i></a>
+                 </div>
+             </div>
+           </div>
+                   
+           
+           
+           
+           
+           
+           <style>
+              .label-container input {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+             .modal {
+                 display: none; /* Hidden by default */
+                 position: fixed;
+                 z-index: 1000;
+                 left: 0;
+                 top: 100px;
+                 width: 100%;
+                 height: 100%;
+                 background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+               }
+               .modal h2 {
+      color: #000;
+    }
+    
+    .modal p {
+      color: #000;
+    }
+    
+   
+    
+               /* Modal Content */
+               .modal-content {
+              margin-top: 20px;
+                 background-color: #fff;
+       
+                 padding: 30px;
+                 border-radius: 8px;
+                 width: 400px;
+                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                 position: relative;
+                 font-family: Arial, sans-serif;
+               }
+               
+               /* Close Button */
+               .close {
+                 position: absolute;
+                 top: 15px;
+                 right: 15px;
+                 color: #aaa;
+                 font-size: 24px;
+                 font-weight: bold;
+                 cursor: pointer;
+               }
+               
+               .close:hover {
+                 color: #000;
+               }
+               
+               
+               /* Social Media Icons */
+               .social-icons {
+                 text-align: center;
+                 margin-top: 15px;
+               }
+               
+               .social-icons a {
+                 margin: 0 8px;
+                 font-size: 18px;
+                 color: #555;
+                 text-decoration: none;
+               }
+               
+               .social-icons a:hover {
+                 color: #007bff;
+               }
+              
+           
+                   .navbar button {
+                      color: #ffffff;
+                       width: 100px;
+                       border: none;
+                       background-color: #007bff;
+                       border-radius: 5px;
+                       height: 40px;
+                   }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Responsiveness */
+    @media (max-width: 768px) {
+        .form-row {
+            flex-direction: column;
+        }
+    
+        .trip-type-group {
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        button {
+            width: 100%;
+        }
+    }
+    
+    
+    @media (max-width: 480px) {
+        .flight-form {
+            padding: 10px;
+        }
+    
+        .trip-type-group label {
+            font-size: 12px;
+        }
+    
+        input, select {
+            font-size: 12px;
+        }
+    
+        button {
+            font-size: 14px;
+        }
+    }
+    
+    
+    
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+        .search-section h2 {
+          font-size: 1.5rem;
+          margin-top: 200px;
+         
+           
+        }
+    
+        .search-box input,
+        .search-box select,
+        .search-box button {
+            font-size: 0.9rem;
+        }
+    
+        .search-subnavbar {
+            gap: 8px;
+        }
+    
+        .search-subnavbar a {
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        /* Stack search box elements vertically */
+        .search-box {
+            gap: 20px;
+        }
+    
+        .search-subnavbar {
+            flex-direction: column;
+            gap: 15px;
+        }
+    
+        .search-subnavbar a {
+            font-size: 1.2rem;
+        }
+    
+        .search-box input,
+        .search-box select,
+        .search-box button {
+            width: 100%;
+        }
+    
+        /* Adjust button size */
+        .search-box button {
+            font-size: 1.1rem;
+        }
+    
+        .search-section h2 {
+          font-size: 1.5rem;
+         
+        }
+    }
+
+
+
+    
+    @media (max-width: 480px) {
+      .header{
+        margin-top: 60px;
+      }
+      .search-section h2 {
+          font-size: 1rem;
+      
+          
+        }
+        .search-box{
+            width: 310px;
+            margin-top: 20px;
+        }
+       
+    
+        .search-box input,
+        .search-box select,
+        .search-box button {
+            font-size: 0.9rem;
+        }
+    
+        .search-subnavbar {
+            flex-direction: column;
+            gap: 10px;
+        }
+    
+        .search-subnavbar a {
+            font-size: 1.1rem;
+        }
+    }
+    
+    .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Form Rows */
+    .form-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+        .form-row {
+            flex-direction: column;
+        }
+    }
+    
+    .label-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              
+                
+            }
+    
+            .label-container label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+    
+           
+    
+            .label-container input {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+    
+    
+    
+    
+           
+    
+           
+    
+    
+            .dropdown-icon {
+                font-size: 15px;
+                color: black;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            @media (max-width: 600px) {
+                #advanced-dropdown {
+                    margin-right: 0;
+                }
+    
+                
+            .drop {
+               
+               position: relative;
+            }
+    
+            .dropdown-icon {
+                font-size: 15px;
+                color: black;
+                font-weight: bold;
+                cursor: pointer;
+            }
+           
+           
+        }
+            
+    
+            @media (max-width: 400px) {
+                .dropdown-content select {
+                    width: 100%;
+                }
+                .drop {
+               
+               position: relative;
+            }
+    
+            .dropdown-icon {
+                font-size: 15px;
+                color: black;
+                font-weight: bold;
+                cursor: pointer;
+            }
+           
+            }
+
+
+
+
+
+            .drop {
+    display: inline-block;
+    position: relative;
+}
+
+
+
+.dropdown-content {
+   
+             /* Hidden by default */
+            margin-top: 10px;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        .textfield {
+          border-radius: 5px;
+          width: 350px;
+          height: 40px;
+          border-color: #dfd3d3;
+        }
+        
+input:hover {
+  border-color: #007BFF;
+}
+        .dropdown-content input {
+            width: 80px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .dropdown-content input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .show {
+            display: flex; /* Make fields visible */
+        }
+
+
+
+
+
+
+
+            .popular-round-trip-wrap {
+  padding-top: 40px;
+}
+
+.deal-card {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.deal-title {
+  margin-bottom: 15px;
+}
+
+.deal-title img {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.deal__title a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.deal__meta {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.deal-action-box {
+  margin-top: 10px;
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
+}
+
+.price__from {
+  font-size: 14px;
+  color: #555;
+}
+
+.price__num {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff5a5f;
+}
+
+.btn-text {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.btn-text:hover {
+  color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .popular-round-trip-wrap {
+    padding-top: 20px;
+  }
+
+  .deal-card {
+    margin-bottom: 20px;
+  }
+
+  .deal__title a {
+    font-size: 16px;
+  }
+
+  .price__num {
+    font-size: 18px;
+  }
+
+  .btn-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .deal-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deal-title img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .deal__title a {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .deal-action-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price-box {
+    margin-bottom: 10px;
+  }
+
+  .btn-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .deal__title a {
+    font-size: 12px;
+  }
+
+  .price__num {
+    font-size: 16px;
+  }
+
+  .btn-text {
+    font-size: 11px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+               /* General Modal Styles */
+                </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal"style="overflow: hidden;">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <p>Hello! Welcome to your account</p>
+      <form>
+          <label for="username">Username</label>
+          <input  id="username" placeholder="Type your username"style="width:20px;">
+          
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Type your password">
+          
+          
+          <button>Submit</button>
+      </form>
+      <p>Or Login Using</p>
+      <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+  </div>
+</div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+              
+                <!-- Hidden checkbox to control modal -->
+                
+                
+         
+        </div>
+
+        <nav class="navbar">
+          <div class="container">
+            <!-- Logo -->
+            <div class="navbar-brand">
+              <img src="logo.png.png" alt="Trizen Logo" class="logo">
+            </div>
+        
+            <!-- Menu Toggle Button -->
+          
+        
+            <!-- Navbar Links -->
+            <ul class="navbar-nav">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/flightpage2.html">Flight</a></li>
+              <li><a href="/hotelpage2.html">Hotel</a></li>
+              <li><a href="/curisepage2.html">Curise</a></li>
+              <li><a href="/curisepage2.html">Car</a></li>
+              <li><a href="/Apartmentpage2.html">Apartments</a></li>
+              <li><a ></a></li>
+            </ul>
+            
+            <li class="navbar-toggler" onclick="toggleMenu()">
+              &#9776;
+            </li>
+            <!-- Sign-In Button -->
+            <button id="loginBtn" class="btn-signin">Sign In</button>
+          
+        </div>
+        </nav>
+        
+        
+
+<div>
+  <style>
+/* General Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  height: 60px;
+}
+
+/* Navbar Links */
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbar-nav a:hover {
+  color: #0066ff;
+}
+
+/* Sign-In Button */
+.btn-signin {
+  background-color: #0066ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+
+  cursor: pointer;
+ 
+}
+
+.btn-signin:hover {
+  background-color: #0051cc;
+}
+
+/* Toggle Button for Mobile */
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar-nav a{
+    margin-left: 20px;
+  }
+  .navbar-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .btn-signin {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .logo {
+  height: 40px;
+}
+
+  
+}
+
+
+/* Adjustments for Small Screens (Up to 992px) */
+@media screen and (max-width: 992px) {
+  .navbar {
+    display: flex; /* Flex layout */
+    justify-content: space-between; /* Space between logo, menu, and buttons */
+    align-items: center; /* Center vertically */
+    padding: 10px; /* Add padding for better appearance */
+  }
+
+  .menu-toggle,
+  .signin-btn {
+    display: inline-block; /* Ensure both buttons are visible */
+    margin: 0 10px; /* Add spacing between buttons */
+  }
+
+  .menu-toggle {
+    font-size: 24px; /* Adjust icon size */
+    cursor: pointer; /* Indicate interactivity */
+  }
+
+  .signin-btn {
+    background-color: #0066ff; /* Button color */
+    border-radius: 5px; /* Rounded corners */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer; /* Indicate interactivity */
+  }
+
+  /* Hide the navbar links for small screens */
+  .navbar-nav {
+    display: none;
+  }
+}
+/* Navbar Links: Default (Stacked on small screens) */
+.navbar-nav {
+  display: none; /* Hidden by default on small screens */
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Links: Side-by-Side on Laptop Screens */
+@media screen and (min-width: 1024px) {
+  .navbar-nav {
+    display: flex; /* Show links side by side on large screens */
+    flex-direction: row;
+    gap: 20px; /* Add spacing between links */
+  }
+}
+
+
+
+  </style>
+  
+  <script>
+    function toggleMenu() {
+  const navbarNav = document.querySelector('.navbar-nav');
+  navbarNav.classList.toggle('active');
+}
+
+  </script>
+  
+     </script>  
+
+</div>
+
+</head>
+
+<body>
+<!-- Login Modal -->
+<header>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Hero Section -->
+        <div class="hero" >
+
+            
+
+          
+
+
+
+
+
+  
+            <!-- Search Box Section -->
+            <div class="search-section"></div>
+               
+                <div class="search-box">
+                    
+                       
+                        <div class="search-box-content" id="search-box-content">
+        
+                            <script>
+                                function showForm(type) {
+                                    const searchBoxContent = document.getElementById('search-box-content');
+                                    let content = '';
+                            
+                                    if (type === 'flight') {
+                                        content = `
+                                            <form> 
+                                        <div class="form-flex"style="margin-top:40px;">
+                                                <label><input type="radio" name="trip-type" value="one-way" onclick="toggleTripOptions()"> One-way</label>
+                                                 <label><input type="radio" name="trip-type" value="round-trip" onclick="toggleTripOptions()"> Round-trip</label>
+                                     <label><input type="radio" name="trip-type" value="multi-city" onclick="toggleTripOptions()"> Multi-city</label>
+                    
+                                              
+                                           </div>
+                  
+         
+                    
+                  
+                    
+                     <div class="label-container" style="margin-top:0px;">
+                           <div class="form-flex">
+        <label for="label1">Flying From</label>
+          <input type="text" placeholder="Flying from"style="margin-right:20px;" >
+          </div>
+           <div class="form-flex">
+        <label for="label2">Flying to</label>
+          <input type="text" placeholder="Flying from" >
+          </div>
+                  
+    </div>
+                                          
+                                        
+                
+            
+                                                                      
+                    
+            <div class="label-container" style="margin-top:0px;">
+                           <div class="form-flex">
+        <label for="label1">Departing From</label>
+         <input type="date" placeholder="Departing"style="margin-right:20px;">
+          </div>
+         <div class="form-flex">
+        <label for="label2">Departing to</label>
+          
+
+ <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-right:20px;">
+
+
+
+
+
+
+  
+                    
+
+
+
+ <div id="hotelPassengerDropdown" class="dropdown">
+                                                <div class="room-controls">
+                                                    <label>Adults</label>
+                                                    <button type="button" onclick="changeCount('adult', -1)">-</button>
+                                                    <span id="hotelAdultCount">1</span>
+                                                    <button type="button" onclick="changeCount('adult', 1)">+</button>
+                                                </div>
+                                                <div class="room-controls">
+                                                    <label>Children</label>
+                                                    <button type="button" onclick="changeCount('children', -1)">-</button>
+                                                    <span id="hotelChildrenCount">0</span>
+                                                    <button type="button" onclick="changeCount('children', 1)">+</button>
+                                                </div>
+                                                <div class="room-controls">
+                                                    <label>Rooms</label>
+                                                    <button type="button" onclick="changeCount('room', -1)">-</button>
+                                                    <span id="hotelRoomCount">1</span>
+                                                    <button type="button" onclick="changeCount('room', 1)">+</button>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+                  <div class="form-flex" style="height:50px;">
+        <label for="label1">Coach</label>
+     <select >
+                                                    <option>Economy</option>
+                                                    <option>Business</option>
+</select>
+          </div>
+       <div class="form-flex">
+        </div>
+       
+           
+        
+    </div>          
+              
+
+
+                    
+                    
+                    
+                    
+                    
+                    
+                                           
+                    
+  <div class="form-flex">
+                                            
+                               
+                               <button style="margin-top:30px;" onclick="window.location.href='page2.html'" type="button">Search Now</button>
+                    
+                    
+                    <div id="add-flight-button-container" style="display: none; margin-top: 30px;">
+                    
+                      <Button type="button" id="add-flight-button" onclick="addFlight()">+ Add Flight</Button>
+                    
+                                    </div>
+                    
+                    
+                    
+                    </div>
+                    
+                    
+                    
+                    
+              
+                    
+                    
+                    
+                    
+                    
+                                        
+                    
+                    
+                    
+                    
+                                
+                    
+                    
+                                    <!-- Flights Container -->
+                                    <div id="flights-container"></div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                            
+                    
+                    
+                    
+                                               
+                    
+                    
+                     <!-- Advanced Dropdown for Round-trip -->
+                                    <div id="advanced-dropdown" style="display: none; margin-top: 0px;margin-right:800px;">
+                                       
+                    
+                    
+                    
+                    
+                    
+                    <!-- Dropdown Icon -->
+
+                            
+                        </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                                    </div>
+                    
+                                            </div>
+                    
+                       
+                        
+                    
+                    
+                    
+                                    
+                    
+                                    <!-- Flights Container -->
+                                    <div id="flights-container"></div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                           
+                        
+                    </div>
+                        
+                    
+                    </form>
+                                       
+                       `;
+                      } 
+                      else if (type === 'cruise') {
+                content = `
+                    <form>
+                        
+                        
+
+                         
+                      <div class="label-container">
+                          <div class="form-flex">
+        <label for="label1">Depart as early as</label>
+           <input type="date" placeholder="Departing" >
+          </div>
+        <div class="form-flex">
+        <label for="label2">Depart as late as</label>
+          <input type="date" placeholder="Departing" >
+          </div>
+ <div>
+        <label for="label2">Traveller in cabin</label>
+/* adult dalna*/
+
+         </div>
+
+          <div class="form-flex">
+        <label for="label1">Going to</label>
+           <select >
+                                <option>Select Destination</option>
+                                <option>Business</option>
+                                 <option>Mexico</option>
+                                <option>Carbieon</option>
+                            </select>
+          </div>
+         
+                  
+    </div>
+                        
+
+
+
+
+
+ 
+            
+           
+            </div>
+        </div>
+
+
+
+
+
+
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div  class="form-flex"style="margin-top: 10px;">
+                          <button onclick="window.location.href='curisepage2.html'" type="button">Search Now</button>
+          
+<div id="add-flight-button-container" style="display: none; margin-top: 0px;">
+                    <button type="button" id="add-flight-button" onclick="addFlight()">+ Add Flight</button>
+                </div>
+
+
+
+
+
+
+                <!-- Flights Container -->
+                <div id="flights-container"></div>
+
+                           
+
+
+ <!-- Advanced Dropdown for Round-trip -->
+             
+                        </div>
+
+   
+    
+
+
+
+                
+
+                <!-- Flights Container -->
+                <div id="flights-container"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    
+</div>
+    
+
+</form>
+   `;
+            } else if (type === 'car') {
+                content = `
+                <form>
+                 
+                                
+                       
+                    
+                      <div class="label-container">
+                        <div class="form-flex">
+        <label for="label1">Picking up</label>
+          <input type="text" placeholder="Flying from" >
+          </div>
+          <div class="form-flex">
+        <label for="label2">Picking up Date</label>
+          <input type="date" placeholder="Departing" >
+          </div>
+           <div class="form-flex">
+        <label for="label2">Time</label>
+         
+               <select>
+                                <option>9:00AM</option>
+                                <option>10:00AM</option>
+                                 <option>11:00AM</option>
+                                <option>12:00AM</option>
+                                 <option>1:00AM</option>
+                                <option>2:00AM</option>
+                            </select>             
+          </div>       
+    </div>
+                
+  <div class="label-container">
+                        <div class="form-flex">
+        <label for="label1">Picking up</label>
+          <input type="text" placeholder="Flying from" >
+          </div>
+         <div class="form-flex">
+        <label for="label2">Picking up Date</label>
+          <input type="date" placeholder="Departing" >
+          </div>
+            <div class="form-flex">
+        <label for="label2">Time</label>
+         
+               <select>
+                                <option>9:00AM</option>
+                                <option>10:00AM</option>
+                                 <option>11:00AM</option>
+                                <option>12:00AM</option>
+                                 <option>1:00AM</option>
+                                <option>2:00AM</option>
+                            </select>             
+          </div>       
+    </div>
+              
+        <!-- Dropdown Icon -->
+
+
+
+
+
+
+
+           <div class="drop">
+        <span class="dropdown-icon" style="margin-right:600px; font-size:15px;color: black;font-weight:bold; " onclick="toggleDropdown()">&#9662;AdvancedOptions</span> <!-- Downward Triangle Icon -->
+
+        <!-- Hidden Text Fields -->
+        <div class="dropdown-content" id="dropdownContent">
+    
+  <div class="label-container">
+                          <div class=form-flex>
+        <label for="label1">Car Type</label>
+         <select>
+                                <option>No Preference</option>
+                                <option>ACE rent A Car</option>
+                                 <option>Advantage rent Car</option>
+                                <option>Alamo rent car</option>
+                                 <option>Alais</option>
+                                
+                            </select> 
+          </div>
+          <div class="form-flex" >
+        <label for="label2">Rental Car Componey</label>
+          <select>
+                                <option>No Preference</option>
+                                <option>ACE rent A Car</option>
+                                 <option>Advantage rent Car</option>
+                                <option>Alamo rent car</option>
+                                 <option>Alais</option>
+                                
+                            </select> 
+          </div>
+         <div class="form-flex" >
+        <label for="label2">Discount Code</label>
+         
+               <select>
+                                <option>I don't have Code</option>
+                                <option>ACE rent A Car</option>
+                                 <option>Advantage rent Car</option>
+                                <option>Alamo rent car</option>
+                                 <option>Alais</option>
+                                
+                            </select>             
+          </div>
+                
+    </div>
+
+
+</div>
+  <div class="form-flex" style="margin-top: 10px;">
+                          <button onclick="window.location.href='carpage2.html'" type="button">Search Now</button>
+         
+ <!-- Flights Container -->
+                <div id="flights-container"></div>
+
+ <!-- Advanced Dropdown for Round-trip -->
+
+
+
+              
+</div>
+    
+
+</form>   
+                
+                
+                
+                
+                `;
+            } else if (type === 'hotel') {
+                content =  `
+                    <form>
+                          
+                         
+                               
+                        
+
+
+
+
+
+                      <div class="label-container">
+                           <div class="form-flex">
+        <label for="label1">Picking up</label>
+          <input type="date" placeholder="Departing" >
+          </div>
+           <div class="form-flex">
+        <label for="label2">Picking up Date</label>
+          <input type="date" placeholder="Departing" >
+          </div>
+          
+           <div class="form-flex">
+        <label for="label2">Passengers</label>
+
+/*adult dalna*/
+
+
+
+              </div> 
+           
+         <div class="form-flex">
+        <label for="label2">Time</label>
+         
+               <input type="text" placeholder="Flying from">          
+          </div>  
+          <div class="form-flex">
+<label for="label2">Driver Needs?</label>
+          <select>
+                                <option>yes </option>
+                                <option>yes</option>
+                                 <option>Any</option>
+                                
+                            </select>  
+                        
+          </div>  
+
+    </div>
+
+
+
+                        
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div  class="form-flex"style="margin-top: 10px;">
+           <button onclick="window.location.href='hotelpage2.html'" type="button">Search Now</button>
+<div id="add-flight-button-container" style="display: none; margin-top: 0px;">
+                    <button type="button" id="add-flight-button"  onclick="addFlight()">+ Add Flight</button>
+                </div>
+
+                <!-- Flights Container -->
+                <div id="flights-container"></div>
+
+                           
+
+
+ <!-- Advanced Dropdown for Round-trip -->
+                <div id="advanced-dropdown" style="display: none; margin-top: 0px;margin-right:350px;">
+                    <label for="advanced-field" style="margin-right:350px;">Advanced Options</label>
+                   <select style="width:200px;margin-right:300px;">
+                    <option>hell</option>
+                    </select>
+                </div>
+
+                        </div>
+
+   
+    
+
+
+
+                
+
+                <!-- Flights Container -->
+               <div id="flights-container">
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    
+</div>
+    
+
+</form>
+   `;
+            }
+                searchBoxContent.innerHTML = content;
+
+ }
+
+ function toggleTripOptions() {
+            const roundTrip = document.querySelector('input[name="trip-type"][value="round-trip"]');
+            const multiCity = document.querySelector('input[name="trip-type"][value="multi-city"]');
+            const advancedDropdown = document.getElementById('advanced-dropdown');
+            const addFlightButtonContainer = document.getElementById('add-flight-button-container');
+
+            // Hide both advanced dropdown and add flight button container by default
+            advancedDropdown.style.display = 'none';
+            addFlightButtonContainer.style.display = 'none';
+
+            // Show advanced options when round-trip is selected
+            if (roundTrip.checked) {
+                advancedDropdown.style.display = 'block';
+            }
+
+            // Show Add Flight button when multi-city is selected
+            if (multiCity.checked) {
+                addFlightButtonContainer.style.display = 'block';
+            }
+        }
+
+
+       
+
+       
+        function addFlight() {
+            const flightsContainer = document.getElementById('flights-container');
+            if (flightsContainer.children.length === 0){
+                // Create a new flight form
+                const flightForm = document.createElement('div');
+                flightForm.classList.add('flight-form');
+
+                const flyingFrom = document.createElement('input');
+                flyingFrom.setAttribute('type', 'text');
+                flyingFrom.setAttribute('placeholder', 'Flying From');
+
+                const flyingTo = document.createElement('input');
+                flyingTo.setAttribute('type', 'text');
+                flyingTo.setAttribute('placeholder', 'Flying To');
+
+                const datePicker = document.createElement('input');
+                datePicker.setAttribute('type', 'date');
+
+                // Create remove button
+                const removeButton = document.createElement('button');
+                removeButton.innerHTML = '&times;';
+                removeButton.onclick = function () {
+                    flightForm.remove();
+                };
+
+                // Append the inputs and remove button to the form
+                flightForm.appendChild(flyingFrom);
+                flightForm.appendChild(flyingTo);
+                flightForm.appendChild(datePicker);
+                flightForm.appendChild(removeButton);
+
+                // Add the flight form to the flights container
+                flightsContainer.appendChild(flightForm);
+            }
+        }
+    
+        
+
+
+        function togglePassengerDropdown() {
+                const dropdown = document.getElementById('hotelPassengerDropdown');
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+
+            function changeCount(type, change) {
+                const countElement = document.getElementById(`hotel${capitalize(type)}Count`);
+                let count = parseInt(countElement.innerText);
+                count = Math.max(type === 'adult' ? 1 : 0, count + change); // Adults must be at least 1, others can be 0
+                countElement.innerText = count;
+                updatePassengerField();
+            }
+
+            function updatePassengerField() {
+                const adults = parseInt(document.getElementById('hotelAdultCount').innerText);
+                const children = parseInt(document.getElementById('hotelChildrenCount').innerText);
+                const rooms = parseInt(document.getElementById('hotelRoomCount').innerText);
+                document.getElementById('hotel-adult').value = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Children, ${rooms} Room${rooms > 1 ? 's' : ''}`;
+            }
+
+            function capitalize(word) {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            }
+
+            window.onload = function() {
+    showForm('flight');
+};
+
+
+
+function togglePassengerDropdown() {
+                const dropdown = document.getElementById('hotelPassengerDropdown');
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+
+            function changeCount(type, change) {
+                const countElement = document.getElementById(`hotel${capitalize(type)}Count`);
+                let count = parseInt(countElement.innerText);
+                count = Math.max(type === 'adult' ? 1 : 0, count + change); // Adults must be at least 1, others can be 0
+                countElement.innerText = count;
+                updatePassengerField();
+            }
+
+            function updatePassengerField() {
+                const adults = parseInt(document.getElementById('hotelAdultCount').innerText);
+                const children = parseInt(document.getElementById('hotelChildrenCount').innerText);
+                const rooms = parseInt(document.getElementById('hotelRoomCount').innerText);
+                document.getElementById('hotel-adult').value = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Children, ${rooms} Room${rooms > 1 ? 's' : ''}`;
+            }
+
+            function capitalize(word) {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            }
+
+            window.onload = function() {
+    showForm('flight');
+};
+
+
+
+
+
+
+
+        </script>
+
+
+
+                    
+
+
+        </script>
+
+
+
+ 
+     
+                    
+
+
+      
+
+
+
+                       
+<style>
+      
+
+
+
+</style>
+ 
+                    
+                    
+                          
+                    
+                    
+                   
+                    
+                    
+                  
+                </div>
+            </div>
+      
+
+
+
+
+            
+           
+                              
+                              
+                                     
+                              
+                              
+
+
+
+
+
+
+
+
+<style>
+
+
+       
+
+    
+</style>
+
+
+        
+</style>
+
+
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+    </header>
+
+
+
+
+
+
+    <!-- Main Content -->
+    
+
+
+
+       
+
+
+
+
+
+<!-- CSS (For Modal and Form Styling) -->
+<style>
+ 
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- JavaScript to Open/Close Modal -->
+<script>
+  // Get modal, button, and close span
+  var modal = document.getElementById("loginModal");
+  var btn = document.getElementById("loginBtn");
+  var closeBtn = document.getElementsByClassName("close")[0];
+
+  // Open modal when button is clicked
+  btn.onclick = function () {
+      modal.style.display = "block";
+  };
+
+  // Close modal when 'x' is clicked
+  closeBtn.onclick = function () {
+      modal.style.display = "none";
+  };
+
+  // Close modal when clicking outside of modal
+  window.onclick = function (event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+
+
+
+
+
+
+
+
+               /* General Modal Styles */
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Filter Navbar Styles */
+        .filter-navbar {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+
+        .filter-navbar .navbar-brand {
+            color: #fff; /* White text for brand */
+        }
+
+        .filter-navbar .navbar-nav .nav-link {
+            color: #fff; /* White text for links */
+        }
+
+        .filter-navbar .navbar-nav .nav-link:hover {
+            color: #ddd; /* Lighter shade on hover */
+        }
+
+        .filter-navbar .navbar-toggler {
+            border-color: #fff; /* White border for toggler */
+        }
+
+        .filter-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='3' d='M5 7h20M5 15h20M5 23h20'/%3E%3C/svg%3E");
+        }
+
+        .filter-navbar .dropdown-menu {
+            background-color: #000; /* Black background for dropdown */
+        }
+
+        .filter-navbar .dropdown-item {
+            color: #fff; /* White text for dropdown items */
+        }
+
+        .filter-navbar .dropdown-item:hover {
+            background-color: #555; /* Darker shade on hover */
+        }
+        .btn{height: 40px;
+           
+            color: #ffffff;
+            background-color: #007bff;
+            width: 200px;
+        }
+        form input:hover
+        {
+       border-color: #0066ff;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+            <style>
+              .modal h2{
+               color: #000;
+              }
+              .modal p{
+               color: #000;
+              }
+              .modal input{
+           width: 340px;
+           height: 40px;
+           border-color: #1c1a1a;
+           border-radius: 5px;
+              }
+              .modal button{
+               width: 100px;
+               margin-top: 20px;
+           
+              }
+           </style>
+                  
+           
+         
+                   
+           
+           
+           
+           
+           
+           <style>
+             
+             
+                   
+               </style>
+           
+           <!-- JavaScript to Open/Close Modal -->
+           <script>
+               // Get modal, button, and close span
+               var modal = document.getElementById("loginModal");
+               var btn = document.getElementById("loginBtn");
+               var closeBtn = document.getElementsByClassName("close")[0];
+             
+               // Open modal when button is clicked
+               btn.onclick = function () {
+                   modal.style.display = "block";
+               };
+             
+               // Close modal when 'x' is clicked
+               closeBtn.onclick = function () {
+                   modal.style.display = "none";
+               };
+             
+               // Close modal when clicking outside of modal
+               window.onclick = function (event) {
+                   if (event.target == modal) {
+                       modal.style.display = "none";
+                   }
+               };
+             </script>
+    
+
+
+      
+
+  
+
+</style>
+
+<!-- Modal Popup -->
+
+
+
+                  
+
+
+        
+
+ 
+
+                  
+                  
+                          </script>
+                  
+                  
+                 
+                  
+                  
+                          
+                  
+                          </script>
+           
+                       
+      
+      <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('nav ul');
+      
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+      </script>
+                 
+         <script>
+          function toggleDropdown() {
+    const dropdown = document.getElementById('dropdownContent');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+
+
+
+
+
+
+function toggleTripOptions() {
+            const roundTrip = document.querySelector('input[name="trip-type"][value="round-trip"]');
+            const multiCity = document.querySelector('input[name="trip-type"][value="multi-city"]');
+            const advancedDropdown = document.getElementById('advanced-dropdown');
+            const addFlightButtonContainer = document.getElementById('add-flight-button-container');
+
+            // Hide both advanced dropdown and add flight button container by default
+            advancedDropdown.style.display = 'none';
+            addFlightButtonContainer.style.display = 'none';
+
+            // Show advanced options when round-trip is selected
+            if (roundTrip.checked) {
+                advancedDropdown.style.display = 'block';
+            }
+
+            // Show Add Flight button when multi-city is selected
+            if (multiCity.checked) {
+                addFlightButtonContainer.style.display = 'block';
+            }
+        }
+
+
+       
+
+       
+        function addFlight() {
+            const flightsContainer = document.getElementById('flights-container');
+            if (flightsContainer.children.length === 0){
+                // Create a new flight form
+                const flightForm = document.createElement('div');
+                flightForm.classList.add('flight-form');
+
+                const flyingFrom = document.createElement('input');
+                flyingFrom.setAttribute('type', 'text');
+                flyingFrom.setAttribute('placeholder', 'Flying From');
+
+                const flyingTo = document.createElement('input');
+                flyingTo.setAttribute('type', 'text');
+                flyingTo.setAttribute('placeholder', 'Flying To');
+
+                const datePicker = document.createElement('input');
+                datePicker.setAttribute('type', 'date');
+
+                // Create remove button
+                const removeButton = document.createElement('button');
+                removeButton.innerHTML = '&times;';
+                removeButton.onclick = function () {
+                    flightForm.remove();
+                };
+
+                // Append the inputs and remove button to the form
+                flightForm.appendChild(flyingFrom);
+                flightForm.appendChild(flyingTo);
+                flightForm.appendChild(datePicker);
+                flightForm.appendChild(removeButton);
+
+                // Add the flight form to the flights container
+                flightsContainer.appendChild(flightForm);
+            }
+        }
+    
+        
+
+
+        function togglePassengerDropdown() {
+                const dropdown = document.getElementById('hotelPassengerDropdown');
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+
+            function changeCount(type, change) {
+                const countElement = document.getElementById(`hotel${capitalize(type)}Count`);
+                let count = parseInt(countElement.innerText);
+                count = Math.max(type === 'adult' ? 1 : 0, count + change); // Adults must be at least 1, others can be 0
+                countElement.innerText = count;
+                updatePassengerField();
+            }
+
+            function updatePassengerField() {
+                const adults = parseInt(document.getElementById('hotelAdultCount').innerText);
+                const children = parseInt(document.getElementById('hotelChildrenCount').innerText);
+                const rooms = parseInt(document.getElementById('hotelRoomCount').innerText);
+                document.getElementById('hotel-adult').value = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Children, ${rooms} Room${rooms > 1 ? 's' : ''}`;
+            }
+
+            function capitalize(word) {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            }
+
+            window.onload = function() {
+    showForm('flight');
+};
+
+
+
+function togglePassengerDropdown() {
+                const dropdown = document.getElementById('hotelPassengerDropdown');
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+
+            function changeCount(type, change) {
+                const countElement = document.getElementById(`hotel${capitalize(type)}Count`);
+                let count = parseInt(countElement.innerText);
+                count = Math.max(type === 'adult' ? 1 : 0, count + change); // Adults must be at least 1, others can be 0
+                countElement.innerText = count;
+                updatePassengerField();
+            }
+
+            function updatePassengerField() {
+                const adults = parseInt(document.getElementById('hotelAdultCount').innerText);
+                const children = parseInt(document.getElementById('hotelChildrenCount').innerText);
+                const rooms = parseInt(document.getElementById('hotelRoomCount').innerText);
+                document.getElementById('hotel-adult').value = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Children, ${rooms} Room${rooms > 1 ? 's' : ''}`;
+            }
+
+            function capitalize(word) {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            }
+
+            window.onload = function() {
+    showForm('flight');
+};
+
+
+
+
+
+        
+
+                
+  function toggleDropdown() {
+      const dropdownContent = document.getElementById('dropdownContent');
+      // Toggle the visibility of the text fields
+      dropdownContent.classList.toggle('show');
+  }
+
+
+                  
+                  
+                        
+                  
+            
+                  
+                      function toggleDropdown() {
+                          const dropdownContent = document.getElementById('dropdownContent');
+                          // Toggle the visibility of the text fields
+                          dropdownContent.classList.toggle('show');
+                      }
+                
+                  
+                  
+                          
+                  
+                
+           
+                    
+                            function toggleDropdown() {
+                                const dropdownContent = document.getElementById('dropdownContent');
+                                // Toggle the visibility of the text fields
+                                dropdownContent.classList.toggle('show');
+                            }
+                        
+      
+       
+        
+          function toggleDropdown() {
+    const dropdown = document.getElementById('dropdownContent');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+         </script>       
+ 
+  
+  
+  
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+         </script>       
+
+
+
+
+
+
+
+
+
+               
+                </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </style>
+       
+
+    <style>
+      /* Hero Section Style */
+      .hero-section {
+        position: relative;
+        padding: 100px 20px;
+        background-color: #f5f5f5;
+      }
+    
+      /* Container with white background */
+      .form-container {
+        
+        background-color: #ffffff;
+        padding: 0px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: 0 auto;
+        z-index: 10;
+      }
+    
+      /* Row for text fields */
+      .input-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+      }
+    
+      /* Individual input fields */
+      .input-field {
+        width: 22%; /* Adjust the width so that 4 fields fit in one row */
+        min-width: 200px; /* Ensure fields do not shrink too much */
+      }
+    
+      .input-field label {
+        font-size: 14px;
+        color: #130c0c;
+        margin-bottom: 8px;
+        display: block;
+      }
+    
+      .input-field input,
+      .input-field select {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #e3e4e6;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+    
+      /* Hover effect: Blue border */
+      .input-field input:hover,
+      .input-field select:hover,
+      .input-field input:focus,
+      .input-field select:focus {
+        border-color: #007bff;
+      }
+    
+      /* Button row */
+      .button-row {
+        margin-top: 20px;
+        text-align: center;
+      }
+    
+      .find-button {
+        background-color:#007bff;
+        color: white;
+        padding: 12px 30px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+    
+      .find-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+    
+    <script>
+      // Ensure dropdown values are selectable and maintain focus/hover state
+      document.getElementById('passenger-select').addEventListener('change', function() {
+        const selectedValue = this.options[this.selectedIndex].text;
+        console.log('Selected Passengers: ', selectedValue); // For testing, you can replace this with any functionality
+      });
+    
+      // Date picker functionality (they will display the calendar when clicked)
+      const checkinDateInput = document.getElementById('checkin-date');
+      const checkoutDateInput = document.getElementById('checkout-date');
+      
+      checkinDateInput.addEventListener('focus', function() {
+        this.style.borderColor = '#007bff'; // Blue border when focused
+      });
+    
+      checkoutDateInput.addEventListener('focus', function() {
+        this.style.borderColor = '#007bff'; // Blue border when focused
+      });
+    
+      // Handle input blur event to remove border color
+      checkinDateInput.addEventListener('blur', function() {
+        this.style.borderColor = '#e3e4e6'; // Return to default border color
+      });
+    
+      checkoutDateInput.addEventListener('blur', function() {
+        this.style.borderColor = '#e3e4e6'; // Return to default border color
+      });
+    </script>
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</header>
+
+
+<nav class="navbar-Filter navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+ 
+     
+     
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <h5 style="color: #000000;margin-right: auto;">Fliter by:</h5>
+        <ul class="navbar-nav mr-auto color-black">
+          <li class="nav-item"><a  id="filterPriceBtn"  class="nav-link active">Filter price</a></li>
+          <li class="nav-item"><a class="nav-link"  id="reviewScoreBtn" >Review Score</a></li>
+          <li class="nav-item"><a class="nav-link" id="review-score-btn">Airline</a></li>
+          </li>
+      
+        </ul>
+
+
+
+
+
+
+
+        <!--airline-->
+        <!-- Dropdown for Review Score -->
+<div id="review-score-dropdown" class="review-dropdown-content" style="margin-left: 600px;margin-top: 250px;">
+    <label class="review-label"><input type="checkbox" class="review-checkbox"> Any curise line</label>
+    <label class="review-label"><input type="checkbox" class="review-checkbox"> Carvival curise</label>
+    <label class="review-label"><input type="checkbox" class="review-checkbox"> Celebrity curise</label>
+    <label class="review-label"><input type="checkbox" class="review-checkbox"> Disney curise line</label>
+    <label class="review-label"><input type="checkbox" class="review-checkbox"> MSC courise</label>
+</div>
+<style>
+#review-score-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    margin: 10px;
+}
+
+/* Dropdown Content Styling */
+.review-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 200px;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+}
+
+/* Styling for Each Rating Label */
+.review-label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+/* Checkbox Styling */
+.review-checkbox {
+    margin-right: 8px;
+}
+
+/* Star Rating Styling */
+.review-stars {
+    color: #f4b400; /* Gold color for stars */
+    font-size: 16px;
+    margin-right: 8px;
+}
+</style>
+<script>
+    // Toggle the dropdown display when the button is clicked
+document.getElementById("review-score-btn").onclick = function () {
+    var dropdown = document.getElementById("review-score-dropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+};
+
+// Close the dropdown when clicking outside of it
+window.onclick = function(event) {
+    var dropdown = document.getElementById("review-score-dropdown");
+    if (event.target !== dropdown && event.target !== document.getElementById("review-score-btn")) {
+        dropdown.style.display = "none";
+    }
+};
+
+</script>
+
+<!--score-->
+
+<div id="reviewScoreDropdown" class="dropdown-content" style="margin-left: 500px; margin-top: 250px;">
+    <label><input type="checkbox"> <span class="stars">★★★★★</span> (55,590)</label>
+    <label><input type="checkbox"> <span class="stars">★★★★☆</span> (40,590)</label>
+    <label><input type="checkbox"> <span class="stars">★★★☆☆</span> (23,590)</label>
+    <label><input type="checkbox"> <span class="stars">★★☆☆☆</span> (12,590)</label>
+    <label><input type="checkbox"> <span class="stars">★☆☆☆☆</span> (590)</label>
+</div>
+<style>
+
+#reviewScoreBtn {
+   
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    margin: 10px;
+}
+
+/* Dropdown Content Styling */
+.dropdown-content {
+   position: absolute;
+   margin-left: 300px;
+   margin-top: 200px;
+    display: none;
+   margin-left: 1500px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 200px;
+    font-family: Arial, sans-serif;
+    z-index: 1;
+}
+
+/* Styling for Each Rating Label */
+.dropdown-content label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+/* Checkbox Styling */
+.dropdown-content input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Star Rating Styling */
+.stars {
+    color: #f4b400; /* Gold color for stars */
+    font-size: 16px;
+    margin-right: 8px;
+}
+</style>
+<script>
+  // Toggle the dropdown display when the button is clicked
+document.getElementById("reviewScoreBtn").onclick = function () {
+    var dropdown = document.getElementById("reviewScoreDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+};
+
+// Close the dropdown when clicking outside of it
+window.onclick = function(event) {
+    var dropdown = document.getElementById("reviewScoreDropdown");
+    if (event.target !== dropdown && event.target !== document.getElementById("reviewScoreBtn")) {
+        dropdown.style.display = "none";
+    }
+};
+
+</script>
+
+
+
+
+
+
+<!--filters-->
+<!-- Dropdown for Price Filter -->
+<div id="priceDropdown" class="dropdown-content">
+    <p>Price: <span id="priceRange">$40 - $800</span></p>
+    <input type="range" id="minPrice" min="40" max="800" value="40" oninput="updatePriceRange()">
+    <input type="range" id="maxPrice" min="40" max="800" value="800" oninput="updatePriceRange()">
+    <button id="applyBtn">Apply</button>
+</div>
+<style>
+  /* Button to Open Dropdown */
+#filterPriceBtn {
+    
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    margin: 10px;
+}
+
+/* Dropdown Content Styling */
+.dropdown-content {
+    margin-left: 250px;
+    margin-top: 200px;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Price Range Text Styling */
+#priceRange {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Range Slider Styling */
+input[type="range"] {
+    
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    margin: 10px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Apply Button Styling */
+#applyBtn {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#applyBtn:hover {
+    background-color: #0056b3;
+}
+
+
+</style>
+<script>
+  // Toggle the dropdown display when the button is clicked
+document.getElementById("filterPriceBtn").onclick = function () {
+    var dropdown = document.getElementById("priceDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+};
+
+// Close the dropdown when clicking outside of it
+window.onclick = function(event) {
+    var dropdown = document.getElementById("priceDropdown");
+    if (event.target !== dropdown && event.target !== document.getElementById("filterPriceBtn")) {
+        dropdown.style.display = "none";
+    }
+};
+
+// Update the displayed price range dynamically
+function updatePriceRange() {
+    var minPrice = document.getElementById("minPrice").value;
+    var maxPrice = document.getElementById("maxPrice").value;
+    document.getElementById("priceRange").innerText = `$${minPrice} - $${maxPrice}`;
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <form class="d-flex ml-auto" style="margin-right: 20px;">
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Short by Default
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Option 1</a>
+                    <a class="dropdown-item" href="#">Option 2</a>
+                    <a class="dropdown-item" href="#">Option 3</a>
+                    <a class="dropdown-item" href="#">Option 4</a>
+                </div>
+            </div>
+           
+        </form>
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+<!-- Main Content -->
+<main class="main-content">
+    <!-- Your content goes here -->
+
+
+
+
+    <!-- Main Container with Sidebar and Content Area -->
+    <div class="container my-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="bg-light p-4 rounded">
+                    <h4 style="color: #000;font-weight: bold;">Search Flights</h4>
+                    <form>
+                        <div class="form-group">
+                            <label for="from">Leaving from</label>
+                            <input type="text" id="from" class="form-control" placeholder="Destination, city, or airport"style="width: 200px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="to">Going to</label>
+                            <input type="text" id="to" class="form-control" placeholder="Destination, city, or airport"style="width: 200px;">
+                        </div>
+                        <div class="form-group">
+                            <label for="departure">Departure on</label>
+                            <input type="date" id="departure" class="form-control"style="width: 200px;">
+                        </div>
+                        <div class="form-group"style="margin-right: 100px;">
+                            <label for="arrival">Arriving on</label>
+                            <input type="date" id="departure" class="form-control"style="width: 200px;">
+                        </div>
+                    
+                        <div class="dropdown mb-3">
+                            <input type="text" class="form-control dropdown-toggle" id="dropdownInputField" data-toggle="dropdown" placeholder="Select an option" aria-haspopup="true" aria-expanded="false">
+                            <div class="dropdown-menu" aria-labelledby="dropdownInputField">
+                                <a class="dropdown-item" href="#">Option 1</a>
+                                <a class="dropdown-item" href="#">Option 2</a>
+                                <a class="dropdown-item" href="#">Option 3</a>
+                                <a class="dropdown-item" href="#">Option 4</a>
+                            </div>
+                        </div>
+<button type="button" class="btn btn-primary btn-sm">Small button</button>
+
+
+
+<h5 style="color: #000;" class="mb-3">Filter by Rating</h5>
+<div class="rating-filter mb-3">
+    <label class="checkbox-container">
+        <input type="checkbox" name="rating" value="5">
+        <span class="stars">
+            ★★★★★
+        </span>
+    </label>
+    <label class="checkbox-container">
+        <input type="checkbox" name="rating" value="4">
+        <span class="stars">
+            ★★★★☆
+        </span>
+    </label>
+    <label class="checkbox-container">
+        <input type="checkbox" name="rating" value="3">
+        <span class="stars">
+            ★★★☆☆
+        </span>
+    </label>
+    <label class="checkbox-container">
+        <input type="checkbox" name="rating" value="2">
+        <span class="stars">
+            ★★☆☆☆
+        </span>
+    </label>
+    <label class="checkbox-container">
+        <input type="checkbox" name="rating" value="1">
+        <span class="stars">
+            ★☆☆☆☆
+        </span>
+    </label>
+</div>
+
+
+
+
+<!-- Label for Flight Stops Filter -->
+<h5 class="mb-3" style="color: black;">Flight Stops</h5>
+
+<!-- Flight Stops Checkboxes -->
+<div class="stops-filter">
+    <label class="checkbox-container" style="color: black;">
+        <input type="checkbox" name="stops" value="1stop">
+        1 Stop
+    </label>
+    <label class="checkbox-container" style="color: black;">
+        <input type="checkbox" name="stops" value="2stop">
+        2 Stops
+    </label>
+    <label class="checkbox-container" style="color: black;">
+        <input type="checkbox" name="stops" value="3stop">
+        3 Stops
+    </label>
+    <label class="checkbox-container" style="color: black;">
+        <input type="checkbox" name="stops" value="multistop">
+        Multistop
+    </label>
+</div>
+
+
+
+
+
+<div class="inflight-experience">
+    <h5>In-Flight Experience</h5>
+    <label>
+        <input type="checkbox" name="wifi"> WiFi
+    </label><br>
+    <label>
+        <input type="checkbox" name="music"> Music
+    </label><br>
+    <label>
+        <input type="checkbox" name="sky_shopping"> Sky Shopping
+    </label><br>
+    <label>
+        <input type="checkbox" name="inflight_dining"> In-Flight Dining
+    </label><br>
+    <label>
+        <input type="checkbox" name="seat"> Seat
+    </label><br>
+</div>
+
+
+
+
+
+<style>
+    .stops-filter .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.stops-filter input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+</style>
+
+
+
+
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="col-md-9">
+                <!-- Card Section -->
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="./dejia.png.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Beijing - $359.3 per avg/person</h5>
+                                <p class="card-text">Takeoff: 3 Wed 2024</p>
+                                <p class="card-text">Landing: 7 Wed 2024</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <button type="button" style='font-size:15px'class="btn btn-primary btn-lg"onclick="document.location='./flightpage3.html'">View Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="./united.png.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Beijing - $359.3 per avg/person</h5>
+                                <p class="card-text">Takeoff: 3 Wed 2024</p>
+                                <p class="card-text">Landing: 7 Wed 2024</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <button type="button"style='font-size:15px' class="btn btn-primary btn-lg"onclick="document.location='.flightpage3.html'">View Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+             
+
+
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="./dejia.png.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Beijing - $359.3 per avg/person</h5>
+                                <p class="card-text">Takeoff: 3 Wed 2024</p>
+                                <p class="card-text">Landing: 7 Wed 2024</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <button type="button"style='font-size:15px' class="btn btn-primary btn-lg"onclick="document.location='./flightpage3.html'">View Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="./united.png.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Beijing - $359.3 per avg/person</h5>
+                                <p class="card-text">Takeoff: 3 Wed 2024</p>
+                                <p class="card-text">Landing: 7 Wed 2024</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <button type="button"style='font-size:15px' class="btn btn-primary btn-lg"onclick="document.location='./flightpage3.html'">View Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="./dejia.png.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Beijing - $359.3 per avg/person</h5>
+                                <p class="card-text">Takeoff: 3 Wed 2024</p>
+                                <p class="card-text">Landing: 7 Wed 2024</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <button type="button"style='font-size:15px' class="btn btn-primary btn-lg"onclick="document.location='./flightpage3.html'">View Detail</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <section class="info-area info-bg padding-top-50px padding-bottom-50px text-center">
+        <div class="main-container">
+           
+            <div class="row justify-content-center"> <!-- Added justify-content-center to center the row -->
+                
+                <!-- WiFi Icon Box -->
+                <div class="col-lg-3 col-md-6 mb-4"> <!-- Added col-md-6 for responsive behavior -->
+                    <div class="icon-box">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-wifi"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4 class="info__title">Stay Connected</h4>
+                            <p class="info__desc">
+                                Enjoy seamless WiFi connectivity wherever you go.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Bag Icon Box -->
+                <div class="col-lg-3 col-md-6 mb-4"> <!-- Added col-md-6 for responsive behavior -->
+                    <div class="icon-box">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-suitcase"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4 class="info__title">Pack Your Bags</h4>
+                            <p class="info__desc">
+                                Travel light or heavy with options for all luggage sizes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- No Change Fee Icon Box -->
+                <div class="col-lg-3 col-md-6 mb-4"> <!-- Added col-md-6 for responsive behavior -->
+                    <div class="icon-box">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4 class="info__title color-black" style="color: black;">No Change Fees</h4>
+                            <p class="info__desc">
+                                Flexible booking with no fees for changing plans.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    <section class="footer-area section-bg padding-top-100px padding-bottom-30px padding-left-80px padding-right-80px">
+        <div class="main-container">
+          <div class="row">
+            <div class="col-lg-3 responsive-column">
+              <div class="footer-item">
+               <div class="logo">
+                <img src="logo.png.png">
+    
+               </div>
+                <!-- end logo -->
+                <p class="footer__desc">
+                  Morbi convallis bibendum urna ut viverra. Maecenas consequat
+                </p>
+                <ul class="list-items pt-3">
+                  <li>
+                    3015 Grand Ave, Coconut Grove,<br>
+                    Cerrick Way, FL 12345
+                  </li>
+                  <li>+123-456-789</li>
+                  <li><a href="">trizen@yourwebsite.com</a></li>
+                </ul>
+              </div>
+              <!-- end footer-item -->
+            </div>
+            <!-- end col-lg-3 -->
+            <div class="col-lg-3 responsive-column">
+              <div class="footer-item">
+                <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">
+                  Company
+                </h4>
+                <ul class="list-items list--items">
+                  <li><a href="">About us</a></li>
+                  <li><a href="">Services</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">News</a></li>
+                  <li><a href="">Support</a></li>
+                  <li><a href="">Advertising</a></li>
+                </ul>
+              </div>
+              <!-- end footer-item -->
+            </div>
+            <!-- end col-lg-3 -->
+            <div class="col-lg-3 responsive-column">
+              <div class="footer-item">
+                <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">
+                  Other Links
+                </h4>
+                <ul class="list-items list--items">
+                  <li><a href="">USA Vacation Packages</a></li>
+                  <li><a href="">USA Flights</a></li>
+                  <li><a href="">USA Hotels</a></li>
+                  <li><a href="">USA Car Hire</a></li>
+                  <li><a href="">Create an Account</a></li>
+                  <li><a href="">Trizen Reviews</a></li>
+                </ul>
+              </div>
+              <!-- end footer-item -->
+            </div>
+            <!-- end col-lg-3 -->
+            <div class="col-lg-3 responsive-column">
+              <div class="footer-item">
+                <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">
+                  Subscribe now
+                </h4>
+                <p class="footer__desc pb-3">
+                  Subscribe for latest updates &amp; promotions
+                </p>
+                <div class="contact-form-action">
+                 
+                </div>
+              </div>
+              <!-- end footer-item -->
+            </div>
+            <!-- end col-lg-3 -->
+          </div>
+
+
+
+    <style>
+
+
+    .info-icon i {
+       
+       
+        margin-top: 20px;
+       
+      font-size: 40px;
+      color: #860886; /* Change this color to make icons visible */
+    }
+    .sectionn-heading {
+    color: #000; /* Black text color */
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 100px; /* Adjusts space below heading */
+    margin-top: 10px; /* Adjusts space above heading */
+  }
+
+ 
+
+
+
+
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            padding: 15px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card img {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .card-body .card-title {
+            font-size: 1.25em;
+        }
+
+        .card-body .card-text {
+            color: #666;
+        }
+
+        .d-flex.ml-auto {
+            margin-left: auto;
+        }
+
+
+
+
+        .dropdown-input .dropdown-toggle::after {
+    display: none; /* Removes default Bootstrap caret */
+}
+
+.dropdown .form-control {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    width: 100%; /* Make dropdown width match the input field */
+    max-height: 200px; /* Optional: limit height for long lists */
+    overflow-y: auto;  /* Scroll if there are many items */
+}
+
+
+
+
+
+
+
+
+
+.rating-filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.stars {
+    font-size: 1.2em;
+    color: gold;
+    font-family: Arial, sans-serif;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .stars {
+    color: #ff9800; /* Change color of checked stars, optional */
+}
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+<style>
+  
+    .inflight-experience {
+        color: black;
+        margin: 20px 0;
+    }
+</style>
+
+
+
+
+
+
+      <script>
+        $(document).on('click', '.dropdown-item', function(){
+            $('#dropdownInputField').val($(this).text());
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+<style>
+
+
+
+
+
+/* Filter Navbar Styles */
+.navbar-Filter {
+    margin-top: 50px;
+    height: 100px;
+    background-color: #f8f9fa; /* Light background for navbar */
+}
+
+.navbar-Filter .navbar-brand {
+    color: #000; /* Black color for the Filter by label */
+    
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    font-size: 16px; /* Optional: Adjust size if necessary */
+}
+
+.navbar-Filter .navbar-nav {
+   font-weight: bold;
+    display: flex; /* Ensure the nav items are in a row */
+    align-items: center; /* Center nav items vertically */
+}
+
+.navbar-Filter .navbar-nav .nav-link {
+    color: #000; /* Black text for links */
+}
+
+.navbar-Filter .navbar-nav .nav-link:hover {
+    color: #555; /* Lighter shade on hover */
+}
+
+.navbar-Filter .navbar-toggler {
+    border-color: #000; /* Black border for toggler */
+}
+
+.navbar-Filter .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-width='3' d='M5 7h20M5 15h20M5 23h20'/%3E%3C/svg%3E");
+}
+
+.navbar-Filter .dropdown-menu {
+    background-color: #fff; /* White background for dropdown */
+}
+
+.navbar-Filter .dropdown-item {
+    color: #000; /* Black text for dropdown items */
+}
+
+.navbar-Filter .dropdown-item:hover {
+    background-color: #eee; /* Light shade on hover */
+}
+
+/* Adjust default button positioning */
+.navbar-Filter .d-flex {
+    margin-left: auto; /* Push the dropdown to the right */
+}
+
+/* Add gap between navbar tabs */
+.navbar-Filter .navbar-nav .nav-item {
+    margin-right: 15px; /* Adjust this value to increase or decrease the gap */
+}
+
+
+</style>
+
+
+
+
+
+
+<style>
+   /* Filter Navbar Styles */
+.filter-navbar {
+    background-color: #000; /* Black background */
+    color: #000000; /* White text */
+}
+
+
+</style>
+</body>
+</html>

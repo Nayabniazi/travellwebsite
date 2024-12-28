@@ -1,0 +1,2903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Template CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/select2.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/line-awesome.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/daterangepicker.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/animate.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/animated-headline.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/jquery-ui.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+   
+    
+    <style>
+
+
+
+        /* Overlay */
+        .hero-section::before {
+            opacity: .6;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(82, 97, 102, 0.5);
+            z-index: 1;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+           /* Navbar */
+.hero-section {
+            color: #000;
+            position: relative;
+            width: 100%;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(218, 26, 26);
+            background-image: url('./curise.png.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: animate 30s ease-in-out infinite alternate-reverse;
+            margin-top: 0px; /* Offset for fixed navbar */
+        }
+
+        /* Filter Navbar Styles */
+        .filter-navbar {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+        }
+
+        .filter-navbar .navbar-brand {
+            color: #fff; /* White text for brand */
+        }
+
+        .filter-navbar .navbar-nav .nav-link {
+            color: #fff; /* White text for links */
+        }
+
+        .filter-navbar .navbar-nav .nav-link:hover {
+            color: #ddd; /* Lighter shade on hover */
+        }
+
+        .filter-navbar .navbar-toggler {
+            border-color: #fff; /* White border for toggler */
+        }
+
+        .filter-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='3' d='M5 7h20M5 15h20M5 23h20'/%3E%3C/svg%3E");
+        }
+
+        .filter-navbar .dropdown-menu {
+            background-color: #000; /* Black background for dropdown */
+        }
+
+        .filter-navbar .dropdown-item {
+            color: #fff; /* White text for dropdown items */
+        }
+
+        .filter-navbar .dropdown-item:hover {
+            background-color: #555; /* Darker shade on hover */
+        }
+
+
+
+
+
+
+       
+        
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+ <style>
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.content-wrapperrr {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.info-section {
+  width: 65%;
+ 
+  padding: 20px;
+ 
+}
+label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox label {
+  font-weight: normal;
+  color: #555;
+}
+
+.checkbox a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.checkbox a:hover {
+  text-decoration: underline;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #3b68ac;
+}
+
+</style>
+
+
+
+
+
+
+
+
+</div>
+
+<script>
+// Function to increment the count
+function increment(elementId) {
+let count = document.getElementById(elementId).innerText;
+count = parseInt(count) + 1;
+document.getElementById(elementId).innerText = count;
+}
+
+// Function to decrement the count
+function decrement(elementId) {
+let count = document.getElementById(elementId).innerText;
+if (count > 0) {
+  count = parseInt(count) - 1;
+  document.getElementById(elementId).innerText = count;
+}
+}
+</script>
+
+
+
+
+ 
+
+
+
+
+
+
+      
+              
+       
+       <!-- Login Modal -->
+       
+               
+       
+       
+       
+       
+       
+       
+
+
+</div>
+
+<!-- Tab Content Sections -->
+<div id="Inflight-Feature" class="tab-section">
+
+
+
+
+<div class="additional-infoo row text-center ">
+
+
+</div>
+</div>
+
+
+<style>
+.containery {
+margin-top: 20px;
+margin-right: 105px;
+}
+.card {
+  
+  margin-right: 10px;
+margin-left: 20px;
+border: none;
+
+margin-bottom: 20px;
+}
+.card img {
+border-radius: 10px 0 0 10px;
+width: 100px;
+height: 100px;
+object-fit: cover;
+}
+.card-body {
+padding: 15px;
+}
+.seat-title {
+font-size: 1.1em;
+font-weight: bold;
+}
+.seat-description {
+font-size: 0.9em;
+color: #6c757d;
+}
+.price-section {
+text-align: center;
+font-weight: bold;
+color: #007bff;
+}
+.sidebar {
+margin-left: 50px;
+  height: 260px;
+margin-right: 100px;
+padding: 25px;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+background-color: #ffffff;
+}
+.sidebar h6 {
+font-weight: bold;
+margin-bottom: 10px;
+}
+.sidebar p {
+font-size: 0.9em;
+color: #6c757d;
+}
+.sidebar .contact-info {
+margin-bottom: 20px;
+}
+.contact-icon {
+color: #007bff;
+margin-right: 5px;
+}
+.organizer-info img {
+border-radius: 50%;
+width: 50px;
+height: 50px;
+object-fit: cover;
+}
+</style>
+
+
+</head>
+<body>
+
+    <style>
+
+        .navbar button {
+           color: #ffffff;
+            width: 100px;
+            border: none;
+            background-color: #007bff;
+            border-radius: 5px;
+            height: 40px;
+        }
+        
+    </style>
+
+
+
+<style>
+
+/* Responsive Styles */
+@media (max-width: 756) {
+  .detail-item {
+    flex: 1 1 calc(50% - 20px); /* Two columns layout for tablets */
+    margin-bottom: 200px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .detail-item {
+    flex: 1 1 100%; /* Stacked layout for mobile */
+  }
+
+  .detail-info h3 {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .detail-info p {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  .detail-item i {
+    font-size: 20px; /* Adjust icon size for smaller screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+  .content-wrapperrr {
+    flex-direction: column; /* Stack sections vertically */
+    gap: 15px;
+  }
+  .form-section {
+ 
+    width: 240px;
+  
+    /* Take full width on medium screens */
+  }
+
+  .info-section
+   {
+    flex: 1;
+    width: 270px;
+    /* Take full width on medium screens */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .info-section h5,
+  .form-section h4 {
+    font-size: 18px;
+  }
+
+  .info-section p {
+    font-size: 13px;
+  }
+
+  .form-section .form-group label {
+    font-size: 13px;
+  }
+
+  .form-section button {
+    font-size: 14px;
+  }
+}
+
+
+
+</style>
+
+
+
+
+
+
+           
+           <!-- JavaScript to Open/Close Modal -->
+          
+    </div>
+</div>
+
+
+
+
+
+<!-- Hero Section -->
+<header class="hero-section" style="position: relative; padding: 100px 20px; background-color: #f5f5f5;">
+
+
+
+
+
+  <nav class="navbar">
+    <div class="containers">
+      <!-- Logo -->
+      <div class="navbar-brand">
+        <img src="logo.png.png" alt="Trizen Logo" class="logoo">
+      </div>
+  
+      <!-- Menu Toggle Button -->
+    
+  
+      <!-- Navbar Links -->
+      <ul class="navbar-navs">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/flightpage2.html">Flight</a></li>
+        <li><a href="/carpage2.html">Car</a></li>
+        <li><a href="/curisepage2.html">Curise</a></li>
+        <li><a href="/hotelpage2.html">Hotel</a></li>
+        <li><a href="/Apartmentpage2.html">Apartments</a></li>
+      </ul>
+      
+      <li class="navbar-toggler" onclick="toggleMenu()">
+        &#9776;
+      </li>
+      <!-- Sign-In Button -->
+      <button id="loginBtn" class="btn-signin">Sign In</button>
+
+
+
+
+
+
+
+
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+      <!-- Close Button -->
+      <span class="close">&times;</span>
+      
+      <!-- Login Header -->
+      <h2>Login</h2>
+      <p>Hello! Welcome to your account</p>
+      
+      <!-- Login Form -->
+      <form>
+          <!-- Username Input -->
+          <label for="username">Username</label>
+          
+          <input  class="textfield" placeholder="Type your Name"></input>
+          
+          <!-- Password Input -->
+          <label for="password">Password</label>
+          <input type="password" class="textfield" placeholder="Type your password" required>
+          
+          <!-- Remember Me Checkbox -->
+          <div>
+              <input type="checkbox" id="rememberMe">
+              <label for="rememberMe">Remember me</label>
+          </div>
+          
+          <!-- Login Button -->
+          <button type="submit">Login Account</button>
+      </form>
+      
+      <!-- Alternative Login Options -->
+      <p>Or Login Using</p>
+      <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+  </div>
+</div>
+
+<!-- CSS (For Modal and Form Styling) -->
+<style>
+  
+/* General Modal Styles */
+.modal {
+ 
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Modal Content */
+.modal-content {
+  
+ margin-left: 500px;
+  background-color: #fff;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+
+/* Social Media Icons */
+.social-icons {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  margin: 0 8px;
+  font-size: 18px;
+  color: #555;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+</style>
+
+
+ <style>
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  
+  .modal-content {
+
+    padding: 15px;
+    max-width: 350px;
+    
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .modal-content {
+    margin-left: 10px;
+    max-width:300px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .modal input{
+  
+    font-size: 9px;
+  }
+  input {
+    width: 200px;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 14px;
+  }
+  
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+}
+
+
+
+
+
+
+       </style>
+              
+       
+       <!-- Login Modal -->
+       <div id="loginModal" class="modal"style="overflow: hidden;">
+         <div class="modal-content">
+             <span class="close">&times;</span>
+             <h2>Login</h2>
+             <p>Hello! Welcome to your account</p>
+             <form>
+                 <label for="username">Username</label>
+                 <input  id="username" placeholder="Type your username">
+                 
+                 <label for="password">Password</label>
+                 <input type="password" id="password" placeholder="Type your password">
+               
+                 
+                 <button>Submit</button>
+           
+             </form>
+             <p>Or Login Using</p>
+             <div class="social-icons">
+                 <a href="#"><i class="fab fa-facebook"></i></a>
+                 <a href="#"><i class="fab fa-twitter"></i></a>
+                 <a href="#"><i class="fab fa-instagram"></i></a>
+                 <a href="#"><i class="fab fa-linkedin"></i></a>
+             </div>
+         </div>
+       </div>
+               
+       
+       
+       
+       
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- JavaScript to Open/Close Modal -->
+<script>
+  // Get modal, button, and close span
+  var modal = document.getElementById("loginModal");
+  var btn = document.getElementById("loginBtn");
+  var closeBtn = document.getElementsByClassName("close")[0];
+
+  // Open modal when button is clicked
+  btn.onclick = function () {
+      modal.style.display = "block";
+  };
+
+  // Close modal when 'x' is clicked
+  closeBtn.onclick = function () {
+      modal.style.display = "none";
+  };
+
+  // Close modal when clicking outside of modal
+  window.onclick = function (event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Main Content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  </div>
+  </nav>
+  
+  
+
+<div>
+<style>
+
+
+
+
+.navbar {
+position: fixed;
+top: 0;
+width: 100%;
+background-color: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+padding: 10px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+/* Container */
+.containers {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+}
+
+/* Logo */
+.logoo {
+height: 60px;
+
+margin-left: 50px;
+}
+/* Navbar Links */
+.navbar-navs {
+
+display: flex;
+gap: 20px;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.navbar-navs a {
+text-decoration: none;
+color: #333;
+font-size: 16px;
+font-weight: bold;
+}
+
+.navbar-navs a:hover {
+color: #f80101;
+}
+
+
+/* Sign-In Button */
+.btn-signin {
+  
+background-color: #0066ff;
+border: none;
+border-radius: 5px;
+color: white;
+
+cursor: pointer;
+
+}
+
+.btn-signin:hover {
+background-color: #0051cc;
+}
+
+/* Toggle Button for Mobile */
+.navbar-toggler {
+display: none;
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .cruise-itinerary{
+margin-left: 0px;
+width: 20%;
+    }
+  .navbar{
+    width: 65%;
+  }
+
+.navbar-navs.active {
+display: flex;
+}
+
+.navbar-toggler {
+display: block;
+}
+
+.btn-signin {
+margin-top: 10px;
+margin-right: 10px;
+}
+   
+.navbar-navs {
+  
+  display: none;
+flex-direction: column;
+background-color: #ffffff;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+padding: 10px 0;
+}
+
+.navbar-navs.active {
+ 
+display: flex;
+}
+
+.navbar-toggler {
+display: block;
+}
+
+.btn-signin {
+margin-top: 10px;
+margin-right: 10px;
+}
+.logoo {
+height: 40px;
+margin-left: 0px;
+
+}
+
+
+}
+
+
+
+
+/* Adjustments for Small Screens (Up to 992px) */
+@media screen and (max-width: 992px) {
+    .cruise-itinerary{
+margin-left: 0px;
+width: 20%;
+    }
+.navbar {
+display: flex; /* Flex layout */
+justify-content: space-between; /* Space between logo, menu, and buttons */
+align-items: center; /* Center vertically */
+padding: 10px; /* Add padding for better appearance */
+}
+
+
+.menu-togglee {
+font-size: 24px; /* Adjust icon size */
+cursor: pointer; /* Indicate interactivity */
+}
+
+.signin-btn {
+
+background-color: #0066ff; /* Button color */
+border-radius: 5px; /* Rounded corners */
+border: none;
+color: white;
+padding: 8px 16px;
+font-size: 14px;
+cursor: pointer; /* Indicate interactivity */
+}
+
+/* Hide the navbar links for small screens */
+.navbar-navs {
+display: none;
+}
+}
+/* Navbar Links: Default (Stacked on small screens) */
+.navbar-navs {
+display: none; /* Hidden by default on small screens */
+flex-direction: column;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+/* Navbar Links: Side-by-Side on Laptop Screens */
+@media screen and (min-width: 1024px) {
+.navbar-navs {
+display: flex; /* Show links side by side on large screens */
+flex-direction: row;
+gap: 20px; /* Add spacing between links */
+}
+}
+
+
+
+</style>
+
+<script>
+function toggleMenu() {
+const navbarNav = document.querySelector('.navbar-navs');
+navbarNav.classList.toggle('active');
+}
+
+</script>
+
+</script>  
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</header>
+
+
+<style>
+  
+ 
+  .hero-section {
+    position: relative;
+    padding: 100px 20px;
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .hero-section {
+      padding: 150px 40px;
+      background-size: cover;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero-section {
+      padding: 80px 10px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+  header {
+          margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #253c53;
+            
+        }
+
+       
+
+
+
+
+    /* Navbar Styles */
+    .navbarr {
+        
+
+        background: #f9f9f9;
+
+        color: #fff9f9;
+        height: 50px;
+        position: sticky;
+        top: 0; /* Stick the navbar to the top of the page */
+        width: 100%;
+       
+        padding: 10px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000; /* Ensure navbar is always above content */
+    }
+
+    .navbarr-nav {
+      
+  justify-content: space-around; /* Distribute links evenly across the navbar */
+  list-style-type: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
+
+
+
+
+
+
+    }
+
+    .nav-item {
+        margin: 0 20px;
+    }
+
+    .nav-link {
+        color: #fff;
+        text-decoration: none;
+    }
+
+   
+
+    /* Form Styling */
+    .form-container {
+        margin: 100px 0;
+        padding: 20px;
+        background: #f9f9f9;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .form-container h2 {
+        text-align: center;
+    }
+
+    /* For better visual of scrolling */
+    .content {
+        height: 3500px; /* To create scrolling effect */
+       
+        padding: 20px;
+    }
+</style>
+
+
+<style>
+  body {
+    scroll-behavior: smooth;
+  }
+  
+  .accordion-button {
+    font-weight: bold;
+  }
+  .tab-content {
+      text-align: center;
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+</style>
+<style>
+  .containerrr {
+      max-width: 1200px;
+      margin-top: 20px;
+    }
+    .flight-info {
+      height: 500px;
+      
+      
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+
+    .booking-info {
+      height: 800px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+   
+    }
+
+
+
+
+
+    .flight-info h2, .flight-info h6 {
+      color: #333;
+    }
+    .flight-info .badge {
+      background-color: #ffd700;
+      color: #000;
+      font-weight: bold;
+    }
+    .flight-details, .additional-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0;
+    }
+    
+    .booking-info .btn {
+    
+      width: 100%;
+      font-weight: bold;
+      
+    }
+    .booking-info .counter {
+      display: flex;
+      align-items: center;
+    }
+    .counter button {
+      border: none;
+      background-color: transparent;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .booking-info .wishlist, .share {
+      text-align: center;
+      color: #007bff;
+      cursor: pointer;
+    }
+    .share {
+      margin-top: 10px;
+    }
+
+    .additional-info .fas {
+      border-radius: 80px;
+      width: 30px;
+      height: 20px;
+   
+    margin-right: 5px; /* Space between icon and text */
+   /* Color of icons */
+}
+.additional-infoo .fas {
+
+      border-radius: 80px;
+      width: 30px;
+      height: 20px;
+   
+    margin-right: 5px; /* Space between icon and text */
+ 
+}
+
+  </style>
+  <style>
+    .wifi-icon {
+        margin-top: 30px;
+        color: #007bff; /* Blue color */
+        font-size: 25px; /* Adjust size as needed */
+    }
+
+.ac-icon {
+margin: 30px;
+color: #007bff; /* Blue color for air conditioner icon */
+font-size: 25px; /* Adjust size as needed */
+}
+
+.entertainment-icon {
+color: #3366ff; /* Color for the entertainment icon */
+font-size: 25px; /* Adjust size as needed */
+margin: 30px;
+}
+.games-icon {
+color: #3366ff;
+/* Green color for gaming icon */
+font-size: 25px; /* Adjust size as needed */
+margin: 30px;
+}
+.drink {
+margin: 30px;
+font-size: 25px; /* Adjust size as needed */
+color: #007bff; /* Blue color */
+}
+.coffee {
+margin: 30px;
+font-size: 25px; /* Adjust size as needed */
+color: #007bff;
+}
+.food {
+margin: 30px;
+color: #007bff;
+font-size: 25px; /* Adjust size as needed */
+/* Tomato color */
+}  .flight-change {
+
+margin-bottom: 30px;
+font-size: 25px; /* Adjust size as needed */
+color: #007bff; /* Blue color */
+}
+.comfort-icon{
+margin-left: 20px;
+margin-bottom: 30px;
+font-size: 25px;
+color: #007bff; 
+}
+.magazine-icon{
+margin-left: 30px;
+margin-bottom:30px ;
+font-size: 25px;
+color: #007bff; 
+}
+.entertainmentt-icon{
+margin-left: 40px;
+margin-bottom:30px ;
+font-size: 25px;
+color: #007bff; 
+}
+.foodd {
+margin-left: 70px;
+color: #007bff;
+margin-bottom: 30px;
+font-size: 25px;
+/* Tomato color */
+} 
+</style>
+<style>
+
+.containerr {
+
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+max-width: 600px;
+padding-right: 40px;
+
+padding-left: 10px;
+
+}
+
+
+.detail-item {
+display: flex;
+align-items: center;
+width: 45%; /* Two-column layout */
+margin-bottom: 20px;
+}
+
+.detail-item img {
+width: 40px;
+height: 40px;
+margin-right: 15px;
+background-color: #e6f0ff;
+border-radius: 50%;
+padding: 8px;
+}
+
+.detail-info h3 {
+font-size: 16px;
+margin: 0;
+color: #1a1a1a;
+}
+
+.detail-info p {
+font-size: 14px;
+color: #666;
+margin: 5px 0 0;
+}
+</style>
+
+<style>
+  
+ 
+ 
+</style>
+<style>
+  .col-md-8 {
+      max-width: 800px;
+     
+      padding: 2rem;
+      
+      
+  }
+  
+  .flight-info h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 0.5rem;
+  }
+  
+  .flight-info h6 {
+      font-size: 16px;
+      color: #666;
+  }
+  
+  .badge {
+     
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+  }
+  
+  .flight-details {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+  }
+  
+  .flight-details div {
+      text-align: center;
+  }
+  
+  .flight-details h6 {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 0.2rem;
+  }
+  
+  .flight-details p {
+      font-size: 14px;
+      color: #666;
+  }
+  
+  .additional-info h4 {
+      font-size: 18px;
+      color: #333;
+      margin: 1rem 0;
+      text-align: center;
+  }
+  
+  .features-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+  }
+  
+  .feature-item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 80px;
+      padding: 0.5rem;
+      border-radius: 50px;
+    
+      text-align: center;
+  }
+  
+  .icon {
+      font-size: 24px;
+      color: #5a87d6;
+  }
+  
+  .feature-item p {
+      font-size: 14px;
+      color: #333;
+      font-weight: bold;
+      margin-top: 0.3rem;
+  }
+ 
+
+  </style>
+  
+<style>
+  .btn{
+   font-size: large;
+  background-color:  #007bff;
+
+color: #ffffff;
+ }
+ .details-grid {
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 15px;
+           margin-top: 20px;
+       }
+</style>
+
+
+
+
+
+
+
+
+
+
+<style>
+    
+    /* Custom review card styling */
+    .review-item {
+      display:flex;
+
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      
+      border-radius: 10px;
+      padding: 15px;
+      
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 20px;
+  }
+    
+
+    .review-content {
+      flex: 1;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .review-header h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .rating-stars {
+      color: #FFD700;
+      margin-left: 10px;
+    }
+
+    .review-date {
+      font-size: 0.9rem;
+      color: #888;
+      margin-left: auto;
+    }
+
+    .review-item p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .reply-button {
+      width: 100px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .reply-button:hover {
+      background-color: #0056b3;
+    }
+
+    .feedback {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .feedback span {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .review-item {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 300px;
+      }
+
+      .review-item .avatar {
+        width: 60px;
+        height: 60px;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .review-date {
+        margin-left: 0;
+        margin-top: 5px;
+      }
+
+      .feedback {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .reply-button {
+        width: 70%;
+        margin-top: 10px;
+      }
+    }
+  </style>       
+   
+  </style>
+<style>
+
+
+/* Responsive Styles */
+
+
+
+</style>
+
+
+
+<style>
+/* Basic Reset and Styles */
+/* Responsive Styles */
+
+
+
+
+
+
+/* Form Styles */
+
+.card {
+width:100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-right: 1px solid #ddd;
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .seat-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .seat-description {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .price-section {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .price-section span {
+            font-size: 1.5rem;
+            color: #28a745;
+        }
+
+        .btn {
+            margin-top: 0.5rem;
+        }
+       
+
+        @media (max-width: 768px) {
+            .card {
+                width: 280px;
+              margin-left: 0px;
+               
+            }
+
+            .row.g-0 {
+                flex-wrap: wrap;
+            }
+
+            .col-md-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+                text-align: center;
+                border-right: none;
+                margin-bottom: 1rem;
+            }
+
+            .col-md-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .col-md-3.d-flex {
+                flex: 0 0 100%;
+                max-width: 100%;
+                justify-content: center;
+            }
+
+            .price-section {
+                font-size: 1rem;
+            }
+
+            .price-section span {
+                font-size: 1.2rem;
+            }
+        }
+
+        
+        .form-section {
+         margin-left: 300px;
+            max-width: 400px;
+          
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        @media (max-width: 768px) {
+            .form-section {
+                padding: 20px;
+             margin-left: 0px;
+            }
+
+            button {
+              
+            }
+        }
+
+
+        h2, h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+p {
+font-weight: lighter;
+  font-size: 15px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+    </style>
+
+
+</style>
+  
+<div class="navbarr" id="navbarr">
+ 
+
+
+
+
+    <nav class="navbar-Filter navbar-expand-lg navbar-light bg-light" style="padding-bottom: 30px;">
+  
+
+        <div class="container">
+         
+          <button style="margin-left: 50px;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+    
+        
+    <!-- Navbar with Tabs -->
+    <div class="collapse navbar-collapse mr-50px" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: 80px; color: #000;">
+        <li class="nav-item">
+          <a class="nav-link active" href="#flight-details">About this ship</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  style="color: #000;" href="#itery">Itinerary</a>
+        </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  style="color: #000;" href="#seat">Staterooms</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" style="color: #000;"  href="#bagagge">bagagge</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: #000;" href="#review">Reviews</a>
+        </li>
+      </ul>
+      </div>
+    
+    
+        </div>
+      
+      </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="content">
+<!-- Main Content -->
+<main class="main-content">
+    <!-- Your content goes here -->
+
+<!-- Tab Content Sections -->
+<div class="container content-container">
+
+  
+    <!-- Baggage Content -->
+    <div id="flight-details" class="tab-section">
+
+      </head>
+      <body>
+      
+      <div class="containerrr">
+        <div class="row">
+          
+          <!-- Flight Information Section -->
+         
+    <div class="col-md-8">
+      <div class="flight-info">
+          <h2>7 Night Caribbean  Southern Curise</h2>
+          <h6>Galventure, Texas(4,304 reviews)  <span class="badge">offer</span></h6>
+        
+          
+         
+          
+          <hr>
+          <div class="additional-info">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMi00CsdgGF1iPxgtaymp0cStXc1iB5iZt9dS+5" crossorigin="anonymous">
+            
+            <div class="features-icons">
+              
+              <div class="containerr">     
+                <h2 style="color: #000;">Description</h2>
+                <p>Per consequat adolescens ex, cu nibh commune temporibus vim, ad sumo viris eloquentiam sed. Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis, tamquam vulputate pertinacia eum at.</p>
+                <p>Cum et probo menandri. Officiis consulatu pro et, ne sea sale invidunt, sed ut sint blandit efficiendi. Atomorum explicari eu qui, est enim quaerendum te. Quo harum viris id. Per ne quando dolore evertitur, pro ad cibo commune.</p>
+               
+  <!-- Airline -->
+  
+
+  <!-- Base Fare -->
+  <style>
+    /* Cruise Itinerary Section */
+.cruise-itinerary {
+    width: 70%;
+}
+
+.cruise-itinerary h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cruise-itinerary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.cruise-itinerary table th, .cruise-itinerary table td {
+    padding: 12px;
+    border-bottom: 1px solid#e0e0e0 ;
+    text-align: left;
+}
+
+.cruise-itinerary table th {
+   
+    font-weight: bold;
+}
+
+.cruise-itinerary table td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.cruise-itinerary .note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+  </style>
+
+
+  <!-- Taxes & Fees -->
+  
+
+              
+              
+        </div>
+               
+            </div>
+
+        </div>
+
+
+
+      </div>  
+  </div>
+          
+
+
+
+
+
+
+
+
+          <!-- Booking Information Section -->
+          <div class="col-md-4">
+            <div class="booking-info" style="height: 590px;"
+  >
+              
+              <div class="form-group mb-3">
+                <label for="travelDate">Travel Date</label>
+                <input type="date" id="travelDate" class="form-control">
+              </div>
+              
+              <div class="form-group mb-3">
+                <label for="preferredClass">Preferred class</label>
+                <select id="preferredClass" class="form-select">
+                  <option>First class</option>
+                  <option>Business class</option>
+                  <option>Economy class</option>
+                </select>
+              </div>
+              
+              <div class="form-group mb-3">
+                <label>Adults</label>
+                <div class="counter">
+                  <button onclick="decrement('adultsCount')">-</button>
+                  <span id="adultsCount">0</span>
+                  <button onclick="increment('adultsCount')">+</button>
+                </div>
+              </div>
+              
+              <div class="form-group mb-3">
+                <label>Children</label>
+                <div class="counter">
+                  <button onclick="decrement('childrenCount')">-</button>
+                  <span id="childrenCount">0</span>
+                  <button onclick="increment('childrenCount')">+</button>
+                </div>
+              </div>
+              
+              <div class="form-group mb-3">
+                <label>Infants</label>
+                <div class="counter">
+                  <button onclick="decrement('infantsCount')">-</button>
+                  <span id="infantsCount">0</span>
+                  <button onclick="increment('infantsCount')">+</button>
+                </div>
+              </div>
+              
+              <button class="btn btn-primary btn-lg mb-3"onclick="document.location='./curisepage3.html'">Book Now</button>
+              <button class="btn btn-primary btn-lg mb-3">Add Wishlist</button>
+              
+              
+              
+              
+            </div>
+          </div>
+          
+        </div>
+
+
+
+
+
+
+        <div id="itery" class="tab-section">
+        <div class="content-wrapperrr">
+            <!-- Airline Information Section -->
+            <div class="info-section">
+                <h5 style="font-weight: bold;color: #000;"></h5>
+                <div style="margin-right: 100px;" class="cruise-itinerary">
+                    <h2 style="color: #000; font-weight: bold;">Cruise Itinerary</h2>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Days</th>
+                                <th>Ports of Call</th>
+                                <th>Arrival</th>
+                                <th>Off</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Day 1</td>
+                                <td><img src="./dip1.png.png" alt="Miami, Florida"style="height: 50px;width: 50px;"> Miami, Florida</td>
+                                <td>4:00 AM</td>
+                                <td>8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Day 2</td>
+                                <td><img src="./dip2.png.png" alt="At Sea"style="height: 50px;width: 50px;"> At Sea</td>
+                                <td>4:00 AM</td>
+                                <td>8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Day 3</td>
+                                <td><img src="./dip3.png.png" alt="At Sea"style="height: 50px;width: 50px;"> At Sea</td>
+                                <td>4:00 AM</td>
+                                <td>8:00 PM</td>
+                            </tr>
+                           
+                            <tr>
+                                <td>Day 4</td>
+                                <td><img src="./dip4.png.png" alt="Miami, Florida"style="height: 50px;width: 50px;"> Miami, Florida</td>
+                                <td>4:00 AM</td>
+                                <td>8:00 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    
+                    
+                    <p class="note"><strong>Please note:</strong> While we do our best to adhere to our published itineraries, they may be changed at the discretion of the captain.</p>
+                
+                </div>
+               
+           
+            </div>
+        
+            <!-- Enquiry Form Section -->
+            <div class="container mt-5">
+              <div class="form-section">
+                  <h4>Enquiry Form</h4>
+                  <form>
+                      <div class="form-group">
+                          <label for="name">Your Name</label>
+                          <input type="text" id="name" placeholder="Your name">
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Your Email</label>
+                          <input type="email" id="email" placeholder="Email address">
+                      </div>
+                      <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea id="message" placeholder="Write message"></textarea>
+                      </div>
+                      <div class="form-group checkbox">
+                          <input type="checkbox" id="terms">
+                          <label for="terms">I agree with <a href="#">Terms of Service</a> and <a href="#">Privacy Statement</a></label>
+                      </div>
+                      <button type="submit">Submit Enquiry</button>
+                  </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    </head>
+    <body>
+
+
+
+
+<style>
+ 
+
+</style>
+
+
+
+        <div id="seat" class="tab-section">
+    <div class="containery">
+      <div class="row">
+      
+        <!-- Seat Selection Section -->
+        <div class="col-lg-8">
+  
+
+
+          <div class="card">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <img src="room1.png.png" alt="Seat Image">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="seat-title">Guarentte-Interior Stateroom</h5>
+                        <p class="seat-description">Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <p class="price-section">Starting at<br><span>$15</span></p>
+                        <button class="btn btn-primary btn-sm">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+          <!-- Seat Selection Card -->
+          <div class="card">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <img src="room2.png.png" alt="Seat Image">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="seat-title">Guarentte-Oceanview Stateroom</h5>
+                        <p class="seat-description">Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <p class="price-section">Starting at<br><span>$15</span></p>
+                        <button class="btn btn-primary btn-sm">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          
+          <!-- Additional cards can be added similarly -->
+          <!-- Duplicate the above card structure as needed -->
+    
+           <!-- Seat Selection Card -->
+           <div class="card">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <img src="room3.png.png" alt="Seat Image">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="seat-title">Guarentte-Balcony Stateroom</h5>
+                        <p class="seat-description">Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <p class="price-section">Starting at<br><span>$15</span></p>
+                        <button class="btn btn-primary btn-sm">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+          
+    
+        </div>
+        <style>
+.cardy {
+  border: #000;
+  width: 400px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+background-color: #ffffff;
+}
+/* Responsive Adjustments */
+/* Responsive Styles for Sidebar Section */
+
+ /* Mobile responsiveness - smaller margin */
+ @media (max-width: 768px) {
+    .cardy{
+     margin-left: 30px;
+        padding-right: 69px;
+        width: 230px;/* Reduce margin on smaller screens */
+      }
+    }
+
+    /* Larger screens, we keep the margin the same */
+    @media (min-width: 768px) {
+      .cardy {
+      
+      /* Keep the original margin on larger screens */
+      }
+    }
+ /* Responsive Font Sizes */
+
+        </style>
+        
+        <div class="col-lg-4" >
+          <div class="cardy">
+            <div class="card-body">
+              <h5 class="card-title">Get a Question?</h5>
+              <p class="card-text">Do not hesitate to give us a call. We are an expert team and are happy to talk to you..</p>
+             <p>☏ +61 23 8093 3400</p>
+  <p>📧 info@trizen.com</p>
+   <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        
+  
+        
+
+        
+          <div class="cardy" >
+            <div class="card-body">
+              <h5 > Respected Organizer</h5>
+              <img src="client1.png.png" alt="Organizer">
+              <h6  class="card-title"> Respected Organizer</h6>
+              <p class="card-text">Do not hesitate to give us a call. We are an expert team and are happy to talk to you..</p>
+             
+  
+   <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+       
+  
+        </div>
+
+
+    <div id="bagagge" class="tab-section">
+
+          </head>
+          <body>
+          <style>
+
+ /* Custom Form Styling */
+ .baggage-form {
+      max-width: 500px;
+   background-color: none;
+      padding: 20px;
+      margin-left: 20px;
+      
+    }
+
+    .baggage-form .form-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .baggage-form .form-row div {
+      flex: 1;
+    }
+
+    .baggage-form .full-width {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .baggage-form button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .baggage-form button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .baggage-form .form-row {
+        flex-direction: column;
+      
+      }
+      .baggage-form input {
+        width: 230px;
+
+      }
+      .baggage-form span{
+        width: 300px;
+      }
+      .baggage-form button{
+        width: 230px;
+        margin-right: 230px;
+      }
+      
+    }
+
+          </style>
+            <div class="container mt-5">
+              <div class="baggage-form">
+                <form action="#" method="post">
+                  <div class="form-row">
+                    <div>
+                      <label for="weight">Baggage Weight (kg)</label>
+                      <input type="text" id="weight" name="weight" placeholder="Enter weight" class="form-control">
+                    </div>
+                    <div>
+                      <label for="dimensions">Baggage Dimensions (cm)</label>
+                      <input type="text" id="dimensions" name="dimensions" placeholder="Enter dimensions" class="form-control">
+                    </div>
+                  </div>
+          
+                  <div class="form-row">
+                    <div>
+                      <label for="toptier-status">Top Tier Status</label>
+                      <select id="toptier-status" name="toptier-status" class="form-select">
+                        <option value="silver">Silver</option>
+                        <option value="gold">Gold</option>
+                        <option value="platinum">Platinum</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="other-dropdown">Other Option</label>
+                      <select id="other-dropdown" name="other-dropdown" class="form-select">
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                      </select>
+                    </div>
+                  </div>
+          
+                  <div class="full-width">
+                    <label for="class-of-service">Class of Service</label>
+                    <select id="class-of-service" name="class-of-service" class="form-select">
+                      <option value="economy">Economy</option>
+                      <option value="business">Business</option>
+                      <option value="first">First</option>
+                    </select>
+                  </div>
+          
+                  <button type="submit" class="view-baggage-btn">View Baggage Allowance</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+        
+          
+
+
+
+
+
+    </div>
+   
+    <div id="review" class="tab-section">
+
+        <div  style="margin-top: 40px;"       class="reviews-section">
+           
+        
+            <!-- Review Item 1 -->
+            <div class="container mt-5">
+              <div class="review-item">
+                <img src="./client.png.png" alt="Reviewer Avatar" class="avatar">
+                <div class="review-content">
+                  <div class="review-header">
+                    <h3>Jenny Doe</h3>
+                    <span class="rating-stars">★★★★★</span>
+                    <span class="review-date">April 5, 2019</span>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis.</p>
+                  <button class="reply-button">Reply</button>
+                  <div class="feedback">
+                    <span class="likes">👍 13</span>
+                    <span class="dislikes">👎 2</span>
+                    <span class="favorites">❤️ 5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Review Item 2 -->
+            
+            <div class="container mt-5">
+              <div class="review-item">
+                <img src="./client.png.png" alt="Reviewer Avatar" class="avatar">
+                <div class="review-content">
+                  <div class="review-header">
+                    <h3>Jenny Doe</h3>
+                    <span class="rating-stars">★★★★★</span>
+                    <span class="review-date">April 5, 2019</span>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis.</p>
+                  <button class="reply-button">Reply</button>
+                  <div class="feedback">
+                    <span class="likes">👍 13</span>
+                    <span class="dislikes">👎 2</span>
+                    <span class="favorites">❤️ 5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Review Item 3 -->
+            <div class="container mt-5">
+              <div class="review-item">
+                <img src="./client1.png.png" alt="Reviewer Avatar" class="avatar">
+                <div class="review-content">
+                  <div class="review-header">
+                    <h3>Jenny Doe</h3>
+                    <span class="rating-stars">★★★★★</span>
+                    <span class="review-date">April 5, 2019</span>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, dolores mandamus moderatius ea ius, sed civibus vivendum imperdiet ei, amet tritani sea id. Ut veri diceret fierent mei, qui facilisi suavitate euripidis.</p>
+                  <button class="reply-button">Reply</button>
+                  <div class="feedback">
+                    <span class="likes">👍 13</span>
+                    <span class="dislikes">👎 2</span>
+                    <span class="favorites">❤️ 5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+       
+</head>
+<body>
+
+  <style>
+    .review-formm {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .review-formm h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    .stars {
+      display: flex;
+      gap: 5px;
+    }
+
+    .star {
+      font-size: 1.5rem;
+      color: #FFD700;
+      cursor: pointer;
+    }
+
+    .row-inputs input {
+      width: 48%;
+      padding: 10px;
+      margin-right: 2%;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+    }
+
+    .row-inputs input:last-child {
+      margin-right: 0;
+    }
+
+    .review-formm button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .review-formm{
+        width: 250px;
+        margin-left: 0px;
+      
+      }
+      .row-inputs input {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .form-group .stars {
+        justify-content: flex-start;
+      }
+
+      .form-group textarea {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <div class="review-formm">
+      <h2>Write a Review</h2>
+
+      <!-- Write a Review Section -->
+      <div class="form-group">
+        <label for="review">Write a Review</label>
+        <textarea id="review" placeholder="Share your experience here..."></textarea>
+      </div>
+
+      <!-- Rating Section 1 -->
+      <div class="form-group row">
+        <div class="col">
+          <label>Service</label>
+          <div class="stars">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+          </div>
+        </div>
+        <div class="col">
+          <label>Location</label>
+          <div class="stars">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+          </div>
+        </div>
+        <div class="col">
+          <label>Value for Money</label>
+          <div class="stars">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rating Section 2 -->
+      <div class="form-group row">
+        <div class="col">
+          <label>Cleanliness</label>
+          <div class="stars">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+          </div>
+        </div>
+        <div class="col">
+          <label>Facilities</label>
+          <div class="stars">
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Name and Email Section -->
+      <div class="form-group row row-inputs">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+      </div>
+
+      <!-- Message Section -->
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Additional comments..."></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit Review</button>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+        let lastScrollTop = 0; // Keep track of the last scroll position
+
+        window.onscroll = function() {
+            let navbar = document.getElementById("navbar");
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            // If scrolling down, hide the navbar; if scrolling up, show it
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down, hide navbar
+                navbar.style.top = "-60px"; // Hide the navbar by moving it up
+            } else {
+                // Scrolling up, show navbar
+                navbar.style.top = "0"; // Show the navbar at the top
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
+        };
+    </script>
+
+</main>
+<section class="footer-area section-bg padding-top-100px padding-bottom-30px padding-left-80px padding-right-100px ">
+  <div class="main-container">
+    <div class="row">
+      <div class="col-lg-3 responsive-column">
+        <div class="footer-item">
+         <div class="logo" >
+          <img src="logo.png.png"alt="pic"style="width: 170px;margin-bottom:30px;">
+
+         </div>
+          <!-- end logo -->
+          <p class="footer__desc">
+            Morbi convallis bibendum urna ut viverra. Maecenas consequat
+          </p>
+          <ul class="list-items pt-3">
+            <li>
+              3015 Grand Ave, Coconut Grove,<br>
+              Cerrick Way, FL 12345
+            </li>
+            <li>+123-456-789</li>
+            <li><a href="">trizen@yourwebsite.com</a></li>
+          </ul>
+        </div>
+        <!-- end footer-item -->
+      </div>
+      <!-- end col-lg-3 -->
+      <div class="col-lg-3 responsive-column">
+        <div class="footer-item">
+          <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">
+            Company
+          </h4>
+          <ul class="list-items list--items">
+            <li><a href="">About us</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Jobs</a></li>
+            <li><a href="">News</a></li>
+            <li><a href="">Support</a></li>
+            <li><a href="">Advertising</a></li>
+          </ul>
+        </div>
+        <!-- end footer-item -->
+      </div>
+      <!-- end col-lg-3 -->
+      <div class="col-lg-3 responsive-column">
+        <div class="footer-item">
+          <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">
+            Other Links
+          </h4>
+          <ul class="list-items list--items">
+            <li><a href="">USA Vacation Packages</a></li>
+            <li><a href="">USA Flights</a></li>
+            <li><a href="">USA Hotels</a></li>
+            <li><a href="">USA Car Hire</a></li>
+            <li><a href="">Create an Account</a></li>
+            <li><a href="">Trizen Reviews</a></li>
+          </ul>
+        </div>
+        <!-- end footer-item -->
+      </div>
+      <!-- end col-lg-3 -->
+      <div class="col-lg-3 responsive-column">
+        <div class="footer-item">
+          <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">
+            Subscribe now
+          </h4>
+          <p class="footer__desc pb-3">
+            Subscribe for latest updates &amp; promotions
+          </p>
+          <div class="contact-form-action">
+            <p class="footer__desc pb-3">
+                Subscribe for Telegram
+              </p>
+
+<p class="footer__desc pb-3">
+            Subscribe for Instagram
+          </p>
+
+<p class="footer__desc pb-3">
+            Subscribe for Facebook
+          </p>
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+        <!-- end footer-item -->
+      </div>
+      <!-- end col-lg-3 -->
+    </div>
+    <!-- end row -->
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <div class="term-box footer-item">
+          <ul class="list-items list--items d-flex align-items-center">
+            <li><a href="">Terms &amp; Conditions</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Help Center</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- end col-lg-8 -->
+      <div class="col-lg-4">
+        <div class="footer-social-box text-end">
+          <ul class="social-profile">
+            <li>
+              <a href=""><i class="lab la-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="lab la-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="lab la-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="lab la-linkedin-in"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- end col-lg-4 -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+  <div class="section-block mt-4"></div>
+  <div class="main-container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="copy-right padding-top-30px">
+          <p class="copy__desc">
+            © Copyright Trizen <span id="get-year">2024</span> . Made with
+            <span class="la la-heart"></span> by
+            <a href="">TechyDevs</a>
+          </p>
+        </div>
+        <!-- end copy-right -->
+      </div>
+      <!-- end col-lg-7 -->
+      <div class="col-lg-5">
+        <div class="copy-right-content d-flex align-items-center justify-content-end padding-top-30px">
+          <h3 class="title font-size-15 pe-2">We Accept</h3>
+          <img src="https://techydevs.com/demos/themes/html/trizen-demo/html/images/payment-img.png" alt="">
+        </div>
+        <!-- end copy-right-content -->
+      </div>
+      <!-- end col-lg-5 -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</section>
+<!-- end footer-area -->
+<!-- ================================
+   START FOOTER AREA
+================================= -->
+
+<!-- start back-to-top -->
+<div id="back-to-top">
+  <i class="la la-angle-up" title="Go top"></i>
+</div>
+<!-- end back-to-top -->
+
+
+
+
+<!-- Modal Popup -->
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+  
+  </body>
+  </html>
+  

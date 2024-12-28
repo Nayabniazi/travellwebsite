@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/select2.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/line-awesome.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/daterangepicker.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/animate.min.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/animated-headline.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/jquery-ui.css">
+    <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Overlay */
+        .hero-section::before {
+            opacity: .6;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(82, 97, 102, 0.5);
+            z-index: 1;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+     /* Navbar */
+     
+       
+        /* Hero Section with Background Overlay */
+        .hero-section {
+            color: #000;
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(218, 26, 26);
+            background-image: url('./hotel.png.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: animate 30s ease-in-out infinite alternate-reverse;
+            margin-top: 0px; /* Offset for fixed navbar */
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="navbar">
+        <div class="containers">
+            <!-- Logo -->
+            <div class="navbar-brand">
+              <img src="logo.png.png" alt="Trizen Logo" class="logoo">
+            </div>
+       
+              
+                  <!-- Menu Toggle Button -->
+                
+              
+                  <!-- Navbar Links -->
+                  <ul class="navbar-navs">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/flightpage2.html">Flight</a></li>
+                    <li><a href="/carpage2.html">Car</a></li>
+                    <li><a href="/curisepage2.html">Curise</a></li>
+                    <li><a href="/hotelpage2.html">Hotel</a></li>
+                    <li><a href="/Apartmentpage2.html">Apartments</a></li>
+                  </ul>
+                  
+                  <li class="navbar-toggler" onclick="toggleMenu()">
+                    &#9776;
+                  </li>
+                  <!-- Sign-In Button -->
+                  <button id="loginBtn" class="btn-signin">Sign In</button>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+           
+            <!-- CSS (For Modal and Form Styling) -->
+            <style>
+              
+            /* General Modal Styles */
+            .modal {
+             
+              display: none; /* Hidden by default */
+              position: fixed;
+              z-index: 1000;
+              left: 0;
+              top: 0px;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            }
+            
+            /* Modal Content */
+            .modal-content {
+              
+             margin-left: 500px;
+              background-color: #fff;
+              margin-top: 50px;
+              padding: 30px;
+              border-radius: 8px;
+              width: 380px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              position: relative;
+              font-family: Arial, sans-serif;
+            }
+            
+            /* Close Button */
+            .close {
+              position: absolute;
+              top: 15px;
+              right: 15px;
+              color: #aaa;
+              font-size: 24px;
+              font-weight: bold;
+              cursor: pointer;
+            }
+            
+            .close:hover {
+              color: #000;
+            }
+            
+            
+            /* Social Media Icons */
+            .social-icons {
+              text-align: center;
+              margin-top: 15px;
+            }
+            
+            .social-icons a {
+              margin: 0 8px;
+              font-size: 18px;
+              color: #555;
+              text-decoration: none;
+            }
+            
+            .social-icons a:hover {
+              color: #007bff;
+            }
+            </style>
+            
+            
+             <style>
+            
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+            
+              .modal-content {
+                max-width: 330px;
+                padding: 15px;
+               
+                
+              }
+             
+            
+              button {
+                font-size: 14px;
+              }
+            
+              .social-icons a {
+                font-size: 20px;
+              }
+            }
+            
+            @media (max-width: 480px) {
+             
+            
+              .social-icons a {
+                font-size: 18px;
+              }
+            }
+            
+         
+
+
+
+
+.navbar {
+position: fixed;
+top: 0;
+width: 100%;
+background-color: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+padding: 10px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+/* Container */
+.containers {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+}
+
+/* Logo */
+.logoo {
+    
+height: 60px;
+
+margin-left: 50px;
+}
+/* Navbar Links */
+.navbar-navs {
+
+display: flex;
+gap: 20px;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.navbar-navs a {
+text-decoration: none;
+color: #333;
+font-size: 16px;
+font-weight: bold;
+}
+
+.navbar-navs a:hover {
+color: #f80101;
+}
+
+
+/* Sign-In Button */
+.btn-signin {
+  
+background-color: #0066ff;
+border: none;
+border-radius: 5px;
+color: white;
+
+cursor: pointer;
+
+}
+
+.btn-signin:hover {
+background-color: #0051cc;
+}
+
+/* Toggle Button for Mobile */
+.navbar-toggler {
+
+display: none;
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+   
+  .navbar{
+    width: 100%;
+  }
+
+.navbar-navs.active {
+display: flex;
+}
+
+.navbar-toggler {
+display: block;
+margin-left: 0px;
+}
+
+.btn-signin {
+margin-top: 10px;
+
+
+}
+   
+.navbar-navs {
+  
+  display: none;
+flex-direction: column;
+background-color: #ffffff;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+padding: 10px 0;
+}
+.navbar-navs a{
+    margin-left: 20px;
+}
+
+.navbar-navs.active {
+ 
+display: flex;
+}
+
+.navbar-toggler {
+    
+display: block;
+}
+
+.btn-signin {
+margin-top: 10px;
+margin-right: 10px;
+}
+.logoo {
+height: 40px;
+margin-left: 0px;
+
+}
+
+
+}
+
+
+
+
+/* Adjustments for Small Screens (Up to 992px) */
+@media screen and (max-width: 992px) {
+
+.navbar {
+display: flex; /* Flex layout */
+justify-content: space-between; /* Space between logo, menu, and buttons */
+align-items: center; /* Center vertically */
+padding: 10px; /* Add padding for better appearance */
+}
+
+
+.menu-togglee {
+font-size: 24px; /* Adjust icon size */
+cursor: pointer; /* Indicate interactivity */
+}
+
+.signin-btn {
+
+background-color: #0066ff; /* Button color */
+border-radius: 5px; /* Rounded corners */
+border: none;
+color: white;
+padding: 8px 16px;
+font-size: 14px;
+cursor: pointer; /* Indicate interactivity */
+}
+
+/* Hide the navbar links for small screens */
+.navbar-navs {
+display: none;
+}
+}
+/* Navbar Links: Default (Stacked on small screens) */
+.navbar-navs {
+display: none; /* Hidden by default on small screens */
+flex-direction: column;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+/* Navbar Links: Side-by-Side on Laptop Screens */
+@media screen and (min-width: 1024px) {
+.navbar-navs {
+display: flex; /* Show links side by side on large screens */
+flex-direction: row;
+gap: 20px; /* Add spacing between links */
+}
+}
+
+
+
+</style>
+
+<script>
+function toggleMenu() {
+const navbarNav = document.querySelector('.navbar-navs');
+navbarNav.classList.toggle('active');
+}
+
+</script>
+
+            
+            
+            
+            
+                   </style>
+                          
+                   
+                   <!-- Login Modal -->
+                   <div id="loginModal" class="modal"style="overflow: hidden;">
+                     <div class="modal-content">
+                         <span class="close">&times;</span>
+                         <h2>Login</h2>
+                         <p>Hello! Welcome to your account</p>
+                         <form>
+                             <label for="username">Username</label>
+                             <input  id="username" placeholder="Type your username">
+                             
+                             <label for="password">Password</label>
+                             <input type="password" id="password" placeholder="Type your password">
+                           
+                             
+                             <button>Submit</button>
+                       
+                         </form>
+                         <p>Or Login Using</p>
+                         <div class="social-icons">
+                             <a href="#"><i class="fab fa-facebook"></i></a>
+                             <a href="#"><i class="fab fa-twitter"></i></a>
+                             <a href="#"><i class="fab fa-instagram"></i></a>
+                             <a href="#"><i class="fab fa-linkedin"></i></a>
+                         </div>
+                     </div>
+                   </div>
+                           
+                   
+                   
+                   
+                   
+                   
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </style>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- JavaScript to Open/Close Modal -->
+            <script>
+              // Get modal, button, and close span
+              var modal = document.getElementById("loginModal");
+              var btn = document.getElementById("loginBtn");
+              var closeBtn = document.getElementsByClassName("close")[0];
+            
+              // Open modal when button is clicked
+              btn.onclick = function () {
+                  modal.style.display = "block";
+              };
+            
+              // Close modal when 'x' is clicked
+              closeBtn.onclick = function () {
+                  modal.style.display = "none";
+              };
+            
+              // Close modal when clicking outside of modal
+              window.onclick = function (event) {
+                  if (event.target == modal) {
+                      modal.style.display = "none";
+                  }
+              };
+            </script>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+
+            <style>
+                 form input:hover
+        {
+       border-color: #0066ff;
+        }
+              .modal h2{
+               color: #000;
+              }
+              .modal p{
+               color: #000;
+              }
+              .modal input{
+               
+           width: 270px;
+           height: 40px;
+           border-color: #1c1a1a;
+           border-radius: 5px;
+              }
+              .modal button{
+               width: 100px;
+               margin-top: 20px;
+           
+              }
+           </style>
+                  
+           
+           <!-- Login Modal -->
+           <div id="loginModal" class="modal"style="overflow: hidden;">
+             <div class="modal-content">
+                 <span class="close">&times;</span>
+                 <h2>Login</h2>
+                 <p>Hello! Welcome to your account</p>
+                 <form>
+                     <label for="username">Username</label>
+                     <input  id="username" placeholder="Type your username">
+                     
+                     <label for="password">Password</label>
+                     <input type="password" id="password" placeholder="Type your password">
+                   
+                     
+                     <button>Submit</button>
+               
+                 </form>
+                 <p>Or Login Using</p>
+                 <div class="social-icons">
+                     <a href="#"><i class="fab fa-facebook"></i></a>
+                     <a href="#"><i class="fab fa-twitter"></i></a>
+                     <a href="#"><i class="fab fa-instagram"></i></a>
+                     <a href="#"><i class="fab fa-linkedin"></i></a>
+                 </div>
+             </div>
+           </div>
+                   
+           
+           
+           
+           
+           
+           <style>
+             
+               /* General Modal Styles */
+               .modal {
+                 display: none; /* Hidden by default */
+                 position: fixed;
+                 z-index: 1;
+                 left: 0;
+                 top: 0;
+                 width: 100%;
+                 height: 100%;
+                 background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+               }
+               
+               /* Modal Content */
+               .modal-content {
+                 background-color: #fff;
+                 margin: 10% auto;
+                 padding: 30px;
+                 border-radius: 8px;
+                 width: 350px;
+                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                 position: relative;
+                 font-family: Arial, sans-serif;
+               }
+               
+               /* Close Button */
+               .close {
+                 position: absolute;
+                 top: 15px;
+                 right: 15px;
+                 color: #aaa;
+                 font-size: 24px;
+                 font-weight: bold;
+                 cursor: pointer;
+               }
+               
+               .close:hover {
+                 color: #000;
+               }
+               
+               
+               /* Social Media Icons */
+               .social-icons {
+                 text-align: center;
+                 margin-top: 15px;
+               }
+               
+               .social-icons a {
+                 margin: 0 8px;
+                 font-size: 18px;
+                 color: #555;
+                 text-decoration: none;
+               }
+               
+               .social-icons a:hover {
+                 color: #007bff;
+               }
+              
+           
+                   .navbar button {
+                      color: #ffffff;
+                       width: 100px;
+                       border: none;
+                       background-color: #007bff;
+                       border-radius: 5px;
+                       height: 40px;
+                   }
+                   
+               </style>
+           
+           <!-- JavaScript to Open/Close Modal -->
+           <script>
+               // Get modal, button, and close span
+               var modal = document.getElementById("loginModal");
+               var btn = document.getElementById("loginBtn");
+               var closeBtn = document.getElementsByClassName("close")[0];
+             
+               // Open modal when button is clicked
+               btn.onclick = function () {
+                   modal.style.display = "block";
+               };
+             
+               // Close modal when 'x' is clicked
+               closeBtn.onclick = function () {
+                   modal.style.display = "none";
+               };
+             
+               // Close modal when clicking outside of modal
+               window.onclick = function (event) {
+                   if (event.target == modal) {
+                       modal.style.display = "none";
+                   }
+               };
+             </script>
+        </div>
+    </div>
+
+
+<!-- Hero Section -->
+<header class="hero-section"></header>
+
+
+     
+
+
+
+<!-- Main Content -->
+<main class="main-content">
+    <!-- Your content goes here -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .containel {
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+           
+        }
+
+
+
+
+       
+        .booking-form{
+           
+           background-color: white;
+           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+       }
+
+       .flight-summary{
+        padding: 20px;
+           background-color: white;
+           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+           width: 500px;
+       }
+
+
+
+
+
+
+
+
+
+       @media (max-width: 768px) {
+        .containel {
+                flex-direction: column; /* Stack items vertically */
+            }
+    .container.mt-5 {
+        padding: 20px;
+        display: flex;
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .booking-form {
+        order: 1; /* Ensure the booking form appears first */
+        margin-bottom: 20px; /* Add space below the booking form */
+    }
+
+    .flight-summary {
+        order: 2; /* Ensure the flight summary appears below the booking form */
+    }
+
+    .flight-summary img {
+        max-width: 100%; /* Ensure images are responsive */
+        height: auto;
+    }
+
+    .payment-options {
+        flex-direction: column; /* Stack payment options vertically */
+        align-items: center;
+    }
+
+    .payment-option {
+        margin-bottom: 15px; /* Add spacing between payment options */
+    }
+
+    .login-btn {
+        width: 100%; /* Make buttons full-width on smaller screens */
+    }
+}
+
+/* Add responsiveness for the card information form */
+.payment-form {
+    padding: 15px;
+}
+
+.payment-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.payment-option img {
+    max-width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.payment-option:hover {
+    border-color: #007bff;
+    background-color: #f8f9fa;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Move the flight summary to the bottom on mobile screens */
+@media (max-width: 768px) {
+    .flight-summary {
+        order: 2; 
+        width: 350px;/* Move this section below the form */
+    }
+
+    .booking-form {
+        order: 1; /* Ensure the booking form stays on top */
+    }
+
+    .payment-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .payment-option {
+        margin: 10px 0;
+        width: 100%;
+    }
+}
+
+.rating {
+            background-color: #ffcc00;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .logo img {
+   width: 150px;
+   height: auto;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="containel">
+    <!-- Booking Form -->
+   
+        <!-- New Cardholder and Card Number Fields -->
+        <div class="container mt-5">
+            <!-- Booking Form -->
+            <div class="booking-form">
+                <h3 style="margin-bottom: 20px;margin-left: 20px;" class="font-weight-bold text-dark">Your Information</h3>
+                <div class="form-group row">
+                    <div class="col-md-6" style="padding-left: 30px;padding-right:30px;">
+                        <input type="text" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="col-md-6"style="padding-left: 30px;padding-right:30px;">
+                        <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6"style="padding-left: 30px;padding-right:30px;">
+                        <input type="email" class="form-control" placeholder="Email address">
+                    </div>
+                    <div class="col-md-6"style="padding-left: 30px;padding-right:30px;">
+                        <input type="tel" class="form-control" placeholder="Phone Number">
+                    </div>
+                </div>
+                <div class="form-group"style="margin-left: 10px;">
+                    <input type="text" class="form-control" placeholder="Address line">
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6"style="padding-left: 30px;padding-right:30px;">
+                        <select class="form-control">
+                            <option>Select country</option>
+                            <option>Abelia</option>
+                            <option>Island</option>
+                            <option>Afganistan</option>
+                            <option>Agerbia</option>
+                            <option>Belize</option>
+                            <option>Butan</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6"style="padding-left: 30px;padding-right:30px;">
+                        <select class="form-control">
+                            <option>Select country code</option>
+                            <option>united-state (+1)</option>
+                            <option>united-kingdom (+44)</option>
+                            <option>Bangladesh (+880)</option>
+                            <option>Brazil (+55)</option>
+                            <option>india (+91)</option>
+                            <option>Pakistan (+92)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-check"style="margin-left: 20px;">
+                    <input type="checkbox" class="form-check-input" id="promo-offers">
+                    <label class="form-check-label" for="promo-offers">I want to receive Trizen promotional offers in the future</label>
+                </div>
+        
+                <h4 class="font-weight-bold text-dark" style="padding-left: 20px;">Your Card Information</h4>
+        
+                <div class="payment-form">
+                    <div class="payment-options">
+                        <div class="payment-option" onclick="showFields('credit')">
+                            <img src="./visa.png.png" alt="Credit Card">
+                            <p>Payment with credit card</p>
+                        </div>
+                        <div class="payment-option active" onclick="showFields('paypal')">
+                            <img src="./united.png.png" alt="PayPal">
+                            <p>Payment with PayPal</p>
+                        </div>
+                        <div class="payment-option" onclick="showFields('payoneer')">
+                            <img src="./visa.png.png" alt="Payoneer">
+                            <p>Payment with Payoneer</p>
+                        </div>
+                    </div>
+        
+                    <!-- PayPal form fields, displayed by default -->
+                    <div id="paypal-fields" class="form-fields active">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Cardholder Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Card Number">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <select class="form-control">
+                                    <option>Expiry Month</option>
+                                    <option>January</option>
+                                    <option>February</option>
+                                    <option>March</option>
+                                    <option>April</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>July</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-control">
+                                    <option>Expiry Year</option>
+                                    <option>2023</option>
+                                    <option>2024</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="CVV">
+                        </div>
+                        <button class="login-btn">Confirm Booking</button>
+                    </div>
+        
+                    <!-- Payoneer form fields -->
+                    <div id="payoneer-fields" class="form-fields">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Enter Password">
+                        </div>
+                        <button class="login-btn">Login Account</button>
+                    </div>
+        
+                    <!-- Credit card form fields -->
+                    <div id="credit-fields" class="form-fields">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Enter password">
+                        </div>
+                        <button class="login-btn">Login Account</button>
+                    </div>
+                </div>
+            </div>
+        
+        
+    </div>
+
+<style>
+    .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .payment-option {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .payment-option img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .form-fields {
+            display: none;
+        }
+
+        .form-fields.active {
+            display: block;
+        }
+
+        .login-btn {
+            width: 150px;
+            margin: 20px 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+        }
+
+        .flight-summary img {
+            max-width: 100%;
+        }
+
+        .flight-details {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+  
+        
+</style>
+
+
+
+
+
+
+    <div class="flight-summary mt-5">
+
+        <img src="./hotel2.png.png" alt="Flight Image">
+               <h4 style="margin-top: 20px;" class="font-weight-bold text-dark">Hilton Hotel and Resorts</h4>
+               <p>One way Flight</p>
+               <p><span class="rating">4.4/5</span> Average (30 Reviews)</p>
+               <div class="flight-details">
+                   <h6 class="font-weight-bold">Check in</h6>
+                   <p>12 May 2020 7:40am</p>
+                   <p>12hrs 40 min</p>
+       
+                   <h6 class="font-weight-bold">Check Out</h6>
+                   <p>13 May 2020 8:40am</p>
+       
+                   <h6 class="font-weight-bold">Booking Details</h6>
+                   <p>Airline: Delta</p>
+                   <p>Flight Type: Economy</p>
+       
+                   <h6 class="font-weight-bold">Additional Details</h6>
+                   <p>Terminal: 2A</p>
+                   <p>Baggage Allowance: 1 piece (23 kg)</p>
+                   <p>Seat Selection: 14A (Window)</p>
+                   <p>Taxes & Fee: $5</p>
+                   <p>Total Price: $245</p>
+                   <p>Sub Total: $240</p>
+               </div>
+           </div>
+       </div>
+
+
+
+
+
+
+    <!-- Flight Summary -->
+   
+
+<section class="footer-area section-bg padding-top-100px padding-bottom-30px padding-left-100px padding-right-80px">
+    <div class="main-container">
+      <div class="row">
+        <div class="col-lg-3 responsive-column">
+          <div class="footer-item">
+           <div class="logo">
+            <img src="logo.png.png"alt='pic'>
+
+           </div>
+            <!-- end logo -->
+            <p class="footer__desc">
+              Morbi convallis bibendum urna ut viverra. Maecenas consequat
+            </p>
+            <ul class="list-items pt-3">
+              <li>
+                3015 Grand Ave, Coconut Grove,<br>
+                Cerrick Way, FL 12345
+              </li>
+              <li>+123-456-789</li>
+              <li><a href="">trizen@yourwebsite.com</a></li>
+            </ul>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 responsive-column">
+          <div class="footer-item">
+            <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">
+              Company
+            </h4>
+            <ul class="list-items list--items">
+              <li><a href="">About us</a></li>
+              <li><a href="">Services</a></li>
+              <li><a href="">Jobs</a></li>
+              <li><a href="">News</a></li>
+              <li><a href="">Support</a></li>
+              <li><a href="">Advertising</a></li>
+            </ul>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 responsive-column">
+          <div class="footer-item">
+            <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">
+              Other Links
+            </h4>
+            <ul class="list-items list--items">
+              <li><a href="">USA Vacation Packages</a></li>
+              <li><a href="">USA Flights</a></li>
+              <li><a href="">USA Hotels</a></li>
+              <li><a href="">USA Car Hire</a></li>
+              <li><a href="">Create an Account</a></li>
+              <li><a href="">Trizen Reviews</a></li>
+            </ul>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 responsive-column">
+          <div class="footer-item">
+            <h4 class="title curve-shape pb-3 margin-bottom-20px" data-text="curvs">
+              Subscribe now
+            </h4>
+            <p class="footer__desc pb-3">
+              Subscribe for latest updates
+            </p>
+            <div class="contact-form-action">
+                <p class="footer__desc pb-3">
+                    Subscribe for viva
+                  </p>
+                  <p class="footer__desc pb-3">
+                    Subscribe for twitter
+                  </p>
+                  <p class="footer__desc pb-3">
+                    Subscribe for instagram
+                  </p>
+                  <p class="footer__desc pb-3">
+                    Subscribe for facebook
+                  </p>
+                  
+            </div>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+<style>
+       
+     
+</style>
+
+
+<script>
+     function showFields(option) {
+            // Remove active class from all options
+            document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
+
+            // Hide all form fields
+            document.querySelectorAll('.form-fields').forEach(fields => fields.classList.remove('active'));
+
+            // Show the selected form fields and add active class to the selected option
+            document.getElementById(option + '-fields').classList.add('active');
+            document.querySelector(`[onclick="showFields('${option}')"]`).classList.add('active');
+        }
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
