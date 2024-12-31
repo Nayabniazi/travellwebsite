@@ -1686,8 +1686,8 @@ input:hover {
                             
                                     if (type === 'flight') {
                                         content = `
-                                            <form> 
-                                        <div class="form-flex"style="margin-top:40px;">
+                                    <form> 
+                                        <div class="form-flex">
                                                 <label><input type="radio" name="trip-type" value="one-way" onclick="toggleTripOptions()"> One-way</label>
                                                  <label><input type="radio" name="trip-type" value="round-trip" onclick="toggleTripOptions()"> Round-trip</label>
                                      <label><input type="radio" name="trip-type" value="multi-city" onclick="toggleTripOptions()"> Multi-city</label>
@@ -1713,19 +1713,25 @@ input:hover {
                                           
                                         
                 
-            
+         
                                                                       
                     
             <div class="label-container" style="margin-top:0px;">
                            <div class="form-flex">
-        <label for="label1">Departing From</label>
-         <input type="date" placeholder="Departing"style="margin-right:20px;">
+        <label for="label">Bundle&Save</label>
+        <select style="margin-right:20px;">
+        <option>Flight+Hotel</option>
+         <option>Flight+Car</option>
+          <option>Flight+Hotel+Car</option>
+           <option>None</option>
+          </select>
+        
           </div>
          <div class="form-flex">
-        <label for="label2">Departing to</label>
+        <label for="label2">Passengers</label>
           
 
- <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-right:20px;">
+ <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:43px;margin-right:20px;">
 
 
 
@@ -1785,16 +1791,74 @@ input:hover {
        <div class="form-flex">
         </div>
        
+
            
         
     </div>          
               
 
+          </div>
+                    
+                
+          
+
+
+
+
+
+
+
+
+
+
+                                                          
+                    
+            <div class="label-container" style="margin-top:0px;">
+                           <div class="form-flex">
+        <label for="label"style="margin-top:20px;">Departing From</label>
+         <input type="Date" placeholder="Flying from" style="margin-right:20px;">
+        
+          </div>
+         <div class="form-flex">
+        <label for="label"style="margin-top:20px;">Departing to</label>
+         <input type="date" placeholder="Flying from"margin-right:20px; >
+
+
+
+
+
+
+   </div>
+                
+       
+  <div class="form-flex" style="margin-left:20px;">
+        <label for="label1"style="margin-top:20px;">Airline</label>
+ <input type="text" placeholder="Airline" >
+          </div>
+      
+           
+        
+          
+              
+
+          </div>
+
+
+
+
+
+
+
+
 
                     
-                    
-                    
-                    
+    
+
+                
+    
+
+    
+              
                     
                     
                                            
@@ -1802,16 +1866,16 @@ input:hover {
   <div class="form-flex">
                                             
                                
-                               <button style="margin-top:30px;" onclick="window.location.href='page2.html'" type="button">Search Now</button>
+                               <button style="margin-top:30px;" onclick="window.location.href='flightpage2.html'" type="button">Search Now</button>
                     
                     
-                    <div id="add-flight-button-container" style="display: none; margin-top: 30px;">
+                    <div id="add-flight-button-container" style="display: none; margin-top: 0px;">
                     
-                      <Button type="button" id="add-flight-button" onclick="addFlight()">+ Add Flight</Button>
+                      <Button type="button" id="add-flight-button" onclick="addFlight()"style="margin-top:30px;">+ Add Flight</Button>
                     
                                     </div>
                     
-                    
+                  
                     
                     </div>
                     
@@ -1860,9 +1924,7 @@ input:hover {
                     
                     
                     <!-- Dropdown Icon -->
-
-                            
-                        </div>
+                              
                     
                     
                     
@@ -1916,7 +1978,7 @@ input:hover {
                     </div>
                         
                     
-                    </form>
+                    </form>        
                                        
                        `;
                       } 

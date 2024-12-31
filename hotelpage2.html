@@ -1686,8 +1686,11 @@ input:hover {
                             
                                     if (type === 'flight') {
                                         content = `
-                                            <form> 
-                           
+ <form>
+                          
+                         
+                            
+                        
 
 
 
@@ -1695,11 +1698,11 @@ input:hover {
 
                       <div class="label-container"style="margin-top:20px;">
                            <div class="form-flex">
-        <label for="label1">Picking up</label>
+        <label for="label1">Check-In</label>
           <input type="date" placeholder="Departing" style="margin-right:20px;">
           </div>
            <div class="form-flex">
-        <label for="label2">Picking up Date</label>
+        <label for="label2">Check-Out</label>
           <input type="date" placeholder="Departing"style="margin-right:20px;" >
           </div>
           
@@ -1731,6 +1734,14 @@ input:hover {
 
 
 
+          
+
+
+
+
+
+
+
 
 
 
@@ -1738,7 +1749,7 @@ input:hover {
 <label for="label2"style="margin-top:20px;">Passengers</label>
 
 
- <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-top:5px;">
+ <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-top:5px;margin-right:20px;">
 
 
 
@@ -1774,8 +1785,31 @@ input:hover {
 
 
 </div>
-</div>
 
+
+<div class="form-flex">
+<label for="label2"style="margin-top:20px;">Need Maid?</label>
+          <select style="margin-right:20px;">
+                                <option>yes </option>
+                                <option>No</option>
+                                
+                                
+                            </select>  
+                        
+          </div>  
+
+
+
+
+
+
+
+
+ 
+
+
+
+</div>
 
 
 
@@ -1793,7 +1827,17 @@ input:hover {
 
 
 
- 
+     <div class="label-container" style="margin-top:0px;">
+                           <div class="form-flex">
+        <label for="label1">Staying at</label>
+          <input type="text" placeholder="Enter Destination and Property"style="margin-right:20px;" >
+          </div>
+           <div class="form-flex">
+        <label for="label2">Cleaning Services</label>
+        <input type="text" placeholder="Specify Cleaning Service Requirments"style="margin-right:20px;" >
+          </div>
+                  
+    </div>   
 
 
 
@@ -1884,58 +1928,17 @@ input:hover {
 
        
     
-</div>                
-                    
-                    </form>
-                                       
+</div>
+    
+
+</form>
+
+                           
                        `;
                       } 
                       else if (type === 'cruise') {
                 content = `
-                    <form>
-                        
-                        
-
-                         
-                      <div class="label-container">
-                          <div class="form-flex">
-        <label for="label1">Depart as early as</label>
-           <input type="date" placeholder="Departing" >
-          </div>
-        <div class="form-flex">
-        <label for="label2">Depart as late as</label>
-          <input type="date" placeholder="Departing" >
-          </div>
- <div>
-        <label for="label2">Traveller in cabin</label>
-/* adult dalna*/
-
-         </div>
-
-          <div class="form-flex">
-        <label for="label1">Going to</label>
-           <select >
-                                <option>Select Destination</option>
-                                <option>Business</option>
-                                 <option>Mexico</option>
-                                <option>Carbieon</option>
-                            </select>
-          </div>
-         
-                  
-    </div>
-                        
-
-
-
-
-
- 
-            
-           
-            </div>
-        </div>
-
+                   
 
 
 
@@ -1958,194 +1961,10 @@ input:hover {
 
 
 
-
-
-                        <div  class="form-flex"style="margin-top: 10px;">
-                          <button onclick="window.location.href='curisepage2.html'" type="button">Search Now</button>
-          
-<div id="add-flight-button-container" style="display: none; margin-top: 0px;">
-                    <button type="button" id="add-flight-button" onclick="addFlight()">+ Add Flight</button>
-                </div>
-
-
-
-
-
-
-                <!-- Flights Container -->
-                <div id="flights-container"></div>
-
-                           
-
-
- <!-- Advanced Dropdown for Round-trip -->
-             
-                        </div>
-
-   
-    
-
-
-
-                
-
-                <!-- Flights Container -->
-                <div id="flights-container"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-    
-</div>
-    
-
-</form>
    `;
             } else if (type === 'car') {
                 content = `
-                <form>
-                 
-                                
-                       
-                    
-                      <div class="label-container">
-                        <div class="form-flex">
-        <label for="label1">Picking up</label>
-          <input type="text" placeholder="Flying from" >
-          </div>
-          <div class="form-flex">
-        <label for="label2">Picking up Date</label>
-          <input type="date" placeholder="Departing" >
-          </div>
-           <div class="form-flex">
-        <label for="label2">Time</label>
-         
-               <select>
-                                <option>9:00AM</option>
-                                <option>10:00AM</option>
-                                 <option>11:00AM</option>
-                                <option>12:00AM</option>
-                                 <option>1:00AM</option>
-                                <option>2:00AM</option>
-                            </select>             
-          </div>       
-    </div>
                 
-  <div class="label-container">
-                        <div class="form-flex">
-        <label for="label1">Picking up</label>
-          <input type="text" placeholder="Flying from" >
-          </div>
-         <div class="form-flex">
-        <label for="label2">Picking up Date</label>
-          <input type="date" placeholder="Departing" >
-          </div>
-            <div class="form-flex">
-        <label for="label2">Time</label>
-         
-               <select>
-                                <option>9:00AM</option>
-                                <option>10:00AM</option>
-                                 <option>11:00AM</option>
-                                <option>12:00AM</option>
-                                 <option>1:00AM</option>
-                                <option>2:00AM</option>
-                            </select>             
-          </div>       
-    </div>
-              
-        <!-- Dropdown Icon -->
-
-
-
-
-
-
-
-           <div class="drop">
-        <span class="dropdown-icon" style="margin-right:600px; font-size:15px;color: black;font-weight:bold; " onclick="toggleDropdown()">&#9662;AdvancedOptions</span> <!-- Downward Triangle Icon -->
-
-        <!-- Hidden Text Fields -->
-        <div class="dropdown-content" id="dropdownContent">
-    
-  <div class="label-container">
-                          <div class=form-flex>
-        <label for="label1">Car Type</label>
-         <select>
-                                <option>No Preference</option>
-                                <option>ACE rent A Car</option>
-                                 <option>Advantage rent Car</option>
-                                <option>Alamo rent car</option>
-                                 <option>Alais</option>
-                                
-                            </select> 
-          </div>
-          <div class="form-flex" >
-        <label for="label2">Rental Car Componey</label>
-          <select>
-                                <option>No Preference</option>
-                                <option>ACE rent A Car</option>
-                                 <option>Advantage rent Car</option>
-                                <option>Alamo rent car</option>
-                                 <option>Alais</option>
-                                
-                            </select> 
-          </div>
-         <div class="form-flex" >
-        <label for="label2">Discount Code</label>
-         
-               <select>
-                                <option>I don't have Code</option>
-                                <option>ACE rent A Car</option>
-                                 <option>Advantage rent Car</option>
-                                <option>Alamo rent car</option>
-                                 <option>Alais</option>
-                                
-                            </select>             
-          </div>
-                
-    </div>
-
-
-</div>
-  <div class="form-flex" style="margin-top: 10px;">
-                          <button onclick="window.location.href='carpage2.html'" type="button">Search Now</button>
-         
- <!-- Flights Container -->
-                <div id="flights-container"></div>
-
- <!-- Advanced Dropdown for Round-trip -->
-
-
-
-              
-</div>
-    
-
-</form>   
                 
                 
                 
@@ -2153,145 +1972,7 @@ input:hover {
                 `;
             } else if (type === 'hotel') {
                 content =  `
-                    <form>
-                          
-                         
-                               
-                        
-
-
-
-
-
-                      <div class="label-container">
-                           <div class="form-flex">
-        <label for="label1">Picking up</label>
-          <input type="date" placeholder="Departing" >
-          </div>
-           <div class="form-flex">
-        <label for="label2">Picking up Date</label>
-          <input type="date" placeholder="Departing" >
-          </div>
-          
-           <div class="form-flex">
-        <label for="label2">Passengers</label>
-
-/*adult dalna*/
-
-
-
-              </div> 
-           
-         <div class="form-flex">
-        <label for="label2">Time</label>
-         
-               <input type="text" placeholder="Flying from">          
-          </div>  
-          <div class="form-flex">
-<label for="label2">Driver Needs?</label>
-          <select>
-                                <option>yes </option>
-                                <option>yes</option>
-                                 <option>Any</option>
-                                
-                            </select>  
-                        
-          </div>  
-
-    </div>
-
-
-
-                        
-
-
-
-
-
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div  class="form-flex"style="margin-top: 10px;">
-           <button onclick="window.location.href='hotelpage2.html'" type="button">Search Now</button>
-<div id="add-flight-button-container" style="display: none; margin-top: 0px;">
-                    <button type="button" id="add-flight-button"  onclick="addFlight()">+ Add Flight</button>
-                </div>
-
-                <!-- Flights Container -->
-                <div id="flights-container"></div>
-
-                           
-
-
- <!-- Advanced Dropdown for Round-trip -->
-                <div id="advanced-dropdown" style="display: none; margin-top: 0px;margin-right:350px;">
-                    <label for="advanced-field" style="margin-right:350px;">Advanced Options</label>
-                   <select style="width:200px;margin-right:300px;">
-                    <option>hell</option>
-                    </select>
-                </div>
-
-                        </div>
-
-   
-    
-
-
-
-                
-
-                <!-- Flights Container -->
-               <div id="flights-container">
-    
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-    
-</div>
-    
-
-</form>
+                    
    `;
             }
                 searchBoxContent.innerHTML = content;

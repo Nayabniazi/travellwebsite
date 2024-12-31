@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/jquery-ui.css">
     <link rel="stylesheet" href="https://techydevs.com/demos/themes/html/trizen-demo/html/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
     
 
 
@@ -168,7 +169,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px; /* Spacing between multiple flight forms */
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 /* Individual flight form */
@@ -285,7 +286,7 @@ padding: 20px;
 border-radius: 8px;
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 max-width: 1100px;
-margin: 50px auto;
+margin: 10px auto;
 display: flex;
 flex-direction: column;
 position: relative;
@@ -293,6 +294,7 @@ gap: 10px;
 
 
 width: 800px;
+
 
 
 
@@ -1680,12 +1682,12 @@ input:hover {
                
                 <div class="search-box">
                     <div class="search-subnavbar">
-                        <a href="#" onclick="showForm('flight')" data-content="Flight"><i class="fas fa-plane"></i>Flight</a>
-                          <a href="#" onclick="showForm('cruise')" data-content="Cruise"><i class="fas fa-ship"></i>Cruise</a>
-                          
-                          <a href="#" onclick="showForm('car')" data-content="Car"><i class="fas fa-car"></i>Car</a>
-                          <a href="#" onclick="showForm('hotel')" data-content="Hotel"><i class="fas fa-hotel"></i>Hotel</a>
-                          <a href="#" onclick="showForm('Apartment')" data-content="Apartment"><i class="fas fa-hotel"></i>Apartments</a>
+                        <a href="#" onclick="showForm('flight')" data-content="Flight"><i class="fas fa-plane" style=" color: red; margin-right: 10px;"></i>Flight</a>
+                          <a href="#" onclick="showForm('cruise')" data-content="Cruise"><i class="fas fa-ship" style=" color: red; margin-right: 10px;"></i>Cruise</a>
+                          <a href="#" onclick="showForm('Bundle')" data-content="Apartment"> <i class="bi bi-box-seam" style=" color: red; margin-right: 10px;" ></i>Bundle&Save</a>
+                          <a href="#" onclick="showForm('car')" data-content="Car"><i class="fas fa-car" style=" color: red; margin-right: 10px;"></i>Car</a>
+                          <a href="#" onclick="showForm('hotel')" data-content="Hotel"><i class="fas fa-hotel" style=" color: red; margin-right: 10px;"></i>Hotel</a>
+                          <a href="#" onclick="showForm('Apartment')" data-content="Apartment"><i class="fas fa-hotel" style=" color: red; margin-right: 10px;"></i>Apartments</a>
                       </div>
                        
                         <div class="search-box-content" id="search-box-content">
@@ -1723,16 +1725,22 @@ input:hover {
                                           
                                         
                 
-            
+         
                                                                       
                     
             <div class="label-container" style="margin-top:0px;">
                            <div class="form-flex">
-        <label for="label1">Departing From</label>
-         <input type="date" placeholder="Departing"style="margin-right:20px;">
+        <label for="label">Bundle&Save</label>
+        <select style="margin-right:20px;">
+        <option>Flight+Hotel</option>
+         <option>Flight+Car</option>
+          <option>Flight+Hotel+Car</option>
+           <option>None</option>
+          </select>
+        
           </div>
          <div class="form-flex">
-        <label for="label2">Departing to</label>
+        <label for="label2">Passengers</label>
           
 
  <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:43px;margin-right:20px;">
@@ -1795,16 +1803,74 @@ input:hover {
        <div class="form-flex">
         </div>
        
+
            
         
     </div>          
               
 
+          </div>
+                    
+                
+          
+
+
+
+
+
+
+
+
+
+
+                                                          
+                    
+            <div class="label-container" style="margin-top:0px;">
+                           <div class="form-flex">
+        <label for="label"style="margin-top:20px;">Departing From</label>
+         <input type="Date" placeholder="Flying from" style="margin-right:20px;">
+        
+          </div>
+         <div class="form-flex">
+        <label for="label"style="margin-top:20px;">Departing to</label>
+         <input type="date" placeholder="Flying from"margin-right:20px; >
+
+
+
+
+
+
+   </div>
+                
+       
+  <div class="form-flex" style="margin-left:20px;">
+        <label for="label1"style="margin-top:20px;">Airline</label>
+ <input type="text" placeholder="Airline" >
+          </div>
+      
+           
+        
+          
+              
+
+          </div>
+
+
+
+
+
+
+
+
 
                     
-                    
-                    
-                    
+    
+
+                
+    
+
+    
+              
                     
                     
                                            
@@ -1821,7 +1887,7 @@ input:hover {
                     
                                     </div>
                     
-                    
+                  
                     
                     </div>
                     
@@ -1870,22 +1936,7 @@ input:hover {
                     
                     
                     <!-- Dropdown Icon -->
-                               <div class="drop">
-                            <span class="dropdown-icon" onclick="toggleDropdown()">&#9662;AdvancedOptions</span> <!-- Downward Triangle Icon -->
-                    
-                            <!-- Hidden Text Fields -->
-                            <div class="dropdown-content" id="dropdownContent">
-                                <select style=" width:200px;">
-                                   
-                                                    <option>No Preference</option>
-                                                    <option>Economy</option>
-                                                    <option>Economy</option>
-                                                    <option>Business</option>
-                                                </select>
-                                          
-                                </div>
-                            
-                        </div>
+                              
                     
                     
                     
@@ -2183,29 +2234,37 @@ input:hover {
                 
   <div class="label-container">
                         <div class="form-flex">
-        <label for="label1">Picking up</label>
-          <input type="text" placeholder="Flying from"style="margin-right:20px;" >
+        <label for="label1">city</label>
+          <input type="text" placeholder="City Name"style="margin-right:20px;" >
           </div>
          <div class="form-flex">
-        <label for="label2">Picking up Date</label>
-          <input type="date" placeholder="Departing"style="margin-right:20px;" >
+        <label for="label2">State</label>
+          <input type="text" placeholder="State"style="margin-right:20px;" >
           </div>
             <div class="form-flex">
-        <label for="label2">Time</label>
+        <label for="label2"> Country</label>
+            <input type="text" placeholder="Country"style="margin-right:20px;" >
+                         
+          </div>
+          
+          
+
+<div class="form-flex">
+        <label for="label2"style="margin-top:20px;">Need any Driver?</label>
          
                <select>
-                                <option>9:00AM</option>
-                                <option>10:00AM</option>
-                                 <option>11:00AM</option>
-                                <option>12:00AM</option>
-                                 <option>1:00AM</option>
-                                <option>2:00AM</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                                 <option>ANY</option>
+                                
                             </select>             
-          </div>       
+          </div>
+
+
+
     </div>
               
         <!-- Dropdown Icon -->
-
 
 
 
@@ -2283,7 +2342,7 @@ input:hover {
                     <form>
                           
                          
-                               
+                            
                         
 
 
@@ -2292,11 +2351,11 @@ input:hover {
 
                       <div class="label-container"style="margin-top:20px;">
                            <div class="form-flex">
-        <label for="label1">Picking up</label>
+        <label for="label1">Check-In</label>
           <input type="date" placeholder="Departing" style="margin-right:20px;">
           </div>
            <div class="form-flex">
-        <label for="label2">Picking up Date</label>
+        <label for="label2">Check-Out</label>
           <input type="date" placeholder="Departing"style="margin-right:20px;" >
           </div>
           
@@ -2328,6 +2387,14 @@ input:hover {
 
 
 
+          
+
+
+
+
+
+
+
 
 
 
@@ -2335,7 +2402,7 @@ input:hover {
 <label for="label2"style="margin-top:20px;">Passengers</label>
 
 
- <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-top:5px;">
+ <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-top:5px;margin-right:20px;">
 
 
 
@@ -2371,8 +2438,31 @@ input:hover {
 
 
 </div>
-</div>
 
+
+<div class="form-flex">
+<label for="label2"style="margin-top:20px;">Need Maid?</label>
+          <select style="margin-right:20px;">
+                                <option>yes </option>
+                                <option>No</option>
+                                
+                                
+                            </select>  
+                        
+          </div>  
+
+
+
+
+
+
+
+
+ 
+
+
+
+</div>
 
 
 
@@ -2390,7 +2480,17 @@ input:hover {
 
 
 
- 
+     <div class="label-container" style="margin-top:0px;">
+                           <div class="form-flex">
+        <label for="label1">Staying at</label>
+          <input type="text" placeholder="Enter Destination and Property"style="margin-right:20px;" >
+          </div>
+           <div class="form-flex">
+        <label for="label2">Cleaning Services</label>
+        <input type="text" placeholder="Specify Cleaning Service Requirments"style="margin-right:20px;" >
+          </div>
+                  
+    </div>   
 
 
 
@@ -2548,7 +2648,7 @@ input:hover {
 <label for="label2"style="margin-top:20px;">Persons</label>
 
 
- <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-top:5px;">
+ <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-top:5px;margin-right:20px;">
 
 
 
@@ -2584,9 +2684,39 @@ input:hover {
 
 
 </div>
+<div class="form-flex">
+<label for="label2"style="margin-top:20px;">Driver Needs?</label>
+          <select style="margin-right:20px;">
+                                <option>yes </option>
+                                <option>yes</option>
+                                 <option>Any</option>
+                                
+                            </select>  
+                        
+          </div> 
+
+
+
+   
+
+
+
+
 </div>
 
 
+
+     <div class="label-container" style="margin-top:0px;">
+                           <div class="form-flex">
+        <label for="label1">Staying at</label>
+          <input type="text" placeholder="Enter Destination and Property"style="margin-right:20px;" >
+          </div>
+           <div class="form-flex">
+        <label for="label2">Cleaning Services</label>
+        <input type="text" placeholder="Specify Cleaning Service Requirments"style="margin-right:20px;" >
+          </div>
+                  
+    </div>   
 
 
 
@@ -2713,6 +2843,105 @@ input:hover {
         
                                 
             }
+
+
+            else if (type === 'Bundle') {
+                content =  `
+                    <form>
+                          
+                         
+                               
+                        
+
+
+
+
+
+                      
+                          
+
+
+
+
+
+
+<div class="form-flex">
+        <label>
+            <input type="radio" name="bundle-type" value="flight-hotel" onclick="toggleBundleOptions()"> Flight + Hotel
+        </label>
+        <label>
+            <input type="radio" name="bundle-type" value="flight-car" onclick="toggleBundleOptions()"> Flight + Car
+        </label>
+        <label>
+            <input type="radio" name="bundle-type" value="flight-car-hotel" onclick="toggleBundleOptions()"> Flight + Car + Hotel
+        </label>
+    </div>
+
+    <!-- Dynamic Content Container -->
+              <div id="bundle-options-container" style="margin-top: 0px;">
+        <!-- Content will be updated dynamically based on the selected option -->
+    </div>
+            <div class="label-container" style="margin-top:0px;">
+                           <div class="form-flex">
+        
+        <label for="label1">Departing From</label>
+     <input type="date" placeholder="City Airline Country"style="margin-right:20px;"></input>
+        
+          </div>
+         <div class="form-flex">
+        <label for="label2">Passengers</label>
+          <select style="margin-right:20px;" >
+                                                    <option>Adult 1</option>
+                                                    <option>Adult 2</option>
+                                                     <option>Adult 3</option>
+                                                    <option>Adult 4</option> <option>Adult 5</option>
+                                                    <option>Adult 6</option>
+
+
+</select> 
+</div>
+                  <div class="form-flex" style="height:50px;">
+        <label for="label1">Departing to</label>
+     <input type="date" placeholder="City Airline Country"></input>
+
+          </div>
+       <div class="form-flex">
+        </div>
+  <button style="margin-top:60px;margin-left:10px;" type="button" onclick="window.location.href='flightpage2.html'">Search Now</button>
+    <!-- Search Button -->
+    <div class="form-flex">
+       
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    
+</div>
+    
+
+</form>
+   `;
+            
+
+           
+            }
+
+
+
+
+
+
                 searchBoxContent.innerHTML = content;
 
  }
@@ -2778,6 +3007,131 @@ input:hover {
             }
         }
     
+
+
+        
+    function toggleBundleOptions() {
+        const bundleOptionsContainer = document.getElementById('bundle-options-container');
+        const selectedBundle = document.querySelector('input[name="bundle-type"]:checked').value;
+
+        let content = '';
+
+        if (selectedBundle === 'flight-hotel') {
+            content = `
+
+                <div class="label-container" style="margin-top: 20px;">
+                
+          <div class="form-flex">
+          <label for="place">Staying at</label>
+            <input type="text" id="place" placeholder=" Enter Destination and Property" style="margin-right: 20px;">
+        </div>
+        <div class="form-flex">
+            <label for="departing">Flying from</label>
+            <input type="text" id="departing" placeholder="City Airport " style="margin-right: 20px;">
+        </div>
+        <div class="form-flex">
+            <label for="returning">Flying to</label>
+            <input type="text" id="returning" placeholder=" City Airport"style="margin-right:20px;">
+        </div>
+         <div class="form-flex">
+            <label for="returning"style="margin-top:20px;">Rooms?</label>
+           <select>
+            <option>1 Room</option>
+             <option>2 Room</option>
+              <option>3 Room</option>
+                 <option>4 Room</option>
+             <option>5 Room</option>
+              <option>6 Room</option>
+            </select>
+
+        </div>
+    </div>      
+           
+       
+   
+    
+    `;
+        } else if (selectedBundle === 'flight-car') {
+            content = `
+              <div class="label-container" style="margin-top: 20px;">
+        <div class="form-flex">
+            <label for="departing">Check-In</label>
+            <input type="text" id="departing" placeholder="Address " style="margin-right: 20px;">
+        </div>
+        <div class="form-flex">
+            <label for="returning">Check-out</label>
+            <input type="text" id="returning" placeholder="Address"style="margin-right:20px;">
+        </div>
+         <div class="form-flex">
+            <label for="returning">Need any Driver?</label>
+           <select>
+            <option>Yes</option>
+             <option>No</option>
+              <option>Any</option>
+            </select>
+
+        </div>
+    </div>  `;
+        } else if (selectedBundle === 'flight-car-hotel') {
+            content = `
+              <div class="label-container" style="margin-top: 20px;">
+        <div class="form-flex">
+            <label for="departing">Check-in</label>
+            <input type="text" id="departing" placeholder="City Airport" style="margin-right: 20px;">
+        </div>
+        <div class="form-flex">
+            <label for="returning">Check-out</label>
+            <input type="text" id="returning" placeholder="City Airport" style="margin-right: 20px;">
+        </div>
+          <div class="form-flex">
+            <label for="returning">Need any Driver?</label>
+         <select>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Any</option>
+          </select>
+        </div>
+<div class="form-flex">
+            <label for="departing"style="margin-top:20px">Staying at</label>
+            <input type="text" id="departing" placeholder=" Enter Destination and Property" style="margin-right: 20px;">
+        </div>
+        <div class="form-flex">
+            <label for="returning"style="margin-top:20px">Rooms</label>
+       <select>
+        <option>1 Room </option>
+        <option>2 Room </option>
+        <option>3 Room </option>
+        </select>
+        </div>
+          
+
+
+    </div> `;
+        }
+
+        bundleOptionsContainer.innerHTML = content;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
 
 

@@ -1686,8 +1686,10 @@ input:hover {
                             
                                     if (type === 'flight') {
                                         content = `
-                                            <form> 
-                                       
+                               <form>
+                          
+                         
+                               
                         
 
 
@@ -1696,7 +1698,7 @@ input:hover {
 
                       <div class="label-container"style="margin-top:20px;">
                            <div class="form-flex">
-        <label for="label1">Joining Date</label>
+        <label for="label1">Booking Date</label>
           <input type="date" placeholder="Departing" style="margin-right:20px;">
           </div>
            <div class="form-flex">
@@ -1705,7 +1707,7 @@ input:hover {
           </div>
           
            <div class="form-flex">
-        <label for="label2">Joining Time</label>
+        <label for="label2">Booking Time</label>
 
 <select><option>9:00am </option>
                                 <option>10:00am</option>
@@ -1722,11 +1724,9 @@ input:hover {
           <div class="form-flex">
 <label for="label2"style="margin-top:20px;">Discount Package</label>
           <select style="margin-right:20px;">
-
-                 <option>having Discount code </option>
-                                <option>yes </option>
-                                <option>No</option>
-                                 <option>Any</option>
+                                <option>Having discount code </option>
+                                <option>yes</option>
+                                 <option>No</option>
                                 
                             </select>  
                         
@@ -1741,7 +1741,7 @@ input:hover {
 <label for="label2"style="margin-top:20px;">Persons</label>
 
 
- <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-top:5px;">
+ <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-top:5px;margin-right:20px;">
 
 
 
@@ -1777,9 +1777,39 @@ input:hover {
 
 
 </div>
+<div class="form-flex">
+<label for="label2"style="margin-top:20px;">Driver Needs?</label>
+          <select style="margin-right:20px;">
+                                <option>yes </option>
+                                <option>yes</option>
+                                 <option>Any</option>
+                                
+                            </select>  
+                        
+          </div> 
+
+
+
+   
+
+
+
+
 </div>
 
 
+
+     <div class="label-container" style="margin-top:0px;">
+                           <div class="form-flex">
+        <label for="label1">Staying at</label>
+          <input type="text" placeholder="Enter Destination and Property"style="margin-right:20px;" >
+          </div>
+           <div class="form-flex">
+        <label for="label2">Cleaning Services</label>
+        <input type="text" placeholder="Specify Cleaning Service Requirments"style="margin-right:20px;" >
+          </div>
+                  
+    </div>   
 
 
 
@@ -1826,7 +1856,7 @@ input:hover {
 
 
                         <div  class="form-flex"style="margin-top: 10px;">
-           <button onclick="window.location.href='hotelpage2.html'" type="button">Search Now</button>
+           <button onclick="window.location.href='Apartmentpage2.html'" type="button">Search Now</button>
 <div id="add-flight-button-container" style="display: none; margin-top: 0px;">
                     <button type="button" id="add-flight-button"  onclick="addFlight()">+ Add Flight</button>
                 </div>
@@ -1888,7 +1918,9 @@ input:hover {
        
     
 </div>
-                    </form>
+    
+
+</form>               
                                        
                        `;
                       } 
