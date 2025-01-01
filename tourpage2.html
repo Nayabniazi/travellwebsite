@@ -61,7 +61,7 @@
             align-items: center;
             justify-content: center;
             background-color: rgb(218, 26, 26);
-            background-image: url('./Apartment.png.png');
+            background-image: url('./tour.png.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -493,10 +493,10 @@ object-fit: cover;
         <li><a href="index.html">Home</a></li>
         <li><a href="flightpage2.html">Flight</a></li>
         <li><a href="carpage2.html">Car</a></li>
-        <li><a href="hotelpage2.html">Hotel</a></li>
-        <li><a href="tourpage1.html"> Tours</a></li>
         <li><a href="curisepage2.html">Curise</a></li>
-        <li><a href="Apartmentpage2.html">Apartment</a></li>
+        <li><a href="tourpage1.html">Tours</a></li>
+        <li><a href="hotelpage2.html">Hotel</a></li>
+        <li><a href="Apartmentpage2.html">Apartments</a></li>
       </ul>
       
       <li class="navbar-toggler" onclick="toggleMenu()">
@@ -900,7 +900,10 @@ cursor: pointer;
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-
+    .cruise-itinerary{
+margin-left: 0px;
+width: 20%;
+    }
   .navbar{
     width: 65%;
   }
@@ -958,7 +961,10 @@ margin-left: 0px;
 
 /* Adjustments for Small Screens (Up to 992px) */
 @media screen and (max-width: 992px) {
-
+    .cruise-itinerary{
+margin-left: 0px;
+width: 20%;
+    }
 .navbar {
 display: flex; /* Flex layout */
 justify-content: space-between; /* Space between logo, menu, and buttons */
@@ -1776,17 +1782,17 @@ font-weight: lighter;
     <div class="collapse navbar-collapse mr-50px" id="navbarNav">
       <ul class="navbar-nav" style="margin-left: 80px; color: #000;">
         <li class="nav-item">
-          <a class="nav-link active" href="#flight-details">Apartment Details</a>
+          <a class="nav-link active" href="#flight-details">About this ship</a>
         </li>
         <li class="nav-item">
-          
+          <a class="nav-link"  style="color: #000;" href="#itery">Itinerary</a>
         </li>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  style="color: #000;" href="#seat">Apartments</a>
+        <a class="nav-link"  style="color: #000;" href="#seat">Staterooms</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" style="color: #000;"  href="#bagagge">Availability</a>
+          <a class="nav-link" style="color: #000;"  href="#bagagge">bagagge</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" style="color: #000;" href="#review">Reviews</a>
@@ -1856,91 +1862,72 @@ font-weight: lighter;
          
     <div class="col-md-8">
       <div class="flight-info">
-          <h2>Our favourite cities for apartments</h2>
-          <h6> Take me there!<span class="badge">offer</span></h6>
-          <hr>
-          
-          
+          <h2>7 Night Caribbean  Southern Curise</h2>
+          <h6>Galventure, Texas(4,304 reviews)  <span class="badge">offer</span></h6>
+        
           
          
+          
+          <hr>
           <div class="additional-info">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMi00CsdgGF1iPxgtaymp0cStXc1iB5iZt9dS+5" crossorigin="anonymous">
             
             <div class="features-icons">
               
               <div class="containerr">     
-
+                <h2 style="color: #000;">Description</h2>
+                <p>Per consequat adolescens ex, cu nibh commune temporibus vim, ad sumo viris eloquentiam sed. Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis, tamquam vulputate pertinacia eum at.</p>
+                <p>Cum et probo menandri. Officiis consulatu pro et, ne sea sale invidunt, sed ut sint blandit efficiendi. Atomorum explicari eu qui, est enim quaerendum te. Quo harum viris id. Per ne quando dolore evertitur, pro ad cibo commune.</p>
+               
   <!-- Airline -->
   
-  <div class="detail-item">
-    <i class="bi bi-airplane" style="font-size: 24px; color: #ff2d08; margin-right: 15px;"></i>
-    <div class="detail-info">
-      <h3>Dubai</h3>
-      <p>1523 Apartments</p>
-    </div>
-  </div>
-  <!-- Flight Type -->
-  <div class="detail-item">
-    <i class="bi bi-airplane" style="font-size: 24px; color: #00e1ff; margin-right: 15px;"></i>
-    <div class="detail-info">
-      <h3>London</h3>
-      <p>3090 Apartments</p>
-    </div>
-  </div>
-
-  <!-- Fare Type -->
-  <div class="detail-item">
-    <i class="bi bi-airplane" style="font-size: 24px; color: #ff1500; margin-right: 15px;"></i>
-    <div class="detail-info">
-      <h3>Rome</h3>
-      <p>4561 Apartments</p>
-    </div>
-  </div>
-
-  <!-- Cancellation -->
-  <div class="detail-item">
-    <i class="bi bi-airplane" style="font-size: 24px; color: #00ddff; margin-right: 15px;"></i>
-    <div class="detail-info">
-      <h3>Paris</h3>
-      <p>1500 Apartments</p>
-    </div>
-  </div>
-
-  <!-- Flight Change -->
-  <div class="detail-item">
-    <i class="bi bi-airplane" style="font-size: 24px; color: #00d5ff; margin-right: 15px;"></i>
-    <div class="detail-info">
-      <h3>Itely</h3>
-      <p>750 Apartments</p>
-    </div>
-  </div>
-
-  <!-- Seats & Baggage -->
-  <div class="detail-item">
-    <i class="bi bi-airplane" style="font-size: 24px; color: #ff0000; margin-right: 15px;"></i>
-    <div class="detail-info">
-      <h3>Manila</h3>
-      <p>5560 Apartments</p>
-    </div>
-  </div>
-
-  <!-- Inflight Features -->
-  <div class="detail-item">
-    <i class="bi bi-airplane" style="font-size: 24px; color: #00ddff; margin-right: 15px;"></i>
-    <div class="detail-info">
-      <h3>Sao Pualo</h3>
-      <p>3450 Apartments</p>
-    </div>
-  </div>
 
   <!-- Base Fare -->
-  <div class="detail-item">
-    <i class="bi bi-airplane" style="font-size: 24px; color: #ff1e00; margin-right: 15px;"></i>
-    <div class="detail-info">
-      <h3>Athens</h3>
-      <p>2034 Apartments</p>
-    </div>
-  </div>
+  <style>
+    /* Cruise Itinerary Section */
+.cruise-itinerary {
+    width: 70%;
+}
+
+.cruise-itinerary h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cruise-itinerary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.cruise-itinerary table th, .cruise-itinerary table td {
+    padding: 12px;
+    border-bottom: 1px solid#e0e0e0 ;
+    text-align: left;
+}
+
+.cruise-itinerary table th {
+   
+    font-weight: bold;
+}
+
+.cruise-itinerary table td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.cruise-itinerary .note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+  </style>
+
 
   <!-- Taxes & Fees -->
   
@@ -2012,10 +1999,9 @@ font-weight: lighter;
                 </div>
               </div>
               
-              <a href="Apartpage4.html" style="font-size: 15px;" class="btn btn-primary btn-lg">Booking Now</a>
-              <a href="Apartpage4.html" style="font-size: 15px;" class="btn btn-primary btn-lg">View Detail</a>
-              
-              
+             
+              <a href="tourpage3.html" style="font-size: 15px;" class="btn btn-primary btn-lg">Booking Now</a>
+              <a href="tourpage3.html" style="font-size: 15px;" class="btn btn-primary btn-lg">View Detail</a>
               
               
             </div>
@@ -2028,17 +2014,59 @@ font-weight: lighter;
 
 
 
-
+        <div id="itery" class="tab-section">
         <div class="content-wrapperrr">
             <!-- Airline Information Section -->
             <div class="info-section">
-                <h5 style="font-weight: bold;color: #000;">About Our Aprtments Details</h5>
-                <p>Per consequat adolescens ex, cu nibh commune temporibus vim, ad sumo viris eloquentiam sed. Mea appareat omittantur eloquentiam ad, nam ei quas oportere democritum. Prima causae admodum id est, ei timeam inimicus sed. Sit an meis aliquam, cetero inermis vel ut. An sit illum euismod facilisis, tamquam vulputate pertinacia eum at.</p>
-                <p>Cum et probo menandri. Officiis consulatu pro et, ne sea sale invidunt, sed ut sint blandit efficiendi. Atomorum explicari eu qui, est enim quaerendum te. Quo harum viris id. Per ne quando dolore evertitur, pro ad cibo commune.</p>
-                <p>Sed scelerisque lectus sit amet faucibus sodales. Proin ut risus tortor. Etiam fermentum tellus auctor, fringilla sapien et, congue quam. In a luctus tortor. Suspendisse eget tempor libero, ut sollicitudin ligula. Nulla vulputate tincidunt est non congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus at est imperdiet, dapibus ipsum vel, lacinia nulla.</p>
-        
-             
-                <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc.</p>
+                <h5 style="font-weight: bold;color: #000;"></h5>
+                <div style="margin-right: 100px;" class="cruise-itinerary">
+                    <h2 style="color: #000; font-weight: bold;">Cruise Itinerary</h2>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Days</th>
+                                <th>Ports of Call</th>
+                                <th>Arrival</th>
+                                <th>Off</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Day 1</td>
+                                <td><img src="./tourpic1.png" alt="Miami, Florida"style="height: 50px;width: 50px;"> Miami, Florida</td>
+                                <td>4:00 AM</td>
+                                <td>8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Day 2</td>
+                                <td><img src="./tourpic2.png" alt="At Sea"style="height: 50px;width: 50px;"> At Sea</td>
+                                <td>4:00 AM</td>
+                                <td>8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Day 3</td>
+                                <td><img src="./tourpic3.png" alt="At Sea"style="height: 50px;width: 50px;"> At Sea</td>
+                                <td>4:00 AM</td>
+                                <td>8:00 PM</td>
+                            </tr>
+                           
+                            <tr>
+                                <td>Day 4</td>
+                                <td><img src="./tourpic1.png" alt="Miami, Florida"style="height: 50px;width: 50px;"> Miami, Florida</td>
+                                <td>4:00 AM</td>
+                                <td>8:00 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    
+                    
+                    <p class="note"><strong>Please note:</strong> While we do our best to adhere to our published itineraries, they may be changed at the discretion of the captain.</p>
+                
+                </div>
+               
+           
             </div>
         
             <!-- Enquiry Form Section -->
@@ -2067,7 +2095,7 @@ font-weight: lighter;
               </div>
           </div>
         </div>
-       
+      </div>
     </head>
     <body>
 
@@ -2093,11 +2121,11 @@ font-weight: lighter;
           <div class="card">
             <div class="row g-0">
                 <div class="col-md-3">
-                    <img src="apert1.png" alt="Seat Image"style="height: 170px;width: 200px;">
+                    <img src="room1.png.png" alt="Seat Image">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
-                        <h5 class="seat-title">All Suites Apart& Hotel Paris 13 Porte d'Italie</h5>
+                        <h5 class="seat-title">Guarentte-Interior Stateroom</h5>
                         <p class="seat-description">Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
                     </div>
                 </div>
@@ -2115,11 +2143,11 @@ font-weight: lighter;
           <div class="card">
             <div class="row g-0">
                 <div class="col-md-3">
-                    <img src="Apartment.png.png" alt="Seat Image"style="height: 170px;width: 200px;">
+                    <img src="room2.png.png" alt="Seat Image">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
-                        <h5 class="seat-title">Break and Home Paris Italie</h5>
+                        <h5 class="seat-title">Guarentte-Oceanview Stateroom</h5>
                         <p class="seat-description">Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
                     </div>
                 </div>
@@ -2140,11 +2168,11 @@ font-weight: lighter;
            <div class="card">
             <div class="row g-0">
                 <div class="col-md-3">
-                    <img src="apert1.png" alt="Seat Image"style="height: 170px;width: 200px;">
+                    <img src="room3.png.png" alt="Seat Image">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
-                        <h5 class="seat-title">Address Jabal Omaar Makkah</h5>
+                        <h5 class="seat-title">Guarentte-Balcony Stateroom</h5>
                         <p class="seat-description">Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
                     </div>
                 </div>
@@ -2294,48 +2322,46 @@ background-color: #ffffff;
             <div class="container mt-5">
               <div class="baggage-form">
                 <form action="#" method="post">
-                    <h4 style="color: #000;font-weight: bold;">Availability</h4>
                   <div class="form-row">
-                    
                     <div>
-                      <label for="weight">Check in</label>
-                      <input type="date" id="weight" name="baggage" placeholder="Enter weight" class="form-control">
+                      <label for="weight">Baggage Weight (kg)</label>
+                      <input type="text" id="weight" name="weight" placeholder="Enter weight" class="form-control">
                     </div>
                     <div>
-                      <label for="dimensions">Check out</label>
-                      <input type="date" id="dimensions" name="dimensions" placeholder="Enter dimensions" class="form-control">
+                      <label for="dimensions">Baggage Dimensions (cm)</label>
+                      <input type="text" id="dimensions" name="dimensions" placeholder="Enter dimensions" class="form-control">
                     </div>
                   </div>
           
                   <div class="form-row">
                     <div>
-                      <label for="toptier-status">Rooms</label>
+                      <label for="toptier-status">Top Tier Status</label>
                       <select id="toptier-status" name="toptier-status" class="form-select">
-                        <option value="silver">Room1</option>
-                        <option value="gold">Room2</option>
-                        <option value="platinum">Romm3</option>
+                        <option value="silver">Silver</option>
+                        <option value="gold">Gold</option>
+                        <option value="platinum">Platinum</option>
                       </select>
                     </div>
                     <div>
-                      <label for="other-dropdown">Adults(18+)</label>
+                      <label for="other-dropdown">Other Option</label>
                       <select id="other-dropdown" name="other-dropdown" class="form-select">
-                        <option value="option1">Select Adult</option>
-                        <option value="option2">Adult 1</option>
-                        <option value="option3">Adult 3</option>
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
                       </select>
                     </div>
                   </div>
           
                   <div class="full-width">
-                    <label for="class-of-service">Childrens(0-17)</label>
+                    <label for="class-of-service">Class of Service</label>
                     <select id="class-of-service" name="class-of-service" class="form-select">
-                      <option value="economy">Select Childrens</option>
-                      <option value="business">Children 1</option>
-                      <option value="first">Children 2</option>
+                      <option value="economy">Economy</option>
+                      <option value="business">Business</option>
+                      <option value="first">First</option>
                     </select>
                   </div>
           
-                  <button type="submit" class="view-baggage-btn">Availability Detials</button>
+                  <button type="submit" class="view-baggage-btn">View Baggage Allowance</button>
                 </form>
               </div>
             </div>

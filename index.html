@@ -1446,6 +1446,7 @@ input:hover {
               <li><a href="flightpage2.html">Flight</a></li>
               <li><a href="hotelpage2.html">Hotel</a></li>
               <li><a href="curisepage2.html">Curise</a></li>
+              <li><a href="tourpage1.html">Tours</a></li>
               <li><a href="curisepage2.html">Car</a></li>
               <li><a href="Apartmentpage2.html">Apartments</a></li>
               <li><a></a></li>
@@ -1685,6 +1686,8 @@ input:hover {
                         <a href="#" onclick="showForm('flight')" data-content="Flight"><i class="fas fa-plane" style=" color: red; margin-right: 10px;"></i>Flight</a>
                           <a href="#" onclick="showForm('cruise')" data-content="Cruise"><i class="fas fa-ship" style=" color: red; margin-right: 10px;"></i>Cruise</a>
                           <a href="#" onclick="showForm('Bundle')" data-content="Apartment"> <i class="bi bi-box-seam" style=" color: red; margin-right: 10px;" ></i>Bundle&Save</a>
+                          <a href="#" onclick="showForm('tour')" data-content="tour"><i class="fas fa-ship" style=" color: red; margin-right: 10px;"></i>Tours</a>
+                        
                           <a href="#" onclick="showForm('car')" data-content="Car"><i class="fas fa-car" style=" color: red; margin-right: 10px;"></i>Car</a>
                           <a href="#" onclick="showForm('hotel')" data-content="Hotel"><i class="fas fa-hotel" style=" color: red; margin-right: 10px;"></i>Hotel</a>
                           <a href="#" onclick="showForm('Apartment')" data-content="Apartment"><i class="fas fa-hotel" style=" color: red; margin-right: 10px;"></i>Apartments</a>
@@ -1993,6 +1996,8 @@ input:hover {
                     </form>
                        `;
                       } 
+                     
+                      
                       else if (type === 'cruise') {
                 content = `
                     <form>
@@ -2007,13 +2012,13 @@ input:hover {
           </div>
         <div class="form-flex">
         <label for="label2">Depart as late as</label>
-          <input type="date" placeholder="Departing" style="height:45px;margin-top:10px;margin-right:20px;">
+          <input type="date" placeholder="Departing" style="height:45px;margin-top:10px;margin-right:10px;">
           </div>
  <div>
   
         <div class="form-flex">
-        <label for="label2"style="">Traveller in cabin</label>
-<select style="width:240px;margin-top:10px;height:45px;margin-left:20px;">
+        <label for="label2"style="margin-left:20px;">Traveller in cabin</label>
+<select style="width:300px;margin-top:10px;height:45px;margin-left:20px;">
                                 <option>Select Destination</option>
                                 <option>Business</option>
                                  <option>Mexico</option>
@@ -2202,7 +2207,235 @@ input:hover {
 
 </form>
    `;
-            } else if (type === 'car') {
+            }
+                      
+            else if (type === 'tour') {
+                content = `
+                                   <form> 
+                               
+
+                         
+                      <div class="label-container"style="margin-top:30px;">
+                          <div class="form-flex">
+        <label for="label1">Country</label>
+           <input type="text" placeholder="Departing" style="margin-right:20px;height:45px;margin-top:10px;">
+          </div>
+        <div class="form-flex">
+        <label for="label2">State</label>
+          <input type="text" placeholder="Departing" style="height:45px;margin-top:10px;margin-right:20px;">
+          </div>
+ <div>
+  
+        <div class="form-flex">
+        <label for="label2"style="margin-left:20px;">City</label>
+
+ <input type="text" placeholder="Departing" style="height:45px;margin-top:10px;margin-right:20px;">
+         </div>
+         </div>
+
+          <div class="form-flex">
+        <label for="label1"style="margin-top:20px;">Seats</label>
+           <select style="width:240px;margin-top:5px;height:45px;" >
+                                <option>1</option>
+                                <option>2</option>
+                                 <option>3</option>
+                                <option>5</option>
+                            </select>
+          </div>
+         
+            
+          
+
+
+ <div class="form-flex">
+        <label for="label2"style="margin-top:20px;">Adults</label>
+          
+
+ <input type="text" id="hotel-adult" value="1 Adult, 0 Children, 1 Room" readonly onclick="togglePassengerDropdown()" style="height:45px;margin-top:5px; margin-right:30px;">
+
+
+
+
+
+
+  
+                    
+
+
+
+ <div id="hotelPassengerDropdown" class="dropdown">
+                                                <div class="room-controls">
+                                                    <label>Adults</label>
+                                                    <button type="button" onclick="changeCount('adult', -1)">-</button>
+                                                    <span id="hotelAdultCount">1</span>
+                                                    <button type="button" onclick="changeCount('adult', 1)">+</button>
+                                                </div>
+                                                <div class="room-controls">
+                                                    <label>Children</label>
+                                                    <button type="button" onclick="changeCount('children', -1)">-</button>
+                                                    <span id="hotelChildrenCount">0</span>
+                                                    <button type="button" onclick="changeCount('children', 1)">+</button>
+                                                </div>
+                                                <div class="room-controls">
+                                                    <label>Rooms</label>
+                                                    <button type="button" onclick="changeCount('room', -1)">-</button>
+                                                    <span id="hotelRoomCount">1</span>
+                                                    <button type="button" onclick="changeCount('room', 1)">+</button>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+<div class="form-flex">
+        <label for="label1"style="margin-top:20px;">Day(Durations)</label>
+           <select style="width:240px;margin-top:5px;height:45px;" >
+                                <option>1</option>
+                                <option>2</option>
+                                 <option>3</option>
+                                <option>4</option>
+                                <option>12</option>
+                                 <option>30</option>
+                                <option>40</option>
+                            </select>
+          </div>
+
+
+
+<div class="form-flex">
+        <label for="label1"style="margin-top:20px;">Max Cost</label>
+           <select style="width:240px;margin-top:5px;height:45px;" >
+                                <option>Enter Max(Cost)</option>
+                                <option>1</option>
+                                 <option>2</option>
+                                <option>4</option>
+                            </select>
+          </div>
+
+
+    </div>
+                        
+
+
+
+
+
+ 
+            
+           
+            </div>
+        </div>
+
+
+
+
+
+
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div  class="form-flex"style="margin-top: 10px;">
+                          <button onclick="window.location.href='tourpage1.html'" type="button">Search Now</button>
+          
+<div id="add-flight-button-container" style="display: none; margin-top: 0px;">
+                    <button type="button" id="add-flight-button" onclick="addFlight()">+ Add Flight</button>
+                </div>
+
+
+
+
+
+
+                <!-- Flights Container -->
+                <div id="flights-container"></div>
+
+                           
+
+
+ <!-- Advanced Dropdown for Round-trip -->
+             
+                        </div>
+
+   
+    
+
+
+
+                
+
+                <!-- Flights Container -->
+                <div id="flights-container"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    
+</div>              
+                    
+                    </form>
+   `;
+            }     
+                      
+                      
+                      
+                      
+                      else if (type === 'car') {
                 content = `
                 <form>
                  
