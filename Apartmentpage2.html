@@ -1710,12 +1710,11 @@ input:hover {
            <div class="form-flex">
         <label for="label2">Booking Time</label>
 
-<select><option>9:00am </option>
-                                <option>10:00am</option>
-                                 <option>11:00am</option>
                                 
-                                
-                            </select> 
+                          
+            
+<input type="time" id="time" name="time" min="00:00" max="23:59" required>      
+                          
 
 
 
@@ -2492,7 +2491,211 @@ function togglePassengerDropdown() {
                     
                     
                           
-                    
+              
+
+ 
+                  
+<script>
+
+                  
+  const locations = [
+"New York",
+"Los Angeles",
+"Chicago",
+"Houston",
+"Miami",
+"London",
+"Paris",
+"Tokyo",
+"Sydney",
+"Dubai",
+"Delhi",
+"Bangkok",
+
+
+
+"Yogykarta ",
+"Adisucipto ",
+"Almakhum ",
+"Bajing Daxing ",
+"Bajing Captital ",
+"Chiang  Mai ",
+
+
+
+
+
+
+
+
+
+
+];
+
+function showSuggestions(inputElement, suggestionsId) {
+const suggestions = document.getElementById(suggestionsId);
+const query = inputElement.value.toLowerCase().trim();
+
+// Clear previous suggestions
+suggestions.innerHTML = '';
+
+if (query.length === 0) {
+suggestions.style.display = 'none';
+return;
+}
+
+// Filter locations
+const matchedLocations = locations.filter(location =>
+location.toLowerCase().includes(query)
+);
+
+// Display suggestions
+if (matchedLocations.length > 0) {
+suggestions.style.display = 'block';
+matchedLocations.forEach(location => {
+const li = document.createElement('li');
+li.textContent = location;
+
+// Add click event to populate input field
+li.addEventListener('click', () => {
+inputElement.value = location;
+suggestions.style.display = 'none';
+});
+
+suggestions.appendChild(li);
+});
+} else {
+suggestions.style.display = 'none';
+}
+}
+
+// Close suggestions when clicking outside
+document.addEventListener('click', (event) => {
+const fromSuggestions = document.getElementById('from-suggestions');
+const toSuggestions = document.getElementById('to-suggestions');
+
+if (!fromSuggestions.contains(event.target) && event.target.id !== 'flying-from') {
+fromSuggestions.style.display = 'none';
+}
+
+if (!toSuggestions.contains(event.target) && event.target.id !== 'flying-to') {
+toSuggestions.style.display = 'none';
+}
+});
+
+
+
+
+
+</script>
+
+
+  
+  
+<script>
+
+
+
+  function togglePassengerDropdown() {
+      const dropdown = document.getElementById('hotelPassengerDropdown');
+  
+      // Close other dropdowns if any
+      closeAllDropdowns();
+  
+      // Toggle the current dropdown visibility
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+  
+  function changeCount(type, change) {
+      const countElement = document.getElementById(`hotel${capitalize(type)}Count`);
+      let count = parseInt(countElement.innerText);
+      count = Math.max(type === 'adult' ? 1 : 0, count + change); // Adults must be at least 1, others can be 0
+      countElement.innerText = count;
+      updatePassengerField();
+  }
+  
+  function updatePassengerField() {
+      const adults = parseInt(document.getElementById('hotelAdultCount').innerText);
+      const children = parseInt(document.getElementById('hotelChildrenCount').innerText);
+      const rooms = parseInt(document.getElementById('hotelRoomCount').innerText);
+      document.getElementById('hotel-adult').value = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Children, ${rooms} Room${rooms > 1 ? 's' : ''}`;
+  }
+  
+  function capitalize(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+  
+  function closeAllDropdowns() {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach((dropdown) => {
+          dropdown.style.display = 'none';
+      });
+  }
+  
+  // Event listener to close dropdown when clicking outside
+  document.addEventListener('click', function (event) {
+      const dropdown = document.getElementById('hotelPassengerDropdown');
+      const input = document.getElementById('hotel-adult');
+  
+      // Close dropdown if the click is outside both the input and dropdown
+      if (!dropdown.contains(event.target) && event.target !== input) {
+          closeAllDropdowns();
+      }
+  });
+  
+  // Prevent the dropdown from closing when clicking inside
+  document.getElementById('hotelPassengerDropdown').addEventListener('click', function (event) {
+      event.stopPropagation();
+  });
+  
+  window.onload = function () {
+      showForm('flight');
+  };
+  
+  
+  
+  </script>
+  
+    
+
+
+
+<style>
+        
+                   
+           
+
+  .suggestions-list {
+   
+    outline: #000;
+      list-style-type: none;
+      margin-top: 80px;
+      padding: 0;
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid #ebe5e5;
+      width: 230px;
+      max-height: 350px;
+      overflow-y: auto;
+      z-index: 1000;
+  }
+  
+  .suggestions-list li {
+      padding: 8px;
+      cursor: pointer;
+      color: #000;
+  }
+  
+  .suggestions-list li:hover {
+      background-color: #5f94d6;
+      color: white;
+  }
+  </style>
+
+
+
+
+      
                     
                    
                     

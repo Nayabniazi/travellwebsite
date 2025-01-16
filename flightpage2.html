@@ -40,7 +40,7 @@ body {
  /* Dropdown */
 .dropdown {
     position: absolute;
-    top: 220px;
+    top: 250px;
     left: 200px;
     width: 100%;
     max-width: 350px;
@@ -103,7 +103,7 @@ body {
 @media (max-width: 768px) {
     .dropdown {
         width: calc(80% - 40px); /* Adjust dropdown width */
-        margin-top: 180px ;
+        margin-top: 270px ;
         left: 50%;
         margin-right: 300px;
         transform: translateX(-50%);
@@ -168,7 +168,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px; /* Spacing between multiple flight forms */
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 /* Individual flight form */
@@ -1687,9 +1687,14 @@ input:hover {
                             
                                     if (type === 'flight') {
                                         content = `
-                                    <form> 
+       
+
+ <form> 
                                         <div class="form-flex">
-                                              
+                                                <label><input type="radio" name="trip-type" value="one-way" onclick="toggleTripOptions()"> One-way</label>
+                                                 <label><input type="radio" name="trip-type" value="round-trip" onclick="toggleTripOptions()"> Round-trip</label>
+                                     <label><input type="radio" name="trip-type" value="multi-city" onclick="toggleTripOptions()"> Multi-city</label>
+                    
                                               
                                            </div>
                   
@@ -1697,17 +1702,24 @@ input:hover {
                     
                   
                     
-                     <div class="label-container" style="margin-top:0px;">
-                           <div class="form-flex">
+                 <div class="label-container" style="margin-top:0px;">
+   <div class="form-flex">
         <label for="label1">Flying From</label>
-          <input type="text" placeholder="Flying from"style="margin-right:20px;" >
-          </div>
-           <div class="form-flex">
-        <label for="label2">Flying to</label>
-          <input type="text" placeholder="Flying from" >
-          </div>
-                  
+        <input type="text" id="flying-from" placeholder="Flying from" style="margin-right:20px;height:40px;" oninput="showSuggestions(this, 'from-suggestions')" />
+        <ul  id="from-suggestions" class="suggestions-list"style=""></ul>
     </div>
+    <div class="form-flex">
+        <label for="label2">Flying to</label>
+        <input type="text" id="flying-to" placeholder="Flying to" oninput="showSuggestions(this, 'to-suggestions')"style="margin-right:20px;height:40px;" />
+        <ul id="to-suggestions" class="suggestions-list"></ul>
+    </div>
+
+
+
+
+
+
+</div>
                                           
                                         
                 
@@ -1779,18 +1791,71 @@ input:hover {
 
 
           </div>
-                  <div class="form-flex" style="height:50px;">
-        <label for="label1">Coach</label>
-     <select >
-                                                    <option>Economy</option>
-                                                    <option>Business</option>
-</select>
+              <div class="form-flex">
+    <label for="coach">Coach</label>
+    <select id="coach" name="coach">
+        <option value="" selected>Optional</option>
+        <option value="economy">Economy</option>
+        <option value="business">Business</option>
+    </select>
+</div>
+
+
+
+
+
+
+ <div class="form-flex">
+<label for="label2"style="margin-top:20px">Driver Needs?</label>
+           
+    
+    <select style="margin-right:10px;height:45px;margin-top:10px;" >
+        <option value="" selected>Yes</option>
+        <option value="economy">No</option>
+        <option value="business">Any</option>
+    </select>
+                 
           </div>
+
+
+
+
+
+  <div class="form-flex">
+    <label for="coach"style="margin-top:20px;">Departing From</label>
+      <input type="date" placeholder="Departing" style="height:45px;margin-top:10px;margin-right:10px;">
+        
+</div>
+
+
+  <div class="form-flex">
+    <label for="coach"style="margin-top:20px;">Departing to</label>
+      <input type="date" placeholder="Departing" style="height:45px;margin-top:10px;margin-right:10px;">
+        
+</div>
+
+
+
        <div class="form-flex">
+
+
+
+
         </div>
        
 
-           
+          
+        
+
+
+
+
+
+
+
+
+
+
         
     </div>          
               
@@ -1809,17 +1874,22 @@ input:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                                           
-                    
-            <div class="label-container" style="margin-top:0px;">
-                           <div class="form-flex">
-        <label for="label"style="margin-top:20px;">Departing From</label>
-         <input type="Date" placeholder="Flying from" style="margin-right:20px;">
-        
-          </div>
-         <div class="form-flex">
-        <label for="label"style="margin-top:20px;">Departing to</label>
-         <input type="date" placeholder="Flying from"margin-right:20px; >
+               
 
 
 
@@ -1829,14 +1899,11 @@ input:hover {
    </div>
                 
        
-  <div class="form-flex" style="margin-left:20px;">
-        <label for="label1"style="margin-top:20px;">Airline</label>
- <input type="text" placeholder="Airline" >
-          </div>
-      
-           
+  
+
+
         
-          
+         
               
 
           </div>
@@ -1845,13 +1912,8 @@ input:hover {
 
 
 
-
-
-
-
-                    
-    
-
+       
+            
                 
     
 
@@ -1864,10 +1926,27 @@ input:hover {
   <div class="form-flex">
                                             
                                
-                               <button style="margin-top:30px;" onclick="window.location.href='flightpage2.html'" type="button">Search Now</button>
+                               <button style="margin-top:30px;"onclick="window.location.href='flightpage2.html'"type="button" >Search Now</button>
                     
                     
-                    <div id="add-flight-button-container" style="display: none; margin-top: 0px;">
+
+    
+
+
+
+
+
+    <!-- Pop-up for seat availability -->
+    
+
+
+
+
+
+
+
+
+                    <div id="add-flight-button-container" style="display: none; margin-top:0px;">
                     
                       <Button type="button" id="add-flight-button" onclick="addFlight()"style="margin-top:30px;">+ Add Flight</Button>
                     
@@ -1881,17 +1960,7 @@ input:hover {
                     
                     
               
-                    
-                    
-                    
-                    
-                    
-                                        
-                    
-                    
-                    
-                    
-                                
+                       
                     
                     
                                     <!-- Flights Container -->
@@ -1931,7 +2000,6 @@ input:hover {
                     
                     
                     
-                    
                                     </div>
                     
                                             </div>
@@ -1951,6 +2019,16 @@ input:hover {
                     
                     
                     
+                   
+        
+
+        <!-- Button to show the airline textfield and seat availability -->
+        
+
+        <!-- Airline and seat details will appear here once the button is clicked -->
+        
+    </div>
+
                     
                     
                     
@@ -1961,281 +2039,39 @@ input:hover {
                     
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+          
                     
                            
                         
                     </div>
                         
                     
-                    </form>        
+                    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                        
                        `;
                       } 
                       else if (type === 'cruise') {
                 content = `
-                    <form>
-                        
-                        
+                   
 
-                         
-                      <div class="label-container">
-                          <div class="form-flex">
-        <label for="label1">Depart as early as</label>
-           <input type="date" placeholder="Departing" >
-          </div>
-        <div class="form-flex">
-        <label for="label2">Depart as late as</label>
-          <input type="date" placeholder="Departing" >
-          </div>
- <div>
-        <label for="label2">Traveller in cabin</label>
-/* adult dalna*/
-
-         </div>
-
-          <div class="form-flex">
-        <label for="label1">Going to</label>
-           <select >
-                                <option>Select Destination</option>
-                                <option>Business</option>
-                                 <option>Mexico</option>
-                                <option>Carbieon</option>
-                            </select>
-          </div>
-         
-                  
-    </div>
-                        
-
-
-
-
-
- 
-            
-           
-            </div>
-        </div>
-
-
-
-
-
-
-                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div  class="form-flex"style="margin-top: 10px;">
-                          <button onclick="window.location.href='curisepage2.html'" type="button">Search Now</button>
-          
-<div id="add-flight-button-container" style="display: none; margin-top: 0px;">
-                    <button type="button" id="add-flight-button" onclick="addFlight()">+ Add Flight</button>
-                </div>
-
-
-
-
-
-
-                <!-- Flights Container -->
-                <div id="flights-container"></div>
-
-                           
-
-
- <!-- Advanced Dropdown for Round-trip -->
-             
-                        </div>
-
-   
-    
-
-
-
-                
-
-                <!-- Flights Container -->
-                <div id="flights-container"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-    
-</div>
-    
-
-</form>
    `;
             } else if (type === 'car') {
                 content = `
-                <form>
-                 
-                                
-                       
-                    
-                      <div class="label-container">
-                        <div class="form-flex">
-        <label for="label1">Picking up</label>
-          <input type="text" placeholder="Flying from" >
-          </div>
-          <div class="form-flex">
-        <label for="label2">Picking up Date</label>
-          <input type="date" placeholder="Departing" >
-          </div>
-           <div class="form-flex">
-        <label for="label2">Time</label>
-         
-               <select>
-                                <option>9:00AM</option>
-                                <option>10:00AM</option>
-                                 <option>11:00AM</option>
-                                <option>12:00AM</option>
-                                 <option>1:00AM</option>
-                                <option>2:00AM</option>
-                            </select>             
-          </div>       
-    </div>
-                
-  <div class="label-container">
-                        <div class="form-flex">
-        <label for="label1">Picking up</label>
-          <input type="text" placeholder="Flying from" >
-          </div>
-         <div class="form-flex">
-        <label for="label2">Picking up Date</label>
-          <input type="date" placeholder="Departing" >
-          </div>
-            <div class="form-flex">
-        <label for="label2">Time</label>
-         
-               <select>
-                                <option>9:00AM</option>
-                                <option>10:00AM</option>
-                                 <option>11:00AM</option>
-                                <option>12:00AM</option>
-                                 <option>1:00AM</option>
-                                <option>2:00AM</option>
-                            </select>             
-          </div>       
-    </div>
-              
-        <!-- Dropdown Icon -->
-
-
-
-
-
-
-
-           <div class="drop">
-        <span class="dropdown-icon" style="margin-right:600px; font-size:15px;color: black;font-weight:bold; " onclick="toggleDropdown()">&#9662;AdvancedOptions</span> <!-- Downward Triangle Icon -->
-
-        <!-- Hidden Text Fields -->
-        <div class="dropdown-content" id="dropdownContent">
-    
-  <div class="label-container">
-                          <div class=form-flex>
-        <label for="label1">Car Type</label>
-         <select>
-                                <option>No Preference</option>
-                                <option>ACE rent A Car</option>
-                                 <option>Advantage rent Car</option>
-                                <option>Alamo rent car</option>
-                                 <option>Alais</option>
-                                
-                            </select> 
-          </div>
-          <div class="form-flex" >
-        <label for="label2">Rental Car Componey</label>
-          <select>
-                                <option>No Preference</option>
-                                <option>ACE rent A Car</option>
-                                 <option>Advantage rent Car</option>
-                                <option>Alamo rent car</option>
-                                 <option>Alais</option>
-                                
-                            </select> 
-          </div>
-         <div class="form-flex" >
-        <label for="label2">Discount Code</label>
-         
-               <select>
-                                <option>I don't have Code</option>
-                                <option>ACE rent A Car</option>
-                                 <option>Advantage rent Car</option>
-                                <option>Alamo rent car</option>
-                                 <option>Alais</option>
-                                
-                            </select>             
-          </div>
-                
-    </div>
-
-
-</div>
-  <div class="form-flex" style="margin-top: 10px;">
-                          <button onclick="window.location.href='carpage2.html'" type="button">Search Now</button>
-         
- <!-- Flights Container -->
-                <div id="flights-container"></div>
-
- <!-- Advanced Dropdown for Round-trip -->
-
-
-
-              
-</div>
-    
-
-</form>   
+               
                 
                 
                 
@@ -2243,145 +2079,7 @@ input:hover {
                 `;
             } else if (type === 'hotel') {
                 content =  `
-                    <form>
-                          
-                         
-                               
-                        
-
-
-
-
-
-                      <div class="label-container">
-                           <div class="form-flex">
-        <label for="label1">Picking up</label>
-          <input type="date" placeholder="Departing" >
-          </div>
-           <div class="form-flex">
-        <label for="label2">Picking up Date</label>
-          <input type="date" placeholder="Departing" >
-          </div>
-          
-           <div class="form-flex">
-        <label for="label2">Passengers</label>
-
-/*adult dalna*/
-
-
-
-              </div> 
-           
-         <div class="form-flex">
-        <label for="label2">Time</label>
-         
-               <input type="text" placeholder="Flying from">          
-          </div>  
-          <div class="form-flex">
-<label for="label2">Driver Needs?</label>
-          <select>
-                                <option>yes </option>
-                                <option>yes</option>
-                                 <option>Any</option>
-                                
-                            </select>  
-                        
-          </div>  
-
-    </div>
-
-
-
-                        
-
-
-
-
-
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div  class="form-flex"style="margin-top: 10px;">
-           <button onclick="window.location.href='hotelpage2.html'" type="button">Search Now</button>
-<div id="add-flight-button-container" style="display: none; margin-top: 0px;">
-                    <button type="button" id="add-flight-button"  onclick="addFlight()">+ Add Flight</button>
-                </div>
-
-                <!-- Flights Container -->
-                <div id="flights-container"></div>
-
-                           
-
-
- <!-- Advanced Dropdown for Round-trip -->
-                <div id="advanced-dropdown" style="display: none; margin-top: 0px;margin-right:350px;">
-                    <label for="advanced-field" style="margin-right:350px;">Advanced Options</label>
-                   <select style="width:200px;margin-right:300px;">
-                    <option>hell</option>
-                    </select>
-                </div>
-
-                        </div>
-
-   
-    
-
-
-
-                
-
-                <!-- Flights Container -->
-               <div id="flights-container">
-    
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-    
-</div>
-    
-
-</form>
+                   
    `;
             }
                 searchBoxContent.innerHTML = content;
@@ -3453,6 +3151,216 @@ window.onclick = function(event) {
 };
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+ 
+                  
+<script>
+
+                  
+  const locations = [
+"New York",
+"Los Angeles",
+"Chicago",
+"Houston",
+"Miami",
+"London",
+"Paris",
+"Tokyo",
+"Sydney",
+"Dubai",
+"Delhi",
+"Bangkok",
+
+
+
+"Yogykarta ",
+"Adisucipto ",
+"Almakhum ",
+"Bajing Daxing ",
+"Bajing Captital ",
+"Chiang  Mai ",
+
+
+
+
+
+
+
+
+
+
+];
+
+function showSuggestions(inputElement, suggestionsId) {
+const suggestions = document.getElementById(suggestionsId);
+const query = inputElement.value.toLowerCase().trim();
+
+// Clear previous suggestions
+suggestions.innerHTML = '';
+
+if (query.length === 0) {
+suggestions.style.display = 'none';
+return;
+}
+
+// Filter locations
+const matchedLocations = locations.filter(location =>
+location.toLowerCase().includes(query)
+);
+
+// Display suggestions
+if (matchedLocations.length > 0) {
+suggestions.style.display = 'block';
+matchedLocations.forEach(location => {
+const li = document.createElement('li');
+li.textContent = location;
+
+// Add click event to populate input field
+li.addEventListener('click', () => {
+inputElement.value = location;
+suggestions.style.display = 'none';
+});
+
+suggestions.appendChild(li);
+});
+} else {
+suggestions.style.display = 'none';
+}
+}
+
+// Close suggestions when clicking outside
+document.addEventListener('click', (event) => {
+const fromSuggestions = document.getElementById('from-suggestions');
+const toSuggestions = document.getElementById('to-suggestions');
+
+if (!fromSuggestions.contains(event.target) && event.target.id !== 'flying-from') {
+fromSuggestions.style.display = 'none';
+}
+
+if (!toSuggestions.contains(event.target) && event.target.id !== 'flying-to') {
+toSuggestions.style.display = 'none';
+}
+});
+
+
+
+
+
+</script>
+
+
+  
+  
+<script>
+
+
+
+  function togglePassengerDropdown() {
+      const dropdown = document.getElementById('hotelPassengerDropdown');
+  
+      // Close other dropdowns if any
+      closeAllDropdowns();
+  
+      // Toggle the current dropdown visibility
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+  
+  function changeCount(type, change) {
+      const countElement = document.getElementById(`hotel${capitalize(type)}Count`);
+      let count = parseInt(countElement.innerText);
+      count = Math.max(type === 'adult' ? 1 : 0, count + change); // Adults must be at least 1, others can be 0
+      countElement.innerText = count;
+      updatePassengerField();
+  }
+  
+  function updatePassengerField() {
+      const adults = parseInt(document.getElementById('hotelAdultCount').innerText);
+      const children = parseInt(document.getElementById('hotelChildrenCount').innerText);
+      const rooms = parseInt(document.getElementById('hotelRoomCount').innerText);
+      document.getElementById('hotel-adult').value = `${adults} Adult${adults > 1 ? 's' : ''}, ${children} Children, ${rooms} Room${rooms > 1 ? 's' : ''}`;
+  }
+  
+  function capitalize(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+  
+  function closeAllDropdowns() {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach((dropdown) => {
+          dropdown.style.display = 'none';
+      });
+  }
+  
+  // Event listener to close dropdown when clicking outside
+  document.addEventListener('click', function (event) {
+      const dropdown = document.getElementById('hotelPassengerDropdown');
+      const input = document.getElementById('hotel-adult');
+  
+      // Close dropdown if the click is outside both the input and dropdown
+      if (!dropdown.contains(event.target) && event.target !== input) {
+          closeAllDropdowns();
+      }
+  });
+  
+  // Prevent the dropdown from closing when clicking inside
+  document.getElementById('hotelPassengerDropdown').addEventListener('click', function (event) {
+      event.stopPropagation();
+  });
+  
+  window.onload = function () {
+      showForm('flight');
+  };
+  
+  
+  
+  </script>
+  
+    
+
+
+
+<style>
+        
+                   
+           
+
+  .suggestions-list {
+   
+    outline: #000;
+      list-style-type: none;
+      margin-top: 80px;
+      padding: 0;
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid #ebe5e5;
+      width: 230px;
+      max-height: 350px;
+      overflow-y: auto;
+      z-index: 1000;
+  }
+  
+  .suggestions-list li {
+      padding: 8px;
+      cursor: pointer;
+      color: #000;
+  }
+  
+  .suggestions-list li:hover {
+      background-color: #5f94d6;
+      color: white;
+  }
+  </style>
+
 
 
 
